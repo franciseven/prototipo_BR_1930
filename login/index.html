@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="titulo">BR 1930 - Login</title>
+
+  <link rel="stylesheet" href="../assets/css/header.css">
+	<link rel="stylesheet" href="../assets/css/footer.css">
+	<link rel="stylesheet" href="./login.css">
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <main class="login-container">
+    <div class="login-box">
+      <h2 data-i18n="login_titulo">Faça login usando sua conta</h2>
+
+      <form id="login-form">
+        <input type="text" placeholder="E-mail" data-i18n-placeholder="email" required>
+        <input type="password" placeholder="Senha" data-i18n-placeholder="senha" required>
+        <button type="submit" class="login-btn" data-i18n="entrar">ENTRAR</button>
+      </form>
+
+      <div class="login-links">
+        <a href="../cadastro/index.html" data-i18n="criar_conta">Criar conta</a>
+        <a href="./redefinicao_senha.html" data-i18n="esqueceu_senha">Esqueceu a senha?</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+	<script src="../assets/js/script.js"></script>
+  <script src="./login.js"></script>
+
+</body>
+</html>

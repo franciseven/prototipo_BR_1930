@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BR 1930 - Busca Principal</title>
+
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <link rel="stylesheet" href="./busca_principal.css">
+  <link rel="stylesheet" href="../assets/css/colecoes_pesquisa.css">
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <section class="hero">
+
+    <div class="caixa-pesquisa-geral">
+      <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" />
+      <button onclick="pesquisar()">Pesquisar</button>
+    </div>
+
+    <h1>Todos os itens do Acervo</h1>
+
+    <p>
+      Esta seção apresenta todos os itens catalogados contendo tipos como <strong>músicas, imagens, jornais, entre outros</strong>. Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
+    </p>
+
+    <div class="navegar-box">
+      <div class="navegar-header">Filtros de Navegação</div>
+      <div class="navegar-tabs" id="tabs">
+        <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
+        <button class="tab" data-target="filtros-autor">Autores</button>
+        <button class="tab" data-target="filtros-data">Data de Publicação</button>
+        <button class="tab" data-target="filtros-tipo">Tipos</button>
+        <button class="tab" data-target="filtros-formato">Formatos</button>
+      </div>
+    </div>
+
+    <div class="filtro-controles">
+      <button id="adicionarFiltroBtn" class="btn-filtro">Adicionar Filtro</button>
+      <button id="removerFiltroBtn" class="btn-filtro">Remover Filtro</button>
+      <button id="finalizarFiltrosBtn" class="btn-filtro">Finalizar Seleção de Filtros</button>
+    </div>
+
+    <div class="filtros" id="filtros-recentes">
+      <p>Exibindo as submissões mais recentes.</p>
+    </div>
+
+    <div class="filtros" id="filtros-autor" style="display:none;">
+      <label>Filtrar por Autor</label>
+      <div class="filtros-inputs">
+        <select>
+          <option>(Escolha o autor)</option>
+          <option>Wilson Braga</option>
+        </select>
+        <input type="text" placeholder="Digite o nome do autor" />
+        <button>Pesquisar</button>
+      </div>
+    </div>
+
+    <div class="filtros" id="filtros-data" style="display:none;">
+      <label>Filtrar resultados por ano ou mês</label>
+      <div class="filtros-inputs">
+        <select>
+          <option>(Escolha o ano)</option>
+          <option>2025</option>
+          <option>2024</option>
+          <option>2023</option>
+        </select>
+
+        <select>
+          <option>(Escolha o mês)</option>
+          <option>Janeiro</option>
+          <option>Fevereiro</option>
+          <option>Março</option>
+          <option>Abril</option>
+          <option>Maio</option>
+          <option>Junho</option>
+          <option>Julho</option>
+          <option>Agosto</option>
+          <option>Setembro</option>
+          <option>Outubro</option>
+          <option>Novembro</option>
+          <option>Dezembro</option>
+        </select>
+
+        <select>
+          <option>(Escolha o dia)</option>
+          <option></option>
+        </select>
+        <button>Pesquisar</button>
+      </div>
+    </div>
+
+    <div class="filtros" id="filtros-tipo" style="display:none;">
+      <label>Filtrar por Tipo</label>
+      <div class="filtros-inputs">
+        <select>
+          <option>(Escolha o tipo)</option>
+          <option>Músicas</option>
+          <option>Hinos</option>
+          <option>Discursos</option>
+        </select>
+        <button>Pesquisar</button>
+      </div>
+    </div>
+
+    <div class="filtros" id="filtros-formato" style="display:none;">
+      <label>Filtrar por Formato</label>
+      <div class="filtros-inputs">
+        <select>
+          <option>(Escolha o formato)</option>
+          <option>.mp3</option>
+          <option>.wav</option>
+          <option>.flac</option>
+          <option>.ogg</option>
+        </select>
+        <button>Pesquisar</button>
+      </div>
+    </div>
+
+    <div class="resultado-info">
+      Agora exibindo n de n
+    </div>
+
+    <div class="lista-itens">
+
+      <div class="item">
+        <a href="../item_selecionado/audios/audio_1_selecionado.html">
+          <img src="../imagens/capas_colecoes/audios/capa_audios_1-hinojoaopessoa.jpg" alt="Capa do Áudio 1" />
+        </a>
+        <div class="item-info">
+          <div class="item-tag">Áudio</div>
+          <h3><a href="../item_selecionado/audios/audio_1_selecionado.html" style="text-decoration: none; color: inherit;">MÚSICA EM HOMENAGEM A JOÃO PESSOA</a></h3>
+          <p class="autor">Francisco Alves, Eduardo Souto e Osvaldo Santiago</p>
+          <p class="descricao collapsed">
+            Lá do Norte, um herói altaneiro
+            Que da pátria o amor conquistou
+            Foi um vivo farol que ligeiro
+            Acendeu e depois se apagou
+
+            João Pessoa, João Pessoa
+            Bravo filho do sertão
+            Toda a pátria espera um dia
+            A sua ressurreição
+
+            João Pessoa, João Pessoa
+            O seu corpo varonil
+            Vive ainda, vive ainda
+            No coração do Brasil
+
+            Como um cedro que tomba na mata
+            Sob o raio que em cheio o feriu
+            Assim ele ante a fúria insensata
+            De um feroz inimigo caiu
+
+            João Pessoa, João Pessoa
+            Bravo filho do sertão
+            Toda a pátria espera um dia
+            A sua ressurreição
+
+            João Pessoa, João Pessoa
+            O seu corpo varonil
+            Vive ainda, vive ainda
+            No coração do Brasil
+
+            Paraíba, ó rincão pequenino
+            Como grande esse homem se fez!
+            Hoje em ti cabe todo o destino
+            Todo o orgulho da nossa altivez
+
+            João Pessoa, João Pessoa
+            Bravo filho do sertão
+            Toda a pátria espera um dia
+            A sua ressurreição
+
+            João Pessoa, João Pessoa
+            O seu corpo varonil
+            Vive ainda, vive ainda
+            No coração do Brasil.
+          </p>
+          <a href="#" class="toggle-descricao">Mostrar mais</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <a href="../item_selecionado/territorio_isabel/territorio_1_selecionado.html">
+          <img src="../imagens/capas_colecoes/territorio/capa_territorio_1.jpg" alt="Capa do Item 1" />
+        </a>
+        <div class="item-info">
+          <div class="item-tag">Item</div>
+          <h3><a href="../item_selecionado/territorio_isabel/territorio_1_selecionado.html" style="text-decoration: none; color: inherit;">Como se combate o cangaceirismo na Parahyba</a></h3>
+          <p class="autor">Jornal A Manhã (RJ)</p>
+          <p class="descricao collapsed">
+            Entrevista com Chico Pereira.
+          </p>
+          <a href="#" class="toggle-descricao">Mostrar mais</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <a href="../item_selecionado/teses/tese_1_selecionada.html">
+          <img src="../imagens/capas_colecoes/teses/2012_CarolinaSoaresSousa.png" alt="Capa da Tese 1" />
+        </a>
+        <div class="item-info">
+          <div class="item-tag">Dissertação/Tese</div>
+          <h3><a href="../item_selecionado/teses/tese_1_selecionada.html" style="text-decoration: none; color: inherit;">Política, A Arte de Lembrar e Esquecer: Os Projetos Políticos Paulistas (1933-1934)</a></h3>
+          <p class="autor">Carolina Soares Sousa</p>
+          <p class="descricao collapsed">
+            A Revolução de 1932 exigiu das forças em disputa de uma base de consenso. Visando o desarme dos paulistas, Getúlio Vargas indicou, em agosto de 1933, Armando de Salles Oliveira para o cargo de interventor. Tal indicação provocou o Partido republicano Paulista, que se encontrava como oposição, ansioso por retomar o poder. Em 1934 uma nova constituição parecia indicar a redefinição das alianças políticas que permitiriam, finalmente, a retomada dos projetos políticos paulistas para o Brasil com as necessárias adaptações da Revolução de 1930. O que significou a Revolução de 1930? E o percurso entre 1932 e 1934? Repensar estas questões implica retomar o diálogo e conflitos ocorridos no interior das elites políticas paulistas e analisar o jogo político por elas praticado em tal contexto. Nesse jogo político, a imprensa oficial dos principais partidos políticos paulistas cumprirá papel pedagógico, fazendo uso da memória das revoluções e 1930 e 1932 com o intuito de formar a opinião pública.
+          </p>
+          <a href="#" class="toggle-descricao">Mostrar mais</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <a href="../item_selecionado/documentos/documento_1_selecionado.html">
+          <img src="../imagens/capas_colecoes/documentos/capa_documento_1-telegrama.png" alt="Capa do Documento 1" />
+        </a>
+        <div class="item-info">
+          <div class="item-tag">Documento</div>
+          <h3><a href="../item_selecionado/documentos/documento_1_selecionado.html" style="text-decoration: none; color: inherit;">TELEGRAMA 313</a></h3>
+          <p class="autor">Acervo FCJA</p>
+          <p class="descricao collapsed">
+            Telegrama de José Fábio da Costa Lyra, secretário da cidade de Bananeiras-PB, comunicando ao Chefe do Governo Revolucionário (José Américo de Almeida) acerca da adesão do coronel José Antônio Ferreira da Rocha e de sua família aos ideias revolucionários.
+          </p>
+          <a href="#" class="toggle-descricao">Mostrar mais</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <a href="../item_selecionado/entrevistas/entrevista_1_selecionado.html">
+          <img src="../imagens/capas_colecoes/entrevistas/capa_entrevista_1.png" alt="Capa da Entrevista 1" />
+        </a>
+        <div class="item-info">
+          <div class="item-tag">Entrevista</div>
+          <h3><a href="../item_selecionado/entrevistas/entrevista_1_selecionado.html" style="text-decoration: none; color: inherit;">ENTREVISTA 01 - PROFA. MONIQUE CITTADINO</a></h3>
+          <p class="autor">Projeto BR 1930</p>
+          <p class="descricao collapsed">
+            Entrevista com a professora da UFPB Monique Cittadino sobre a Revolução de 1930 na Paraíba.
+          </p>
+          <a href="#" class="toggle-descricao">Mostrar mais</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <a href="../item_selecionado/entrevistas/entrevista_2_selecionada.html">
+          <img src="../imagens/capas_colecoes/entrevistas/capa_entrevista_impressa_1-.png" alt="Capa da Entrevista 2" />
+        </a>
+        <div class="item-info">
+          <div class="item-tag">Entrevista</div>
+          <h3><a href="../item_selecionado/entrevistas/entrevista_2_selecionada.html" style="text-decoration: none; color: inherit;">Entrevista com José Pereira</a></h3>
+          <p class="autor">O Cruzeiro (RJ)</p>
+          <p class="descricao collapsed">
+            Entrevista com José Pereira que desligou o município paraibano de Princesa da comunidade estadual e o proclamou independente.
+          </p>
+          <a href="#" class="toggle-descricao">Mostrar mais</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <a href="../item_selecionado/imagens/imagem_1_selecionado.html">
+          <img src="../imagens/capas_colecoes/imagens/capa_imagem_1-joaopessoa.jpg" alt="Capa da Imagem 1" />
+        </a>
+        <div class="item-info">
+          <div class="item-tag">Imagem</div>
+          <h3><a href="../item_selecionado/imagens/imagem_1_selecionado.html" style="text-decoration: none; color: inherit;">RETRATO DE JOÃO PESSOA</a></h3>
+          <p class="autor">FONTE: Acervo FCJA</p>
+          <p class="descricao collapsed">
+            Retrato de João Pessoa.
+          </p>
+          <a href="#" class="toggle-descricao">Mostrar mais</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <a href="../item_selecionado/livros/livro_1_selecionado.html">
+          <img src="../imagens/capas_colecoes/livros/capa_livro_1-oanodonego.png" alt="Capa do Livro 1" />
+        </a>
+        <div class="item-info">
+          <div class="item-tag">Livro</div>
+          <h3><a href="../item_selecionado/livros/livro_1_selecionado.html" style="text-decoration: none; color: inherit;">O ANO DO NEGO</a></h3>
+          <p class="autor">José Américo de Almeida</p>
+          <p class="descricao collapsed">
+            Memórias de José Américo sobre o assassinato de João Pessoa.
+          </p>
+          <a href="#" class="toggle-descricao">Mostrar mais</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <a href="../item_selecionado/periodicos/periodico_1_selecionado.html">
+          <img src="../imagens/capas_colecoes/periodicos/capa_materia_1-odiadarevolucao.jpg" alt="Capa do Periódico 1" />
+        </a>
+        <div class="item-info">
+          <div class="item-tag">Periódico</div>
+          <h3><a href="../item_selecionado/periodicos/periodico_1_selecionado.html" style="text-decoration: none; color: inherit;">O DIA DA REVOLUÇÃO</a></h3>
+          <p class="autor">Jornal A União</p>
+          <p class="descricao collapsed">
+            Matéria Jornalística sobre o aniversário de 2 anos da Revolução de 1930.
+          </p>
+          <a href="#" class="toggle-descricao">Mostrar mais</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <a href="../item_selecionado/periodicos/periodico_2_selecionado.html">
+          <img src="../imagens/capas_colecoes/periodicos/capa_revista_1-princesa.png" alt="Capa do Periódico 2" />
+        </a>
+        <div class="item-info">
+          <div class="item-tag">Periódico</div>
+          <h3><a href="../item_selecionado/periodicos/periodico_2_selecionado.html" style="text-decoration: none; color: inherit;">Revista Princesa</a></h3>
+          <p class="autor">O Cruzeiro (RJ)</p>
+          <p class="descricao collapsed">
+            DESCRIÇÃO DO PERIÓDICO 3.
+          </p>
+          <a href="#" class="toggle-descricao">Mostrar mais</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <a href="../item_selecionado/videos/video_1_selecionado.html">
+          <img src="../imagens/capas_colecoes/videos/capa_video_1-ohomemdeareia.jpg" alt="Capa do Vídeo 1" />
+        </a>
+        <div class="item-info">
+          <div class="item-tag">Vídeo</div>
+          <h3><a href="../item_selecionado/videos/video_1_selecionado.html" style="text-decoration: none; color: inherit;">O Homem de Areia</a></h3>
+          <p class="autor">Vladimir de Carvalho</p>
+          <p class="descricao collapsed">
+            A Revolução de 1930 vista a partir da ótica nordestina e na visão de José Américo de Almeida.
+          </p>
+          <a href="#" class="toggle-descricao">Mostrar mais</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="paginacao">
+      <a href="#">«</a>
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">»</a>
+    </div>
+
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/pesquisar.js"></script>
+	<script src="./busca_principal.js"></script>
+
+
+</body>
+</html>

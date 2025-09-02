@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BR 1930 - Áudios</title>
+
+  <link rel="stylesheet" href="../../assets/css/header.css">
+  <link rel="stylesheet" href="../../assets/css/footer.css">
+  <link rel="stylesheet" href="../../assets/css/colecoes_pesquisa.css">
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <section class="hero">
+
+    <div class="caixa-pesquisa-geral">
+      <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" />
+      <button onclick="pesquisar()">Pesquisar</button>
+    </div>
+
+    <h1>Áudios</h1>
+
+    <p>
+      Esta seção apresenta uma coleção de áudios catalogados contendo tipos como <strong>músicas, hinos e discursos</strong>. Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
+    </p>
+
+    <div class="navegar-box">
+      <div class="navegar-header">Filtros de Navegação</div>
+      <div class="navegar-tabs" id="tabs">
+        <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
+        <button class="tab" data-target="filtros-autor">Autores</button>
+        <button class="tab" data-target="filtros-data">Data de Publicação</button>
+        <button class="tab" data-target="filtros-tipo">Tipos</button>
+        <button class="tab" data-target="filtros-formato">Formatos</button>
+      </div>
+    </div>
+
+    <div class="filtros" id="filtros-recentes">
+      <p>Exibindo as submissões mais recentes.</p>
+    </div>
+
+    <div class="filtros" id="filtros-autor" style="display:none;">
+      <label>Filtrar por Autor</label>
+      <div class="filtros-inputs">
+        <select>
+          <option>(Escolha o autor)</option>
+          <option>Wilson Braga</option>
+        </select>
+        <input type="text" placeholder="Digite o nome do autor" />
+        <button>Pesquisar</button>
+      </div>
+    </div>
+
+    <div class="filtros" id="filtros-data" style="display:none;">
+      <label>Filtrar resultados por ano ou mês</label>
+      <div class="filtros-inputs">
+        <select>
+          <option>(Escolha o ano)</option>
+          <option>2025</option>
+          <option>2024</option>
+          <option>2023</option>
+        </select>
+
+        <select>
+          <option>(Escolha o mês)</option>
+          <option>Janeiro</option>
+          <option>Fevereiro</option>
+          <option>Março</option>
+          <option>Abril</option>
+          <option>Maio</option>
+          <option>Junho</option>
+          <option>Julho</option>
+          <option>Agosto</option>
+          <option>Setembro</option>
+          <option>Outubro</option>
+          <option>Novembro</option>
+          <option>Dezembro</option>
+        </select>
+
+        <select>
+          <option>(Escolha o dia)</option>
+          <option></option>
+        </select>
+        <button>Pesquisar</button>
+      </div>
+    </div>
+
+    <div class="filtros" id="filtros-tipo" style="display:none;">
+      <label>Filtrar por Tipo</label>
+      <div class="filtros-inputs">
+        <select>
+          <option>(Escolha o tipo)</option>
+          <option>Músicas</option>
+          <option>Hinos</option>
+          <option>Discursos</option>
+          <option>Palestras</option>
+        </select>
+        <button>Pesquisar</button>
+      </div>
+    </div>
+
+    <div class="filtros" id="filtros-formato" style="display:none;">
+      <label>Filtrar por Formato</label>
+      <div class="filtros-inputs">
+        <select>
+          <option>(Escolha o formato)</option>
+          <option>.mp3</option>
+          <option>.wav</option>
+          <option>.flac</option>
+          <option>.ogg</option>
+        </select>
+        <button>Pesquisar</button>
+      </div>
+    </div>
+
+    <div class="resultado-info">
+      Agora exibindo n de n
+    </div>
+
+    <div class="lista-itens">
+
+      <div class="item">
+        <a href="../../item_selecionado/audios/audio_1_selecionado.html">
+          <img src="../../imagens/capas_colecoes/audios/capa_audios_1-hinojoaopessoa.jpg" alt="Capa do Áudio 1" />
+        </a>
+        <div class="item-info">
+          <div class="item-tag">Áudio</div>
+          <h3><a href="../../item_selecionado/audios/audio_1_selecionado.html" style="text-decoration: none; color: inherit;">MÚSICA EM HOMENAGEM A JOÃO PESSOA</a></h3>
+          <p class="autor">Francisco Alves, Eduardo Souto e Osvaldo Santiago</p>
+          <p class="descricao collapsed">
+            Lá do Norte, um herói altaneiro
+            Que da pátria o amor conquistou
+            Foi um vivo farol que ligeiro
+            Acendeu e depois se apagou
+
+            João Pessoa, João Pessoa
+            Bravo filho do sertão
+            Toda a pátria espera um dia
+            A sua ressurreição
+
+            João Pessoa, João Pessoa
+            O seu corpo varonil
+            Vive ainda, vive ainda
+            No coração do Brasil
+
+            Como um cedro que tomba na mata
+            Sob o raio que em cheio o feriu
+            Assim ele ante a fúria insensata
+            De um feroz inimigo caiu
+
+            João Pessoa, João Pessoa
+            Bravo filho do sertão
+            Toda a pátria espera um dia
+            A sua ressurreição
+
+            João Pessoa, João Pessoa
+            O seu corpo varonil
+            Vive ainda, vive ainda
+            No coração do Brasil
+
+            Paraíba, ó rincão pequenino
+            Como grande esse homem se fez!
+            Hoje em ti cabe todo o destino
+            Todo o orgulho da nossa altivez
+
+            João Pessoa, João Pessoa
+            Bravo filho do sertão
+            Toda a pátria espera um dia
+            A sua ressurreição
+
+            João Pessoa, João Pessoa
+            O seu corpo varonil
+            Vive ainda, vive ainda
+            No coração do Brasil.
+          </p>
+          <a href="#" class="toggle-descricao">Mostrar mais</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="paginacao">
+      <a href="#">«</a>
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">»</a>
+    </div>
+
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="../../assets/js/script.js"></script>
+  <script src="../../assets/js/pesquisar.js"></script>
+  <script src="./audios.js"></script>
+
+  
+</body>
+</html>

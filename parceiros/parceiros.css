@@ -1,0 +1,123 @@
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.partner-section {
+  flex: 1;
+  padding: 70px 40px;
+  background-color: #eaeaea;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.partner-header h2 {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 100px;
+  column-gap: 20px;
+  align-items: stretch;
+}
+
+.partner-card {
+  background-color: #000;
+  border: 1px solid #444;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.partner-card:hover,
+.partner-card:focus-within {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  transform: translateY(-8px);
+  outline: none;
+}
+
+.partner-card img {
+  max-width: 100%;
+  max-height: 130px;
+  margin: 25px 0;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.partner-card img:hover,
+.partner-card img:focus-visible {
+  transform: scale(1.08);
+  outline: none;
+}
+
+.partner-card .partner-label {
+  display: block;
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.partner-card p {
+  font-size: 1.15rem;
+  color: #eee;
+  line-height: 1.6;
+}
+
+.partner-cta {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.partner-button {
+  display: inline-block;
+  background: linear-gradient(90deg, #b23333, #e87474);
+  color: #fff;
+  padding: 20px 36px;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  transition: all 0.3s ease;
+  line-height: 1.5;
+  max-width: 90%;
+}
+
+.partner-button:hover,
+.partner-button:focus-visible {
+  background: linear-gradient(90deg, #9e2b2b, #d76262);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.partner-subtext {
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-top: 8px;
+  color: #f0eaea;
+}

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BR 1930 - Matérias Jornalísticas</title>
+</head>
+
+<body>
+
+  <header>
+    
+    <a href="../inicio_principais_telas/index.html" class="logo" data-i18n="logo">BR 1930</a>
+
+    <nav>
+      <a href="../inicio_principais_telas/sobre.html" data-i18n="sobre">Sobre</a>
+      <a href="../inicio_principais_telas/politica_privacidade.html" data-i18n="politica">Política de Privacidade</a>
+      <a href="../inicio_principais_telas/instituicoes_parceiras.html" data-i18n="instituicoes">Instituições Parceiras</a>
+      <a href="../inicio_principais_telas/login.html" data-i18n="usuario">Usuário</a>
+      <a href="../inicio_principais_telas/contato.html" data-i18n="contato">Contato</a>
+      <a href="../inicio_principais_telas/manual.html" data-i18n="contato">Manual</a>
+      
+      <select id="language-selector">
+        <option value="pt-BR">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+    </nav>
+
+  </header>
+
+<section class="hero">
+
+  <div class="caixa-pesquisa-geral">
+    <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" />
+    <button onclick="pesquisar()">Pesquisar</button>
+  </div>
+  
+  <h1>Matérias Jornalísticas</h1>
+
+  <p>
+    Esta seção apresenta uma coleção de matérias jornalísticas catalogadas contendo tipos como <strong>fragmentos, matérias, recortes e revistas.</strong> Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
+  </p>
+
+    <div class="navegar-box">
+      <div class="navegar-header">Navegar</div>
+      <div class="navegar-tabs" id="tabs">
+        <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
+        <button class="tab" data-target="filtros-autor">Autores</button>
+        <button class="tab" data-target="filtros-data">Data de Publicação</button>
+        <button class="tab" data-target="filtros-jornal">Jornais</button>
+        <button class="tab" data-target="filtros-tipo">Tipos</button>
+      </div>
+    </div>
+
+    <div class="filtros" id="filtros-recentes">
+      <p>Exibindo as submissões mais recentes.</p>
+    </div>
+
+    <div class="filtros" id="filtros-autor" style="display:none;">
+      <label>Filtrar matéria jornalística por autor</label>
+      <div class="filtros-inputs">
+        <select>
+          <option>(Escolha o autor)</option>
+          <option>Fernando Moura</option>
+        </select>
+        <input type="text" placeholder="Digite o autor" />
+        <button>Pesquisar</button>
+      </div>
+    </div>
+
+    <div class="filtros" id="filtros-data" style="display:none;">
+      <label>Filtrar resultados por ano ou mês</label>
+      <div class="filtros-inputs">
+        <select>
+          <option>(Escolha o ano)</option>
+          <option>2025</option>
+          <option>2024</option>
+          <option>2023</option>
+        </select>
+
+        <select>
+          <option>(Escolha o mês)</option>
+          <option>Janeiro</option>
+          <option>Fevereiro</option>
+          <option>Março</option>
+          <option>Abril</option>
+          <option>Maio</option>
+          <option>Junho</option>
+          <option>Julho</option>
+          <option>Agosto</option>
+          <option>Setembro</option>
+          <option>Outubro</option>
+          <option>Novembro</option>
+          <option>Dezembro</option>
+        </select>
+
+        <select>
+          <option>(Escolha o dia)</option>
+          <option></option>
+        </select>
+        <button>Pesquisar</button>
+      </div>
+    </div>
+
+    <div class="filtros" id="filtros-jornal" style="display:none;">
+      <label>Filtrar matéria jornalística por jornal</label>
+      <div class="filtros-inputs">
+        <select>
+          <option>(Escolha o jornal)</option>
+          <option>A União</option>
+          <option>O Norte</option>
+        </select>
+        <input type="text" placeholder="Digite o jornal" />
+        <button>Pesquisar</button>
+      </div>
+    </div>
+
+    <div class="filtros" id="filtros-tipo" style="display:none;">
+      <label>Filtrar matéria jornalística por tipo</label>
+      <div class="filtros-inputs">
+        <select>
+          <option>(Escolha o tipo)</option>
+          <option>Fragmentos</option>
+          <option>Matérias</option>
+          <option>Recortes</option>
+          <option>Revistas</option>
+        </select>
+        <input type="text" placeholder="Digite a revista" />
+        <button>Pesquisar</button>
+      </div>
+    </div>
+
+    <div class="resultado-info">
+      Agora exibindo n de n
+    </div>
+
+    <div class="lista-itens">
+
+      <div class="item">
+        <img src="exemplo_capa1.jpg" alt="Capa da matéria jornalística 1" />
+        <div class="item-info">
+          <div class="item-tag">Matéria Jornalística</div>
+          <h3><a href="../itens_selecionados_telas/ARQUIVO.HTML" style="text-decoration: none; color: inherit;">TÍTULO DA MATÉRIA JORNALÍSTICA 1</a></h3>
+          <p class="autor">AUTORES DA matéria jornalística 1</p>
+          <p class="descricao collapsed">
+            DESCRIÇÃO DA matéria jornalística 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing
+          </p>
+          <a href="#" class="toggle-descricao">Mostrar mais</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="exemplo_capa2.jpg" alt="Capa do matéria jornalística 2" />
+        <div class="item-info">
+          <div class="item-tag">Matéria Jornalística</div>
+          <h3><a href="../itens_selecionados_telas/ARQUIVO.HTML" style="text-decoration: none; color: inherit;">TÍTULO DA MATÉRIA JORNALÍSTICA 2</a></h3>
+          <p class="autor">AUTORES DA matéria jornalística 2</p>
+          <p class="descricao collapsed">
+            DESCRIÇÃO DA matéria jornalística 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing
+          </p>
+          <a href="#" class="toggle-descricao">Mostrar mais</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="paginacao">
+      <a href="#">«</a>
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">»</a>
+    </div>
+
+  </section>
+
+  <footer class="footer-section">
+    <p data-i18n="footer.database">Base de Dados - BR 1930</p>
+    <p data-i18n="footer.rights">Todos os Direitos Reservados</p>
+    <p data-i18n="footer.dspace">Feito com DSpace</p>
+  </footer>
+
+  <div class="footer-bottom">
+    <div class="left-logos">
+      <a href="https://paraiba.pb.gov.br/" target="_blank"><img src="../icones/governo_da_paraiba_logo.png" alt="Governo da Paraíba Logo"></a>
+      <a href="https://fcja.pb.gov.br/" target="_blank"><img src="../icones/fundacao_casa_de_jose_americo_logo-removebg-preview.png" alt="FCJA Logo"></a>
+      <a href="https://fapesq.rpp.br/" target="_blank"><img src="../icones/fapesq_pb_logo.png" alt="Fapesq-pb Logo"></a>
+      <a href="https://www.ufpb.br/" target="_blank"><img src="../icones/ufpb__logo.png" alt="UFPB Logo"></a>
+      <a href="https://www.ifpb.edu.br/" target="_blank"><img src="../icones/ifpb_logo.png" alt="IFPB Logo"></a>
+      <a href="https://www.instagram.com/memorialpereiralima/" target="_blank"><img src="../icones/memorial_pereira_lima_logo.png" alt="Memorial Pereira Lima"></a>
+      <a href="https://codata.pb.gov.br/" target="_blank"><img src="../icones/codata_logo.png" alt="CODATA Logo"></a>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/projetobr1930/" target="_blank"><img src="../icones/instagram.png" alt="Instagram" style="height: 20px;"></a>
+      <a href="https://www.youtube.com/@projetobr1930" target="_blank"><img src="../icones/youtube.png" alt="YouTube" style="height: 20px; margin-left: 10px;"></a>
+    </div>
+  </div>
+  
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const filtros = document.querySelectorAll('.filtros');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        filtros.forEach(f => f.style.display = 'none');
+
+        tab.classList.add('active');
+        const targetId = tab.getAttribute('data-target');
+        const targetFiltro = document.getElementById(targetId);
+        if (targetFiltro) {
+          targetFiltro.style.display = 'block';
+        }
+      });
+    });
+
+    document.querySelectorAll('.toggle-descricao').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const descricao = button.previousElementSibling;
+        descricao.classList.toggle('collapsed');
+        button.textContent = descricao.classList.contains('collapsed') ? 'Mostrar mais' : 'Mostrar menos';
+      });
+    });
+
+    const selectMes = document.querySelector('#filtros-data select:nth-of-type(2)');
+    const selectDia = document.querySelector('#filtros-data select:nth-of-type(3)');
+    const selectAno = document.querySelector('#filtros-data select:nth-of-type(1)');
+
+    selectMes.addEventListener('change', () => {
+      const mes = selectMes.selectedIndex;
+      const ano = parseInt(selectAno.value);
+      let diasNoMes = 31;
+
+      if (mes === 2) {
+        diasNoMes = (!isNaN(ano) && ((ano % 4 === 0 && ano % 100 !== 0) || ano % 400 === 0)) ? 29 : 28;
+      } else if ([4, 6, 9, 11].includes(mes)) {
+        diasNoMes = 30;
+      }
+
+      selectDia.innerHTML = '<option>(Escolha o dia)</option>';
+      for (let d = 1; d <= diasNoMes; d++) {
+        const opt = document.createElement('option');
+        opt.value = d;
+        opt.textContent = d;
+        selectDia.appendChild(opt);
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Georgia', serif;
+      color: #222;
+      background-color: #fff;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 2vh 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.8rem;
+      color: #000;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2vw;
+      position: relative;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    #language-selector {
+      font-family: 'Georgia', serif;
+      font-size: 1.1rem;
+      padding: 8px 14px;
+      border: 3px solid #000000;
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 6px;
+      cursor: pointer;
+      min-width: 160px;
+      outline-offset: 3px;
+    }
+
+    .container {
+      padding: 50px 80px;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #003366;
+      padding-bottom: 6px;
+      color: #003366;
+    }
+
+    .filtro-controles {
+      display: flex;
+      gap: 15px;
+      margin: 25px 0;
+      flex-wrap: wrap;
+    }
+
+    .btn-filtro {
+      background-color: #003366;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1.05rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-family: 'Georgia', serif;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-filtro:hover {
+      background-color: #002244;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      max-width: 960px;
+      margin: 60px auto;
+      padding: 0 20px;
+      border-top: 1px solid #ddd;
+      box-sizing: border-box;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .caixa-pesquisa-geral {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px auto 40px;
+      padding: 10px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 700px;
+    }
+
+    .caixa-pesquisa-geral input[type="text"] {
+      flex-grow: 1;
+      padding: 12px 15px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .caixa-pesquisa-geral button {
+      margin-left: 10px;
+      padding: 12px 20px;
+      background-color: #31c4f3;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .navegar-box {
+      border: 1px solid #003366;
+      margin-bottom: 30px;
+    }
+
+    .navegar-header {
+      background-color: #003366;
+      color: #fff;
+      font-size: 1.6rem;
+      padding: 14px;
+    }
+
+    .navegar-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      border-top: 1px solid #ccc;
+    }
+
+    .navegar-tabs .tab {
+      flex: 1 1 auto;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+      background-color: #fff;
+      cursor: pointer;
+      font-size: 1.05rem;
+    }
+
+    .navegar-tabs .tab.active {
+      background-color: #003366;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .filtros {
+      margin-bottom: 25px;
+    }
+
+    .filtros label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .filtros-inputs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .filtros select,
+    .filtros input {
+      padding: 10px;
+      font-size: 1.05rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .filtros button {
+      background-color: #003366;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1.05rem;
+      border-radius: 5px;
+    }
+
+    .filtros button:hover {
+      background-color: #002244;
+    }
+
+    .resultado-info {
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .lista-itens {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+
+    .item {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+    }
+
+    .item img {
+      width: 90px;
+      height: 120px;
+      object-fit: cover;
+      margin-right: 25px;
+      border-radius: 4px;
+    }
+
+    .item-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .item-info h3 {
+      font-size: 1.4rem;
+      margin: 0 0 8px;
+      color: #003366;
+    }
+
+    .item-info .autor {
+      font-size: 1.05rem;
+      color: #333;
+      margin-bottom: 8px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      max-width: 100%;
+      text-align: justify;
+    }
+
+    .item-info .descricao {
+      font-size: 1.05rem;
+      color: #333;
+      margin-bottom: 8px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      max-width: 100%;
+      text-align: justify;
+    }
+
+    .item-info .descricao.collapsed {
+      max-height: 5em;
+      overflow: hidden;
+    }
+
+    .item-info a {
+      font-size: 1.05rem;
+      color: #003366;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .item-info a:hover {
+      text-decoration: underline;
+    }
+
+    .item-info .item-tag {
+      display: inline-block;
+      background-color: #003366;
+      color: #fff;
+      font-size: 0.85rem;
+      padding: 4px 8px;
+      border-radius: 5px;
+      margin-bottom: 6px;
+    }
+
+    .paginacao {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .paginacao a {
+      padding: 8px 14px;
+      border: 1px solid #ccc;
+      color: #003366;
+      text-decoration: none;
+      font-size: 1.05rem;
+      border-radius: 5px;
+    }
+
+    .paginacao a.active,
+    .paginacao a:hover {
+      background-color: #003366;
+      color: #fff;
+    }
+
+    .footer-section {
+      background-color: #e87474e9;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .footer-section p {
+      margin: 5px 0;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #e87474e9;
+      color: white;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      flex-wrap: wrap;
+      font-size: 1.1rem;
+    }
+
+    .footer-bottom .left-logos img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    .footer-section .footer-links a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+    
+    a > button {
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>

@@ -1,0 +1,91 @@
+.container {
+	padding: 50px 80px;
+}
+
+.section {
+	margin-bottom: 50px;
+}
+
+.section h2 {
+	font-size: 2rem;
+	margin-bottom: 20px;
+	border-bottom: 3px solid var(--primary);
+	padding-bottom: 6px;
+	color: var(--primary);
+}
+
+.hero {
+	max-width: 960px;
+	margin: 60px auto;
+	padding: 0 20px;
+	border-top: 1px solid #ddd;
+}
+
+.hero h1 {
+	font-size: 3rem;
+	margin: 50px 0 30px 0;
+	color: #111;
+	text-align: center;
+}
+
+.hero h2 {
+	font-size: 1.3rem;
+	font-weight: normal;
+	text-align: justify;
+	line-height: 2;
+}
+
+.team-section {
+	max-width: 960px;
+	margin: 60px auto;
+	padding: 0 20px;
+	border-top: 2px solid #333;
+}
+
+.team-section h1 {
+	font-size: 3rem;
+	color: #111;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.team-member {
+	display: flex;
+	align-items: center;
+	margin-bottom: 50px;
+	gap: 30px;
+}
+
+.profile-pic {
+	width: 140px;
+	height: auto;
+	object-fit: cover;
+	margin-right: 20px;
+	border: none;
+}
+
+.member-info h2,
+.member-info p,
+.member-info a {
+	color: #000;
+}
+
+.member-info h2 {
+	margin: 0 0 15px 0;
+	font-size: 1.8rem;
+}
+
+.member-info p {
+	margin: 8px 0;
+	font-size: 1.3rem;
+	line-height: 1.8;
+}
+
+.member-info a {
+	text-decoration: none;
+	font-size: 1.2rem;
+}
+
+.member-info a:hover {
+	text-decoration: underline;
+}

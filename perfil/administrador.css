@@ -1,0 +1,391 @@
+.section {
+  margin-bottom: 50px;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #8B0000;
+  padding-bottom: 6px;
+  color: #8B0000;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 80px;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 25px;
+  flex: 1 1 260px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #8B0000;
+}
+
+.card p {
+  margin: 8px 0 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.tabela-container {
+  max-height: 350px;
+  overflow-y: auto;
+  display: block;
+  border: 1px solid #ccc;
+}
+
+.tabela-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-container th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+.tabela-container td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+.tabela-container table tr:last-child {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.checkbox-group label {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.checkbox-group input[type="checkbox"] {
+  transform: scale(1.2);
+  accent-color: #8B0000;
+}
+
+.file-upload {
+  border: 2px dashed #8B0000;
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #8B0000;
+  font-size: 1.1rem;
+}
+
+.visibilidade-select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 6px;
+  background-color: #fff;
+  color: #333;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  cursor: pointer;
+}
+
+#submitContentBtn {
+  background-color: #8B0000;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 16px 40px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+}
+
+.graph-bar {
+  height: 24px;
+  background: #8B0000;
+  margin: 6px 0;
+  border-radius: 4px;
+  color: #fff;
+  padding-left: 12px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.export-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.export-buttons button {
+  background: linear-gradient(135deg, #8B0000, #a50000);
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.2s ease;
+}
+
+.export-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.user-profile {
+  background: #fff;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  padding: 35px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.profile-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #8B0000;
+}
+
+.user-info h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #8B0000;
+}
+
+.user-info p {
+  margin: 6px 0 12px;
+  color: #666;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.user-actions button {
+  background-color: #8B0000;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  margin-right: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.user-actions button:hover {
+  background-color: #a50000;
+}
+
+.btn-profile-style {
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  margin-right: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-profile-style:not(#approveBtn):not(#rejectBtn):not(#viewBtn):not(#downloadBtn):not(#deleteBtn) {
+  background-color: #6c757d;
+}
+
+.btn-profile-style:not(#approveBtn):not(#rejectBtn):not(#viewBtn):not(#downloadBtn):not(#deleteBtn):hover {
+  background-color: #5a6268;
+}
+
+#approveBtn {
+  background-color: #28a745;
+}
+
+#approveBtn:hover {
+  background-color: #218838;
+}
+
+#rejectBtn {
+  background-color: #dc3545;
+}
+
+#rejectBtn:hover {
+  background-color: #c82333;
+}
+
+#deleteBtn {
+  background-color: #dc3545;
+}
+
+#deleteBtn:hover {
+  background-color: #c82333;
+}
+
+#viewBtn {
+  background-color: #007bff;
+}
+
+#viewBtn:hover {
+  background-color: #0069d9;
+}
+
+#downloadBtn {
+  background-color: #20c997;
+}
+
+#downloadBtn:hover {
+  background-color: #17a589;
+}
+
+.user-stats.cards {
+  gap: 25px;
+  flex-wrap: wrap;
+  display: flex;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.most-accessed-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.most-accessed-list li {
+  position: relative;
+  background: #f9f9f9;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 10px 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+.most-accessed-list li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #cc5050cd;
+  z-index: 0;
+}
+
+.most-accessed-list li span {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.most-accessed-list li:nth-child(1)::before { width: 100%; }
+.most-accessed-list li:nth-child(2)::before { width: 66%; }
+.most-accessed-list li:nth-child(3)::before { width: 53%; }
+.most-accessed-list li:nth-child(4)::before { width: 50%; }
+
+.upload-area input[type="text"],
+.upload-area textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+
+.metadata-input {
+  display: flex;
+  flex-direction: column;
+}
+
+#metadadoInput {
+  font-size: 1rem;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: #eee;
+  border: 1px solid #8B0000;
+  color: #8B0000;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tag .remove-tag {
+  background: none;
+  border: none;
+  color: #8B0000;
+  cursor: pointer;
+  font-weight: bold;
+}

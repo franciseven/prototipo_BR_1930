@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="titulo">BR 1930 - Contato</title>
+
+  <link rel="stylesheet" href="../assets/css/header.css">
+	<link rel="stylesheet" href="../assets/css/footer.css">
+	<link rel="stylesheet" href="./contato.css">
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <div class="container">
+    <div class="contact-form">
+      <h2 data-i18n="entre_contato">Entre em contato</h2>
+      <p style="color: #c00; margin-bottom: 1.5em;">
+        Os campos marcados com <span style="color: #c00;">*</span> são obrigatórios.
+      </p>
+      <form id="cadastro-form">
+
+        <label for="nome-completo" class="custom-label">
+          <span data-i18n="nome_completo">Nome Completo</span> <span style="color: #c00;">*</span>
+        </label>
+        <input type="text" id="nome-completo" name="nome-completo" data-i18n-placeholder="nome_completo" required>
+
+        <label for="email" class="custom-label">
+          <span data-i18n="email">E-mail</span> <span style="color: #c00;">*</span>
+        </label>
+        <input type="email" id="email" name="email" data-i18n-placeholder="email" required>
+
+        <label for="data-nascimento" class="custom-label"> Data de Nascimento 
+          <span style="color: #c00;">*</span>
+        </label>
+        <input type="date" id="data-nascimento" name="data-nascimento" required>
+
+        <label for="estado" class="custom-label">
+          <span data-i18n="estado">Estado</span> <span style="color: #c00;">*</span>
+        </label>
+        <select id="estado" name="estado" required>
+          <option value="" disabled selected data-i18n="selecione_estado">Selecione seu estado</option>
+          <option value="Paraiba" data-i18n="paraiba">Paraíba</option>
+          <option value="Minas Gerais" data-i18n="minas_gerais">Minas Gerais</option>
+          <option value="Rio Grande do Sul" data-i18n="rio_grande_do_sul">Rio Grande do Sul</option>
+          <option value="Exterior" data-i18n="exterior">Exterior</option>
+        </select>
+
+        <div id="cidade-container" style="display:none;">
+          <label for="cidade" class="custom-label">
+            <span data-i18n="cidade">Cidade</span> <span style="color: #c00;">*</span>
+          </label>
+          <select id="cidade" name="cidade" required>
+            <option value="" disabled selected data-i18n="selecione_cidade">Selecione sua cidade</option>
+          </select>
+        </div>
+
+        <input type="text" id="outra-cidade" name="outra-cidade" style="display:none; margin-top: 0.5em;">
+
+        <div id="exterior-container" style="display:none;">
+          <label for="pais" class="custom-label"> País 
+            <span style="color: #c00;">*</span> 
+          </label>
+          <select id="pais" name="pais" required>
+            <option value="" disabled selected>Selecione o país</option>
+            <option value="Estados Unidos da América">Estados Unidos da América</option>
+            <option value="Canadá">Canadá</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Outro País">Outro País</option>
+          </select>
+
+          <div id="estado-exterior-container" style="display:none;">
+            <label for="estado-exterior" class="custom-label"> Estado 
+              <span style="color: #c00;">*</span>
+            </label>
+            <select id="estado-exterior" name="estado-exterior" required>
+              <option value="" disabled selected>Selecione o estado</option>
+            </select>
+          </div>
+
+          <div id="cidade-exterior-container" style="display:none;">
+            <label for="cidade-exterior" class="custom-label"> Cidade 
+              <span style="color: #c00;">*</span>
+            </label>
+            <select id="cidade-exterior" name="cidade-exterior" required>
+              <option value="" disabled selected>Selecione a cidade</option>
+            </select>
+          </div>
+
+          <input type="text" id="outro-pais" name="outro-pais" style="display:none; margin-top: 0.5em;">
+          <input type="text" id="outro-estado" name="outro-estado" style="display:none; margin-top: 0.5em;">
+          <input type="text" id="outra-cidade-exterior" name="outra-cidade-exterior" style="display:none; margin-top: 0.5em;">
+        </div>
+
+        <label for="assunto" class="custom-label">
+          <span data-i18n="assunto">Assunto</span> <span style="color: #c00;">*</span>
+        </label>
+        <select id="assunto" required>
+          <option value="" disabled selected data-i18n="selecione_assunto">Selecione o assunto</option>
+          <option value="parceria" data-i18n="fazer_parceria">Fazer Parceria</option>
+          <option value="duvida" data-i18n="duvida">Dúvida</option>
+          <option value="sugestao" data-i18n="sugestao">Sugestão</option>
+          <option value="elogio" data-i18n="elogio">Elogio</option>
+          <option value="reclamacao" data-i18n="reclamacao">Reclamação</option>
+          <option value="outro" data-i18n="outro_assunto">Outro Assunto</option>
+        </select>
+
+        <input type="text" id="outro-assunto" data-i18n-placeholder="digite_assunto" style="display:none;" />
+
+        <label for="mensagem" class="custom-label">
+          <span data-i18n="mensagem">Mensagem</span> <span style="color: #c00;">*</span>
+        </label>
+        <textarea required data-i18n-placeholder="mensagem"></textarea>
+        <button type="submit" data-i18n="enviar">Enviar</button>
+
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <h3 data-i18n="contato">Contato</h3>
+      <p><strong>Projeto BR 1930</strong></p>
+      <p>Email: projetobr1930@gmail.com</p>
+
+      <div class="social-media">
+        <a href="https://www.facebook.com/people/Projeto-1930-A-Caminho-do-centen%C3%A1rio/61578106413861/" target="_blank">
+          <img src="../imagens/icones/facebook.png" alt="Facebook">
+        </a>
+        <a href="#" target="_blank">
+          <img src="../imagens/icones/twitter.png" alt="Twitter">
+        </a>
+        <a href="https://www.instagram.com/projetobr1930/" target="_blank">
+          <img src="../imagens/icones/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.youtube.com/@projetobr1930" target="_blank">
+          <img src="../imagens/icones/youtube.png" alt="YouTube">
+        </a>
+      </div>
+
+      <br><br>
+
+      <p><strong>Fundação Casa de José Américo</strong></p>
+      <p>Governo do Estado da Paraíba</p>
+      <p data-i18n="endereco">Endereço: Av. Cabo Branco, 3336 - Cabo Branco, João Pessoa - PB, 58045-010</p>
+      <p>Email: exemplo@gmail.com</p>
+
+      <div class="social-media">
+        <a href="#" target="_blank">
+          <img src="../imagens/icones/facebook.png" alt="Facebook">
+        </a>
+        <a href="#" target="_blank">
+          <img src="../imagens/icones/twitter.png" alt="Twitter">
+        </a>
+        <a href="#" target="_blank">
+          <img src="../imagens/icones/instagram.png" alt="Instagram">
+        </a>
+        <a href="#" target="_blank">
+          <img src="../imagens/icones/youtube.png" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+	<script src="../assets/js/script.js"></script>
+  <script src="./contato.js"></script>
+
+
+</body>
+</html>
