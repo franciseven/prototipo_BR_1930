@@ -104,26 +104,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const approveBtn = document.getElementById("approveBtn");
-  const rejectBtn = document.getElementById("rejectBtn");
-  const deleteBtn = document.getElementById("deleteBtn");
-
-  if (approveBtn) {
-    approveBtn.addEventListener("click", () => {
+  document.querySelectorAll(".approveBtn").forEach((btn) => {
+    btn.addEventListener("click", () => {
       alert("Conteúdo aprovado, email de aprovação enviado para o usuário!");
     });
-  }
+  });
 
-  if (rejectBtn) {
-    rejectBtn.addEventListener("click", () => {
+  document.querySelectorAll(".rejectBtn").forEach((btn) => {
+    btn.addEventListener("click", () => {
       alert("Conteúdo rejeitado, email de rejeição enviado para o usuário!");
     });
-  }
+  });
 
-  if (deleteBtn) {
-    deleteBtn.addEventListener("click", () => {
-      alert("Conteúdo rejeitado, email de remoção enviado para o responsável pelo conteúdo!");
+  document.querySelectorAll(".viewBtn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      alert("Visualizando o conteúdo selecionado!");
     });
-  }
-});
+  });
+
+  document.querySelectorAll(".downloadBtn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      alert("Baixando o conteúdo selecionado!");
+    });
+  });
+
+  document.querySelectorAll(".deleteBtn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      alert("Conteúdo removido, email de remoção enviado para o responsável!");
+    });
+  });

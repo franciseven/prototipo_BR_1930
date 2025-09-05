@@ -246,51 +246,51 @@
   transition: background-color 0.3s ease;
 }
 
-.btn-profile-style:not(#approveBtn):not(#rejectBtn):not(#viewBtn):not(#downloadBtn):not(#deleteBtn) {
+.btn-profile-style:not(.approveBtn):not(.rejectBtn):not(.viewBtn):not(.downloadBtn):not(.deleteBtn) {
   background-color: #6c757d;
 }
 
-.btn-profile-style:not(#approveBtn):not(#rejectBtn):not(#viewBtn):not(#downloadBtn):not(#deleteBtn):hover {
+.btn-profile-style:not(.approveBtn):not(.rejectBtn):not(.viewBtn):not(.downloadBtn):not(.deleteBtn):hover {
   background-color: #5a6268;
 }
 
-#approveBtn {
+.approveBtn {
   background-color: #28a745;
 }
 
-#approveBtn:hover {
+.approveBtn:hover {
   background-color: #218838;
 }
 
-#rejectBtn {
+.rejectBtn {
   background-color: #dc3545;
 }
 
-#rejectBtn:hover {
+.rejectBtn:hover {
   background-color: #c82333;
 }
 
-#deleteBtn {
+.deleteBtn {
   background-color: #dc3545;
 }
 
-#deleteBtn:hover {
+.deleteBtn:hover {
   background-color: #c82333;
 }
 
-#viewBtn {
+.viewBtn {
   background-color: #007bff;
 }
 
-#viewBtn:hover {
+.viewBtn:hover {
   background-color: #0069d9;
 }
 
-#downloadBtn {
+.downloadBtn {
   background-color: #20c997;
 }
 
-#downloadBtn:hover {
+.downloadBtn:hover {
   background-color: #17a589;
 }
 
