@@ -111,20 +111,3 @@ selectMes.addEventListener('change', () => {
 		selectDia.appendChild(opt);
 	}
 });
-
-function pesquisar() {
-	const termo = document.getElementById("pesquisaGeral").value.toLowerCase();
-	const itens = document.querySelectorAll(".lista-itens .item");
-
-	itens.forEach(item => {
-	const titulo = item.querySelector("h3").textContent.toLowerCase();
-	const autor = item.querySelector(".autor").textContent.toLowerCase();
-	const descricao = item.querySelector(".descricao").textContent.toLowerCase();
-
-	if (titulo.includes(termo) || autor.includes(termo) || descricao.includes(termo)) {
-			item.style.display = "flex";
-	} else {
-			item.style.display = "none";
-	}
-	});
-}
