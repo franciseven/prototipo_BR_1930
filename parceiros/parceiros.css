@@ -59,8 +59,7 @@
 
 .partner-card img {
   max-width: 100%;
-  max-height: 130px;
-  margin: 25px 0;
+  max-height: 200px;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
@@ -84,6 +83,12 @@
   font-size: 1.15rem;
   color: #eee;
   line-height: 1.6;
+  min-height: 48px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  margin-top: auto;
 }
 
 .partner-cta {

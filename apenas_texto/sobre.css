@@ -89,3 +89,43 @@
 .member-info a:hover {
 	text-decoration: underline;
 }
+
+.other-members {
+	border-top: 1px dashed #999;
+	margin-top: 40px;
+	padding-top: 30px;
+}
+
+.other-members h2 {
+	text-align: center;
+}
+
+.other-members h3 {
+	font-size: 1.5rem;
+	color: #444;
+	text-align: left;
+	margin-bottom: 40px;
+	font-weight: 600;
+}
+
+.team-member.small {
+	margin-bottom: 30px;
+	gap: 20px;
+}
+
+.team-member.small .profile-pic {
+	height: 100px;
+	width: 100px;
+	margin-bottom: -15px;
+}
+
+.team-member.small .member-info h3 {
+	font-size: 1.1rem;
+	margin-bottom: 10px;
+	color: #222;
+}
+
+.team-member.small .member-info p {
+	font-size: 1.1rem;
+	color: #555;
+}
