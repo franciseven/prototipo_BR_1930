@@ -15,124 +15,128 @@
 
   <div id="header"></div>
 
-  <section class="hero">
+  <div class="overlay-conteudo">
 
-    <div class="caixa-pesquisa-geral">
-      <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" />
-      <button onclick="pesquisar()">Pesquisar</button>
-    </div>
-    
-    <h1>Território Livre de Princesa Isabel</h1>
+    <section class="hero">
 
-    <p>
-      Esta seção apresenta documentos ao Coronel José Pereira Lima, contendo tipos como <strong>documentos, imagens e jornais</strong>. Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
-    </p>
-
-    <div class="navegar-box">
-      <div class="navegar-header">Filtros de Navegação</div>
-      <div class="navegar-tabs" id="tabs">
-        <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
-        <button class="tab" data-target="filtros-autor">Autores</button>
-        <button class="tab" data-target="filtros-data">Data de Publicação</button>
-        <button class="tab" data-target="filtros-tipo">Tipos</button>
+      <div class="caixa-pesquisa-geral">
+        <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" />
+        <button onclick="pesquisar()">Pesquisar</button>
       </div>
-    </div>
+      
+      <h1>Território Livre de Princesa Isabel</h1>
 
-    <div class="filtros" id="filtros-recentes">
-      <p>Exibindo as submissões mais recentes.</p>
-    </div>
+      <p>
+        Esta seção apresenta documentos ao Coronel José Pereira Lima, contendo tipos como <strong>documentos, imagens e jornais</strong>. Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
+      </p>
 
-    <div class="filtros" id="filtros-autor" style="display:none;">
-      <label>Filtrar por Autor</label>
-      <div class="filtros-inputs">
-        <select>
-          <option>(Escolha o autor)</option>
-          <option>José Pereira Lima</option>
-        </select>
-        <input type="text" placeholder="Digite o nome do autor" />
-        <button>Pesquisar</button>
-      </div>
-    </div>
-
-    <div class="filtros" id="filtros-data" style="display:none;">
-      <label>Filtrar resultados por ano ou mês</label>
-      <div class="filtros-inputs">
-        <select>
-          <option>(Escolha o ano)</option>
-          <option>2025</option>
-          <option>2024</option>
-          <option>2023</option>
-        </select>
-
-        <select>
-          <option>(Escolha o mês)</option>
-          <option>Janeiro</option>
-          <option>Fevereiro</option>
-          <option>Março</option>
-          <option>Abril</option>
-          <option>Maio</option>
-          <option>Junho</option>
-          <option>Julho</option>
-          <option>Agosto</option>
-          <option>Setembro</option>
-          <option>Outubro</option>
-          <option>Novembro</option>
-          <option>Dezembro</option>
-        </select>
-
-        <select>
-          <option>(Escolha o dia)</option>
-          <option></option>
-        </select>
-        <button>Pesquisar</button>
-      </div>
-    </div>
-
-    <div class="filtros" id="filtros-tipo" style="display:none;">
-      <label>Filtrar por Tipo</label>
-      <div class="filtros-inputs">
-        <select>
-          <option>(Escolha o tipo)</option>
-          <option>Documentos</option>
-          <option>Imagens</option>
-          <option>Jornais</option>
-        </select>
-        <button>Pesquisar</button>
-      </div>
-    </div>
-
-    <div class="resultado-info">
-      Agora exibindo n de n
-    </div>
-
-    <div class="lista-itens">
-
-      <div class="item">
-        <a href="../../item_selecionado/territorio_isabel/territorio_1_selecionado.html">
-          <img src="../../imagens/capas_colecoes/territorio/capa_territorio_1.jpg" alt="Capa do Item 1" />
-        </a>
-        <div class="item-info">
-          <div class="item-tag">Item</div>
-          <h3><a href="../../item_selecionado/territorio_isabel/territorio_1_selecionado.html" style="text-decoration: none; color: inherit;">Como se combate o cangaceirismo na Parahyba</a></h3>
-          <p class="autor">Jornal A Manhã (RJ)</p>
-          <p class="descricao collapsed">
-            Entrevista com Chico Pereira.
-          </p>
-          <a href="#" class="toggle-descricao">Mostrar mais</a>
+      <div class="navegar-box">
+        <div class="navegar-header">Filtros de Navegação</div>
+        <div class="navegar-tabs" id="tabs">
+          <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
+          <button class="tab" data-target="filtros-autor">Autores</button>
+          <button class="tab" data-target="filtros-data">Data de Publicação</button>
+          <button class="tab" data-target="filtros-tipo">Tipos</button>
         </div>
       </div>
 
-    </div>
+      <div class="filtros" id="filtros-recentes">
+        <p>Exibindo as submissões mais recentes.</p>
+      </div>
 
-    <div class="paginacao">
-      <a href="#">«</a>
-      <a href="#" class="active">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#">»</a>
-    </div>
+      <div class="filtros" id="filtros-autor" style="display:none;">
+        <label>Filtrar por Autor</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o autor)</option>
+            <option>José Pereira Lima</option>
+          </select>
+          <input type="text" placeholder="Digite o nome do autor" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
 
-  </section>
+      <div class="filtros" id="filtros-data" style="display:none;">
+        <label>Filtrar resultados por ano ou mês</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o ano)</option>
+            <option>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+          </select>
+
+          <select>
+            <option>(Escolha o mês)</option>
+            <option>Janeiro</option>
+            <option>Fevereiro</option>
+            <option>Março</option>
+            <option>Abril</option>
+            <option>Maio</option>
+            <option>Junho</option>
+            <option>Julho</option>
+            <option>Agosto</option>
+            <option>Setembro</option>
+            <option>Outubro</option>
+            <option>Novembro</option>
+            <option>Dezembro</option>
+          </select>
+
+          <select>
+            <option>(Escolha o dia)</option>
+            <option></option>
+          </select>
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-tipo" style="display:none;">
+        <label>Filtrar por Tipo</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o tipo)</option>
+            <option>Documentos</option>
+            <option>Imagens</option>
+            <option>Jornais</option>
+          </select>
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="resultado-info">
+        Agora exibindo n de n
+      </div>
+
+      <div class="lista-itens">
+
+        <div class="item">
+          <a href="../../item_selecionado/territorio_isabel/territorio_1_selecionado.html">
+            <img src="../../imagens/capas_colecoes/territorio/capa_territorio_1.jpg" alt="Capa do Item 1" />
+          </a>
+          <div class="item-info">
+            <div class="item-tag">Item</div>
+            <h3><a href="../../item_selecionado/territorio_isabel/territorio_1_selecionado.html" style="text-decoration: none; color: inherit;">Como se combate o cangaceirismo na Parahyba</a></h3>
+            <p class="autor">Jornal A Manhã (RJ)</p>
+            <p class="descricao collapsed">
+              Entrevista com Chico Pereira.
+            </p>
+            <a href="#" class="toggle-descricao">Mostrar mais</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="paginacao">
+        <a href="#">«</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">»</a>
+      </div>
+
+    </section>
+
+  </div>
 
   <div id="footer"></div>
 

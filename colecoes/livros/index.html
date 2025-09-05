@@ -15,134 +15,138 @@
 
   <div id="header"></div>
 
-  <section class="hero">
+  <div class="overlay-conteudo">
 
-    <div class="caixa-pesquisa-geral">
-      <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" />
-      <button onclick="pesquisar()">Pesquisar</button>
-    </div>
-    
-    <h1>Livros</h1>
+    <section class="hero">
 
-    <p>
-      Esta seção apresenta uma coleção de livros catalogadas. Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
-    </p>
-
-    <div class="navegar-box">
-      <div class="navegar-header">Filtros de Navegação</div>
-      <div class="navegar-tabs" id="tabs">
-        <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
-        <button class="tab" data-target="filtros-autor">Autores</button>
-        <button class="tab" data-target="filtros-titulo">Títulos</button>
-        <button class="tab" data-target="filtros-edicao">Edição</button>
-        <button class="tab" data-target="filtros-data">Data de Publicação</button>
-        <button class="tab" data-target="filtros-genero">Gêneros</button>
+      <div class="caixa-pesquisa-geral">
+        <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" />
+        <button onclick="pesquisar()">Pesquisar</button>
       </div>
-    </div>
+      
+      <h1>Livros</h1>
 
-    <div class="filtros" id="filtros-recentes">
-      <p>Exibindo as submissões mais recentes.</p>
-    </div>
+      <p>
+        Esta seção apresenta uma coleção de livros catalogadas. Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
+      </p>
 
-    <div class="filtros" id="filtros-autor" style="display:none;">
-      <label>Filtrar livro por autor</label>
-      <div class="filtros-inputs">
-        <select>
-          <option>(Escolha o autor)</option>
-          <option>José Américo</option>
-          <option>José Octávio Arruda de Melo</option>
-        </select>
-        <input type="text" placeholder="Digite o autor" />
-        <button>Pesquisar</button>
-      </div>
-    </div>
-
-    <div class="filtros" id="filtros-data" style="display:none;">
-      <label>Filtrar resultados por ano ou mês</label>
-      <div class="filtros-inputs">
-        <select>
-          <option>(Escolha o ano)</option>
-          <option>2025</option>
-          <option>2024</option>
-          <option>2023</option>
-        </select>
-        <button>Pesquisar</button>
-      </div>
-    </div>
-
-    <div class="filtros" id="filtros-genero" style="display:none;">
-      <label>Filtrar livro por gênero</label>
-      <div class="filtros-inputs">
-        <select>
-          <option>(Escolha o gênero)</option>
-          <option>Ficção</option>
-          <option>Biografia</option>
-          <option>Acadêmico</option>
-          <option>Texto Literário</option>
-          <option>Texto Não Literário</option>
-          <option>Texto Científico</option>
-        </select>
-        <input type="text" placeholder="Digite o gênero" />
-        <button>Pesquisar</button>
-      </div>
-    </div>
-
-    <div class="filtros" id="filtros-titulo" style="display:none;">
-      <label>Filtrar livro por título</label>
-      <div class="filtros-inputs">
-        <select>
-          <option>(Escolha o título)</option>
-          <option>A Bagaceira</option>
-        </select>
-        <input type="text" placeholder="Digite o título" />
-        <button>Pesquisar</button>
-      </div>
-    </div>
-
-    <div class="filtros" id="filtros-edicao" style="display:none;">
-      <label>Filtrar livro por edição</label>
-      <div class="filtros-inputs">
-        <select>
-          <option>(Escolha a edição)</option>
-          <option>1ª Edição</option>
-        </select>
-        <input type="text" placeholder="Digite a edição" />
-        <button>Pesquisar</button>
-      </div>
-    </div>
-
-    <div class="resultado-info">
-      Agora exibindo n de n
-    </div>
-
-    <div class="lista-itens">
-
-      <div class="item">
-        <a href="../../item_selecionado/livros/livro_1_selecionado.html">
-          <img src="../../imagens/capas_colecoes/livros/capa_livro_1-oanodonego.png" alt="Capa do Livro 1" />
-        </a>
-        <div class="item-info">
-          <div class="item-tag">Livro</div>
-          <h3><a href="../../item_selecionado/livros/livro_1_selecionado.html" style="text-decoration: none; color: inherit;">O ANO DO NEGO</a></h3>
-          <p class="autor">José Américo de Almeida</p>
-          <p class="descricao collapsed">
-            Memórias de José Américo sobre o assassinato de João Pessoa.
-          </p>
-          <a href="#" class="toggle-descricao">Mostrar mais</a>
+      <div class="navegar-box">
+        <div class="navegar-header">Filtros de Navegação</div>
+        <div class="navegar-tabs" id="tabs">
+          <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
+          <button class="tab" data-target="filtros-autor">Autores</button>
+          <button class="tab" data-target="filtros-titulo">Títulos</button>
+          <button class="tab" data-target="filtros-edicao">Edição</button>
+          <button class="tab" data-target="filtros-data">Data de Publicação</button>
+          <button class="tab" data-target="filtros-genero">Gêneros</button>
         </div>
       </div>
 
-    </div>
+      <div class="filtros" id="filtros-recentes">
+        <p>Exibindo as submissões mais recentes.</p>
+      </div>
 
-    <div class="paginacao">
-      <a href="#">«</a>
-      <a href="#" class="active">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#">»</a>
-    </div>
+      <div class="filtros" id="filtros-autor" style="display:none;">
+        <label>Filtrar livro por autor</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o autor)</option>
+            <option>José Américo</option>
+            <option>José Octávio Arruda de Melo</option>
+          </select>
+          <input type="text" placeholder="Digite o autor" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
 
-  </section>
+      <div class="filtros" id="filtros-data" style="display:none;">
+        <label>Filtrar resultados por ano ou mês</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o ano)</option>
+            <option>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+          </select>
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-genero" style="display:none;">
+        <label>Filtrar livro por gênero</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o gênero)</option>
+            <option>Ficção</option>
+            <option>Biografia</option>
+            <option>Acadêmico</option>
+            <option>Texto Literário</option>
+            <option>Texto Não Literário</option>
+            <option>Texto Científico</option>
+          </select>
+          <input type="text" placeholder="Digite o gênero" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-titulo" style="display:none;">
+        <label>Filtrar livro por título</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o título)</option>
+            <option>A Bagaceira</option>
+          </select>
+          <input type="text" placeholder="Digite o título" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-edicao" style="display:none;">
+        <label>Filtrar livro por edição</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha a edição)</option>
+            <option>1ª Edição</option>
+          </select>
+          <input type="text" placeholder="Digite a edição" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="resultado-info">
+        Agora exibindo n de n
+      </div>
+
+      <div class="lista-itens">
+
+        <div class="item">
+          <a href="../../item_selecionado/livros/livro_1_selecionado.html">
+            <img src="../../imagens/capas_colecoes/livros/capa_livro_1-oanodonego.png" alt="Capa do Livro 1" />
+          </a>
+          <div class="item-info">
+            <div class="item-tag">Livro</div>
+            <h3><a href="../../item_selecionado/livros/livro_1_selecionado.html" style="text-decoration: none; color: inherit;">O ANO DO NEGO</a></h3>
+            <p class="autor">José Américo de Almeida</p>
+            <p class="descricao collapsed">
+              Memórias de José Américo sobre o assassinato de João Pessoa.
+            </p>
+            <a href="#" class="toggle-descricao">Mostrar mais</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="paginacao">
+        <a href="#">«</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">»</a>
+      </div>
+
+    </section>
+
+  </div>
 
   <div id="footer"></div>
 
