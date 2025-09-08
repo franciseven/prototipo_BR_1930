@@ -161,6 +161,13 @@
   z-index: 1;
 }
 
+.browse-box.close {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Deve-se utilizar apenas se houver 9 browse-box
 .browse-box.move {
   transform: translateX(130px);
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -170,6 +177,7 @@
   transform: translateX(130px) translateY(-4px);
   background-color: #f0f2f5;
 }
+*/
 
 #popup-colab {
   position: fixed;

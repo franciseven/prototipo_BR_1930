@@ -91,13 +91,19 @@
 }
 
 .other-members {
-	border-top: 1px dashed #999;
-	margin-top: 40px;
-	padding-top: 30px;
+	max-width: 960px;
+	margin: 60px auto;
+	padding: 0 20px;
+	border-top: 1px solid #ddd;
+}
+
+.members-wrapper {
+	margin: 0 auto;
 }
 
 .other-members h2 {
 	text-align: center;
+	margin-bottom: 50px;
 }
 
 .other-members h3 {
@@ -109,23 +115,33 @@
 }
 
 .team-member.small {
-	margin-bottom: 30px;
+	display: flex;
+	align-items: flex-start;
 	gap: 20px;
 }
 
 .team-member.small .profile-pic {
-	height: 100px;
-	width: 100px;
-	margin-bottom: -15px;
+	height: 120px;
+	width: 120px;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.team-member.small .member-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 
 .team-member.small .member-info h3 {
+	margin-top: -5px;
 	font-size: 1.1rem;
 	margin-bottom: 10px;
-	color: #222;
+	color: #000000;
 }
 
 .team-member.small .member-info p {
 	font-size: 1.1rem;
-	color: #555;
+	color: #000000;
+	margin: 2px 0;
 }

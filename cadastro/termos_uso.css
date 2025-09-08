@@ -18,12 +18,12 @@
 	box-sizing: border-box;
 }
 
-	.login-box h2 {
+.login-box h2 {
 	font-size: 2rem;
 	color: #333;
 	margin-bottom: 35px;
 	text-align: center;
-	}
+}
 
 .login-btn {
 	width: 100%;

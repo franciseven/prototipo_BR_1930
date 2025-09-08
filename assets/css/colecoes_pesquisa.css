@@ -1,13 +1,4 @@
 html, body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Georgia', serif;
-  color: #222;
-  background-color: #fff;
-  line-height: 1.6;
-  font-size: 18px;
   background-image: url('../../imagens/background/old-parchment\ \(1\).jpg');
   background-size: cover;
   background-position: center;
@@ -21,6 +12,9 @@ html, body {
   margin: 0;
   z-index: 1;
   position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -97,7 +91,9 @@ select#language-selector:focus {
 }
 
 .container {
-  padding: 50px 80px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .section {
@@ -149,6 +145,7 @@ select#language-selector:focus {
   font-size: 2.2rem;
   margin-bottom: 20px;
   color: #111;
+  text-align: center;
 }
 
 .hero p {
@@ -346,6 +343,7 @@ select#language-selector:focus {
 }
 
 .paginacao {
+  margin-top: auto;
   display: flex;
   justify-content: center;
   gap: 6px;
