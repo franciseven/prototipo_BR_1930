@@ -98,14 +98,14 @@
 
 .partner-button {
   display: inline-block;
-  background: linear-gradient(90deg, #b23333, #e87474);
-  color: #fff;
+  background: linear-gradient(90deg, #1E90FF, #5A5A5A);
+  color: #ffffff;
   padding: 20px 36px;
   border-radius: 12px;
   font-size: 1.3rem;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
   line-height: 1.5;
   max-width: 90%;
@@ -113,7 +113,7 @@
 
 .partner-button:hover,
 .partner-button:focus-visible {
-  background: linear-gradient(90deg, #9e2b2b, #d76262);
+  background: linear-gradient(90deg, #4682B4, #4682B4);
   transform: translateY(-4px);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
   outline: none;
@@ -124,5 +124,5 @@
   font-size: 1rem;
   font-weight: normal;
   margin-top: 8px;
-  color: #f0eaea;
+  color: #ffffff;
 }
