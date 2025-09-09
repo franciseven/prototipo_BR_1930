@@ -31,8 +31,19 @@
 }
 
 .author-header p {
-	font-size: 1.2rem;
-	color: #444;
+	margin: 8px 0;
+	font-size: 1.3rem;
+	line-height: 1.8;
+	color: #000000;
+}
+
+.author-header a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.author-header a:hover {
+	text-decoration: underline;
 }
 
 .card-grid {

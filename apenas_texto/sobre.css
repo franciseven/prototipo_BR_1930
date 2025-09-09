@@ -57,26 +57,38 @@
 }
 
 .profile-pic {
-	width: 140px;
-	height: auto;
+	width: 240px;
+	height: 240px;
 	object-fit: cover;
-	margin-right: 20px;
-	border: none;
+	border-radius: 8px;
+}
+
+.profile-pic-extend {
+	width: 240px;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.member-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	flex: 1;
 }
 
 .member-info h2,
 .member-info p,
 .member-info a {
 	color: #000;
+	margin: 5px 0;
 }
 
 .member-info h2 {
-	margin: 0 0 15px 0;
 	font-size: 1.8rem;
 }
 
 .member-info p {
-	margin: 8px 0;
 	font-size: 1.3rem;
 	line-height: 1.8;
 }
