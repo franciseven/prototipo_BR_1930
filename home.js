@@ -1,8 +1,74 @@
+// Versão do popup com fechamento temporário, reaparecendo o mesmo quando a tela é reiniciada
 window.addEventListener('load', () => {
+  const popup = document.getElementById('popup-colab');
+  const closeBtn = popup.querySelector('.close-btn');
+  let timeoutId;
+  let remainingTime = 7000;
+  let startTime;
+
   setTimeout(() => {
-    document.getElementById('popup-colab').style.display = 'block';
+    popup.style.display = 'block';
+    startTime = Date.now();
+    timeoutId = setTimeout(() => {
+      popup.style.display = 'none';
+    }, remainingTime);
   }, 2000);
+
+  popup.addEventListener('mouseenter', () => {
+    clearTimeout(timeoutId);
+    remainingTime -= (Date.now() - startTime);
+  });
+
+  popup.addEventListener('mouseleave', () => {
+    startTime = Date.now();
+    timeoutId = setTimeout(() => {
+      popup.style.display = 'none';
+    }, remainingTime);
+  });
+
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
 });
+
+/* Versão com o fechamento definitivo do popup quando o usuário clicar no 'x'
+window.addEventListener('load', () => {
+  const popup = document.getElementById('popup-colab');
+  const closeBtn = popup.querySelector('.close-btn');
+  const popupKey = 'popupClosed';
+  let timeoutId;
+  let remainingTime = 7000;
+  let startTime;
+
+  if (localStorage.getItem(popupKey)) return;
+
+  setTimeout(() => {
+    popup.style.display = 'block';
+    startTime = Date.now();
+
+    timeoutId = setTimeout(() => {
+      popup.style.display = 'none';
+    }, remainingTime);
+  }, 2000);
+
+  popup.addEventListener('mouseenter', () => {
+    clearTimeout(timeoutId);
+    remainingTime -= (Date.now() - startTime);
+  })
+
+  popup.addEventListener('mouseleave', () => {
+    startTime = Date.now();
+    timeoutId = setTimeout(() => {
+      popup.style.display = 'none';
+    }, remainingTime);
+  })
+
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+    localStorage.setItem(popupKey, 'true');
+  })
+});
+*/
 
 const heroImages = document.querySelectorAll('.hero-images img');
 
