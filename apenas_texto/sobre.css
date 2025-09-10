@@ -18,14 +18,30 @@
 	max-width: 960px;
 	margin: 60px auto;
 	padding: 0 20px;
-	border-top: 1px solid #ddd;
 }
 
 .hero h1 {
 	font-size: 3rem;
-	margin: 50px 0 30px 0;
-	color: #111;
+	margin-bottom: 50px;
+	margin: 20px 0 50px 0;
 	text-align: center;
+  text-transform: uppercase;
+  color: #1E90FF;
+}
+
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #4682B4;
+  margin: 16px auto 0 auto;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.hero h1:hover::after {
+	width: 520px;
 }
 
 .hero h2 {
@@ -37,16 +53,33 @@
 
 .team-section {
 	max-width: 960px;
-	margin: 60px auto;
+	margin: auto;
 	padding: 0 20px;
 	border-top: 2px solid #333;
 }
 
 .team-section h1 {
 	font-size: 3rem;
-	color: #111;
+	color: #1E90FF;
 	margin-bottom: 50px;
 	text-align: center;
+	text-transform: uppercase;
+	margin: 100px 0 0 0;
+}
+
+.team-section h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #4682B4;
+  margin: 16px auto 0px auto;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.team-section h1:hover::after {
+	width: 205px;
 }
 
 .team-member {
@@ -104,7 +137,7 @@
 
 .other-members {
 	max-width: 960px;
-	margin: 60px auto;
+	margin: auto;
 	padding: 0 20px;
 	border-top: 1px solid #ddd;
 }
@@ -116,6 +149,24 @@
 .other-members h2 {
 	text-align: center;
 	margin-bottom: 50px;
+	margin: 100px 0 50px 0;
+  text-transform: uppercase;
+  color: #1E90FF;
+}
+
+.other-members h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #4682B4;
+  margin: 16px auto 0 auto;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.other-members h2:hover::after {
+	width: 265px;
 }
 
 .other-members h3 {
@@ -133,8 +184,8 @@
 }
 
 .team-member.small .profile-pic {
-	height: 120px;
-	width: 120px;
+	height: 110px;
+	width: 110px;
 	object-fit: cover;
 	border-radius: 8px;
 }
