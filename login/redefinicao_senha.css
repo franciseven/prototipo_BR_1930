@@ -1,26 +1,49 @@
 .main-content {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .container {
   padding: 50px 80px;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .section {
   margin-bottom: 50px;
 }
 
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  border-bottom: 3px solid #e87474;
-  padding-bottom: 6px;
-  color: #e87474;
+.section p {
+  font-size: 1.2rem;
 }
 
-form#redefinicao-form {
-  max-width: 400px;
-  margin-top: 25px;
+.section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  padding-bottom: 6px;
+  color: #1E90FF;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #4682B4;
+  margin: 16px auto 0px auto;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.section h2:hover::after {
+  width: 560px;
 }
 
 form#redefinicao-form input[type="email"] {
@@ -34,7 +57,7 @@ form#redefinicao-form input[type="email"] {
 }
 
 .btn-redefinir {
-  background-color: #e87474e9;
+  background-color: #5d8de3;
   color: white;
   padding: 14px 24px;
   border: none;
@@ -46,5 +69,5 @@ form#redefinicao-form input[type="email"] {
 }
 
 .btn-redefinir:hover {
-  background-color: #d46363;
+  background-color: #74b9ff;
 }

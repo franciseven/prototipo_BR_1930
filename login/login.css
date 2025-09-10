@@ -5,9 +5,7 @@
 .section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  border-bottom: 3px solid var(--primary);
   padding-bottom: 6px;
-  color: var(--primary);
 }
 
 .login-container {
@@ -17,11 +15,18 @@
   min-height: 85vh;
   background-color: #f0f0f0;
   padding: 60px 10vw;
+  
+  background-image: url(../imagens/background/equipe_trabalhando_a_uniao.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgb(198, 198, 198, 0.92);
+  background-blend-mode: lighten
 }
 
 .login-box {
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 100px;
   padding: 60px 80px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
   text-align: center;
@@ -55,7 +60,7 @@
 .login-btn {
   width: 100%;
   padding: 20px;
-  background-color: #3aa693;
+  background-color: #5d8de3;
   color: white;
   border: none;
   border-radius: 8px;
@@ -66,7 +71,7 @@
 }
 
 .login-btn:hover {
-  background-color: #339482;
+  background-color: #74b9ff;
 }
 
 .login-links {
@@ -78,7 +83,7 @@
 
 .login-links a {
   text-decoration: none;
-  color: #3aa693;
+  color: #5d8de3;
 }
 
 .login-links a:hover {
@@ -91,25 +96,10 @@
 }
 
 .account-info a {
-  color: #3aa693;
+  color: #5d8de3;
   text-decoration: none;
 }
 
 .account-info a:hover {
   text-decoration: underline;
-}
-
-.google-btn {
-  width: 100%;
-  padding: 20px;
-  background-color: #db4437;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.3rem;
-  cursor: pointer;
-}
-
-.google-btn:hover {
-  background-color: #c33c2f;
 }

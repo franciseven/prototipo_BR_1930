@@ -61,10 +61,20 @@ select {
 	color: #555;
 }
 
+.custom-label:hover {
+    color: #1E90FF;
+		cursor: pointer;
+}
+
+.custom-label span:hover {
+	color: #5d8de3;
+	cursor: pointer;
+}
+
 .login-btn {
 	width: 100%;
 	padding: clamp(12px, 1.5vh, 18px);
-	background-color: #3aa693;
+	background-color: #5d8de3;
 	color: white;
 	border: none;
 	border-radius: 6px;
@@ -76,7 +86,7 @@ select {
 }
 
 .login-btn:hover {
-	background-color: #2b8778;
+	background-color: #74b9ff;
 }
 
 .login-links {
@@ -88,7 +98,7 @@ select {
 }
 
 .login-links a {
-	color: #3aa693;
+	color: #5d8de3;
 	text-decoration: none;
 }
 

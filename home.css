@@ -99,7 +99,7 @@
 
 .caixa-pesquisa-geral button {
   padding: 12px 24px;
-  background-color: #74b9ff;
+  background-color: #5d8de3;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -109,7 +109,7 @@
 }
 
 .caixa-pesquisa-geral button:hover {
-  background-color: #5d8de3;
+  background-color: #74b9ff;
 }
 
 .browse-section {
@@ -207,7 +207,7 @@
 
 #popup-colab a {
   text-decoration: none;
-  background-color: #74b9ff;
+  background-color: #5d8de3;
   color: #fff;
   font-weight: bold;
   padding: 8px 12px;
@@ -217,7 +217,7 @@
 }
 
 #popup-colab a:hover {
-  background-color: #5d8de3;
+  background-color: #74b9ff;
 }
 
 #popup-colab .close-btn {

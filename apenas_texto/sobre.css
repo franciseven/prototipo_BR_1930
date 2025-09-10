@@ -9,9 +9,7 @@
 .section h2 {
 	font-size: 2rem;
 	margin-bottom: 20px;
-	border-bottom: 3px solid var(--primary);
 	padding-bottom: 6px;
-	color: var(--primary);
 }
 
 .hero {
@@ -54,7 +52,6 @@
 .team-section {
 	max-width: 960px;
 	margin: auto;
-	padding: 0 20px;
 	border-top: 2px solid #333;
 }
 

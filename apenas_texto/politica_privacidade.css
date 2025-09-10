@@ -9,9 +9,7 @@
 .section h2 {
 	font-size: 2rem;
 	margin-bottom: 20px;
-	border-bottom: 3px solid var(--primary);
 	padding-bottom: 6px;
-	color: var(--primary);
 }
 
 .hero {
@@ -24,8 +22,23 @@
 .hero h1 {
 	font-size: 3rem;
 	margin: 50px 0 30px 0;
-	color: #111;
+	color: #1E90FF;
 	text-align: center;
+}
+
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #4682B4;
+  margin: 16px auto 0px auto;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.hero h1:hover::after {
+	width: 720px;
 }
 
 .hero h2 {
@@ -38,8 +51,23 @@
 .hero h3 {
 	font-size: 2.5rem;
 	margin: 50px 0 30px 0;
-	color: #111;
-	text-align: left;
+	color: #1E90FF;
+	text-align: center;
+}
+
+.hero h3::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #4682B4;
+  margin: 16px auto 0px auto;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.hero h3:hover::after {
+	width: 548px;
 }
 
 .hero li {
