@@ -117,7 +117,7 @@
 
 .texts-button {
   display: inline-block;
-  background: linear-gradient(90deg, #1E90FF, #5A5A5A);
+  background: linear-gradient(90deg, #1E90FF, #4682B4);
   color: #ffffff;
   padding: 20px 36px;
   border-radius: 12px;
@@ -132,7 +132,7 @@
 
 .texts-button:hover,
 .texts-button:focus-visible {
-  background: linear-gradient(90deg, #4682B4, #4682B4);
+  background: linear-gradient(90deg, #5AA0FF, #1E90FF);
   transform: translateY(-4px);
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
   outline: none;
