@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BR 1930 - Vídeos</title>
+
+  <link rel="stylesheet" href="../../assets/css/header.css">
+  <link rel="stylesheet" href="../../assets/css/footer.css">
+  <link rel="stylesheet" href="../../assets/css/colecoes_pesquisa.css">
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <div class="overlay-conteudo">
+
+    <section class="hero">
+
+      <div class="caixa-pesquisa-geral">
+        <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" />
+        <button onclick="pesquisar()">Pesquisar</button>
+      </div>
+      
+      <h1>Vídeos</h1>
+
+      <p>
+        Esta seção apresenta uma coleção de vídeos catalogadas contendo tipos como <strong>filmagens, entrevistas, documentários e filmes.</strong> Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
+      </p>
+
+      <div class="navegar-box">
+        <div class="navegar-header">Filtros de Navegação</div>
+        <div class="navegar-tabs" id="tabs">
+          <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
+          <button class="tab" data-target="filtros-autor">Autores</button>
+          <button class="tab" data-target="filtros-data">Data de Publicação</button>
+          <button class="tab" data-target="filtros-duracao">Durações</button>
+          <button class="tab" data-target="filtros-formato">Formatos</button>
+          <button class="tab" data-target="filtros-filmagens">Filmagens</button>
+          <button class="tab" data-target="filtros-entrevistas">Entrevistas</button>
+          <button class="tab" data-target="filtros-documentarios">Documentários</button>
+          <button class="tab" data-target="filtros-filmes">Filmes</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-recentes">
+        <p>Exibindo as submissões mais recentes.</p>
+      </div>
+
+      <div class="filtros" id="filtros-autor" style="display:none;">
+        <label>Filtrar vídeo por autor</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o autor)</option>
+            <option>Fulano</option>
+            <option>Sicrano</option>
+            <option>Beltrano</option>
+          </select>
+          
+          <input type="text" placeholder="Digite o autor" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-data" style="display:none;">
+        <label>Filtrar resultados por ano ou mês</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o ano)</option>
+            <option>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+          </select>
+
+          <select>
+            <option>(Escolha o mês)</option>
+            <option>Janeiro</option>
+            <option>Fevereiro</option>
+            <option>Março</option>
+            <option>Abril</option>
+            <option>Maio</option>
+            <option>Junho</option>
+            <option>Julho</option>
+            <option>Agosto</option>
+            <option>Setembro</option>
+            <option>Outubro</option>
+            <option>Novembro</option>
+            <option>Dezembro</option>
+          </select>
+
+          <select>
+            <option>(Escolha o dia)</option>
+            <option></option>
+          </select>
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-duracao" style="display:none;">
+        <label>Filtrar vídeo por duração</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha a duração)</option>
+            <option>Maior para o menor</option>
+            <option>Menor para o maior</option>
+            <option>Maior que 5 minutos</option>
+            <option>Menor que 5 minutos</option>
+          </select>
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-formato" style="display:none;">
+        <label>Filtrar vídeo por formato</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o formato)</option>
+            <option>.mp4</option>
+            <option>.avi</option>
+            <option>.wmv</option>
+          </select>
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-filmagens" style="display:none;">
+        <label>Filtrar vídeo por filmagem</label>
+        <div class="filtros-inputs">
+          <select id="filmagens-select">
+            <option value="">(Escolha a filmagem)</option>
+            <option value="duracao">Duração</option>
+            <option value="formato">Formato</option>
+            <option value="autor">Autor</option>
+          </select>
+
+          <select id="filmagens-duracao-select" style="display: none;">
+            <option value="">(Escolha a duração)</option>
+            <option value="maior-menor">Maior para o menor</option>
+            <option value="menor-maior">Menor para o maior</option>
+            <option value="maior-5">Maior que 5 minutos</option>
+            <option value="menor-5">Menor que 5 minutos</option>
+          </select>
+
+          <select id="filmagens-formato-select" style="display: none;">
+            <option value="">(Escolha o formato)</option>
+            <option value="mp4">.mp4</option>
+            <option value="avi">.avi</option>
+            <option value="wmv">.wmv</option>
+          </select>
+
+          <select id="filmagens-autor-select" style="display: none;">
+            <option value="">(Escolha o autor)</option>
+            <option value="fulano">Fulano</option>
+            <option value="sicrano">Sicrano</option>
+            <option value="beltrano">Beltrano</option>
+          </select>
+
+          <input type="text" id="filmagens-autor-texto" placeholder="Digite o nome do autor" style="display: none;" />
+
+          <input type="text" id="filmagens-input" placeholder="Digite a filmagem" />
+
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-entrevistas" style="display:none;">
+        <label>Filtrar vídeo por entrevista</label>
+        <div class="filtros-inputs">
+          <select id="entrevistas-select">
+            <option value="">(Escolha a entrevista)</option>
+            <option value="duracao">Duração</option>
+            <option value="formato">Formato</option>
+            <option value="autor">Autor</option>
+          </select>
+
+          <select id="entrevistas-duracao-select" style="display: none;">
+            <option value="">(Escolha a duração)</option>
+            <option value="maior-menor">Maior para o menor</option>
+            <option value="menor-maior">Menor para o maior</option>
+            <option value="maior-5">Maior que 5 minutos</option>
+            <option value="menor-5">Menor que 5 minutos</option>
+          </select>
+
+          <select id="entrevistas-formato-select" style="display: none;">
+            <option value="">(Escolha o formato)</option>
+            <option value="mp4">.mp4</option>
+            <option value="avi">.avi</option>
+            <option value="wmv">.wmv</option>
+          </select>
+
+          <select id="entrevistas-autor-select" style="display: none;">
+            <option value="">(Escolha o entrevistado)</option>
+            <option value="fulano">Fulano</option>
+            <option value="sicrano">Sicrano</option>
+            <option value="beltrano">Beltrano</option>
+          </select>
+
+          <input type="text" id="entrevistas-autor-texto" placeholder="Digite o nome do autor" style="display: none;" />
+
+          <input type="text" id="entrevistas-input" placeholder="Digite a entrevista" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-documentarios" style="display:none;">
+        <label>Filtrar vídeo por documentário</label>
+        <div class="filtros-inputs">
+          <select id="documentarios-select">
+            <option value="">(Escolha o documentário)</option>
+            <option value="duracao">Duração</option>
+            <option value="formato">Formato</option>
+            <option value="autor">Autor</option>
+          </select>
+
+          <select id="documentarios-duracao-select" style="display: none;">
+            <option value="">(Escolha a duração)</option>
+            <option value="maior-menor">Maior para o menor</option>
+            <option value="menor-maior">Menor para o maior</option>
+            <option value="maior-5">Maior que 5 minutos</option>
+            <option value="menor-5">Menor que 5 minutos</option>
+          </select>
+
+          <select id="documentarios-formato-select" style="display: none;">
+            <option value="">(Escolha o formato)</option>
+            <option value="mp4">.mp4</option>
+            <option value="avi">.avi</option>
+            <option value="wmv">.wmv</option>
+          </select>
+
+          <select id="documentarios-autor-select" style="display: none;">
+            <option value="">(Escolha o autor)</option>
+            <option value="fulano">Fulano</option>
+            <option value="sicrano">Sicrano</option>
+            <option value="beltrano">Beltrano</option>
+
+          <input type="text" id="documentarios-autor-texto" placeholder="Digite o nome do autor" style="display: none;" />
+
+          <input type="text" id= "documentarios-input" placeholder="Digite o documentário" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-filmes" style="display:none;">
+        <label>Filtrar vídeo por filmes</label>
+        <div class="filtros-inputs">
+          <select id="filmes-select">
+            <option value="">(Escolha o filme)</option>
+            <option value="autor">Autor</option>
+            <option value="duracao">Duração</option>
+            <option value="formato">Formato</option>
+            <option value="curta-metragem">Curta-Metragem</option>
+            <option value="longa-metragem">Longa-Metragem</option>
+          </select>
+
+          <select id="filmes-duracao-select" style="display: none;">
+            <option value="">(Escolha a duração)</option>
+            <option value="maior-menor">Maior para o menor</option>
+            <option value="menor-maior">Menor para o maior</option>
+            <option value="maior-5">Maior que 5 minutos</option>
+            <option value="menor-5">Menor que 5 minutos</option>
+          </select>
+
+          <select id="filmes-formato-select" style="display: none;">
+            <option value="">(Escolha o formato)</option>
+            <option value="mp4">.mp4</option>
+            <option value="avi">.avi</option>
+            <option value="wmv">.wmv</option>
+          </select>
+
+          <select id="filmes-autor-select" style="display: none;">
+            <option value="">(Escolha o autor)</option>
+            <option value="fulano">Fulano</option>
+            <option value="sicrano">Sicrano</option>
+            <option value="beltrano">Beltrano</option>
+
+          <input type="text" id="filmes-autor-texto" placeholder="Digite o nome do autor" style="display: none;" />
+
+          <input type="text" id="filmes-input" placeholder="Digite o filme" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="resultado-info">
+        Agora exibindo n de n
+      </div>
+
+      <div class="lista-itens">
+
+        <div class="item">
+          <a href="../../item_selecionado/videos/video_1_selecionado.html">
+            <img src="../../imagens/capas_colecoes/videos/capa_video_1-ohomemdeareia.jpg" alt="Capa do Vídeo 1" />
+          </a>
+          <div class="item-info">
+            <div class="item-tag">Vídeo</div>
+            <h3><a href="../../item_selecionado/videos/video_1_selecionado.html" style="text-decoration: none; color: inherit;">O Homem de Areia</a></h3>
+            <p class="autor">Vladimir de Carvalho</p>
+            <p class="descricao collapsed">
+              A Revolução de 1930 vista a partir da ótica nordestina e na visão de José Américo de Almeida.
+            </p>
+            <a href="#" class="toggle-descricao">Mostrar mais</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="paginacao">
+        <a href="#">«</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">»</a>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div id="footer"></div>
+
+  <script src="../../assets/js/script.js"></script>
+  <script src="../../assets/js/pesquisar.js"></script>
+  <script src="./videos.js"></script>
+
+
+</body>
+</html>

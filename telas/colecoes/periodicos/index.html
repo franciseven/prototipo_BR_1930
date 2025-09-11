@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BR 1930 - Periódicos</title>
+
+  <link rel="stylesheet" href="../../assets/css/header.css">
+  <link rel="stylesheet" href="../../assets/css/footer.css">
+  <link rel="stylesheet" href="../../assets/css/colecoes_pesquisa.css">
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <div class="overlay-conteudo">
+
+    <section class="hero">
+
+      <div class="caixa-pesquisa-geral">
+        <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" />
+        <button onclick="pesquisar()">Pesquisar</button>
+      </div>
+      
+      <h1>Periódicos</h1>
+
+      <p>
+        Esta seção apresenta uma coleção de periódicos catalogados contendo tipos como contendo tipos como <strong>entrevistas impressas, matérias jornalísticas e revistas.</strong> Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
+      </p>
+
+      <div class="navegar-box">
+        <div class="navegar-header">Filtros de Navegação</div>
+        <div class="navegar-tabs" id="tabs">
+          <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
+          <button class="tab" data-target="filtros-autor">Autores</button>
+          <button class="tab" data-target="filtros-data">Data de Publicação</button>
+          <button class="tab" data-target="filtros-formato">Formatos</button>
+          <button class="tab" data-target="filtros-materias-jornalisticas">Matérias Jornalísticas</button>
+          <button class="tab" data-target="filtros-revistas">Revistas</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-recentes">
+        <p>Exibindo as submissões mais recentes.</p>
+      </div>
+
+      <div class="filtros" id="filtros-autor" style="display:none;">
+        <label>Filtrar por Autor</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o autor)</option>
+            <option>LUX JORNAL</option>
+          </select>
+          <input type="text" placeholder="Digite o nome do autor" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-data" style="display:none;">
+        <label>Filtrar resultados por ano ou mês</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o ano)</option>
+            <option>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+          </select>
+
+          <select>
+            <option>(Escolha o mês)</option>
+            <option>Janeiro</option>
+            <option>Fevereiro</option>
+            <option>Março</option>
+            <option>Abril</option>
+            <option>Maio</option>
+            <option>Junho</option>
+            <option>Julho</option>
+            <option>Agosto</option>
+            <option>Setembro</option>
+            <option>Outubro</option>
+            <option>Novembro</option>
+            <option>Dezembro</option>
+          </select>
+
+          <select>
+            <option>(Escolha o dia)</option>
+            <option></option>
+          </select>
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-formato" style="display:none;">
+        <label>Filtrar por Formato</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o formato)</option>
+            <option>.png</option>
+            <option>.pdf</option>
+            <option>.jpg</option>
+            <option>.tiff</option>
+          </select>
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-materias-jornalisticas" style="display:none;">
+        <label>Filtrar periódico por matéria jornalística</label>
+        <div class="filtros-inputs">
+          <select id="materias-jornalisticas-select">
+            <option value="">(Escolha a matéria jornalística)</option>
+            <option value="autor">Autor</option>
+            <option value="jornal">Jornal</option>
+            <option value="tipo">Tipo</option>
+          </select>
+
+          <select id="materias-jornalisticas-autor-select" style="display: none;">
+            <option value="">(Escolha o autor)</option>
+            <option value="fernando-moura">Fernando Moura</option>
+          </select>
+
+          <select id="materias-jornalisticas-jornal-select" style="display: none;">
+            <option value="">(Escolha o jornal)</option>
+            <option value="uniao">A União</option>
+            <option value="norte">O Norte</option>
+          </select>
+
+          <select id="materias-impressas-tipo-select" style="display: none;">
+            <option value="">(Escolha o tipo)</option>
+            <option value="discurso">Discurso</option>
+            <option value="noticia">Notícia</option>
+            <option value="artigo">Artigo</option>
+            <option value="relatorio">Relatório</option>
+          </select>
+
+          <input type="text" id="materia-jornalistica-input" placeholder="Digite a matéria jornalística" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-revistas" style="display:none;">
+        <label>Filtrar periódico por revistas</label>
+        <div class="filtros-inputs">
+          <select id="revistas-select">
+            <option value="">(Escolha a revista)</option>
+            <option value="editora">Editora</option>
+            <option value="assunto">Assunto</option>
+            <option value="titulo">Título</option>
+          </select>
+
+          <select id="revistas-editora-select" style="display: none;">
+            <option value="">(Escolha a Editora)</option>
+            <option value="exemplo">Exemplo</option>
+          </select>
+
+          <select id="revistas-assunto-select" style="display: none;">
+            <option value="">(Escolha o assunto)</option>
+            <option value="populismo">Populismo</option>
+          </select>
+
+          <select id="revistas-titulo-select" style="display: none;">
+            <option value="">(Escolha o Título)</option>
+            <option value="exemplo">Exemplo</option>
+          </select>
+
+          <input type="text" id="revistas-input" placeholder="Digite a revista" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="resultado-info">
+        Agora exibindo n de n
+      </div>
+
+      <div class="lista-itens">
+
+        <div class="item">
+          <a href="../../item_selecionado/periodicos/periodico_1_selecionado.html">
+            <img src="../../imagens/capas_colecoes/periodicos/capa_materia_1-odiadarevolucao.jpg" alt="Capa do Periódico 1" />
+          </a>
+          <div class="item-info">
+            <div class="item-tag">Periódico</div>
+            <h3><a href="../../item_selecionado/periodicos/periodico_1_selecionado.html" style="text-decoration: none; color: inherit;">O DIA DA REVOLUÇÃO</a></h3>
+            <p class="autor">Jornal A União</p>
+            <p class="descricao collapsed">
+              Matéria Jornalística sobre o aniversário de 2 anos da Revolução de 1930.
+            </p>
+            <a href="#" class="toggle-descricao">Mostrar mais</a>
+          </div>
+        </div>
+
+        <div class="item">
+          <a href="../../item_selecionado/periodicos/periodico_2_selecionado.html">
+            <img src="../../imagens/capas_colecoes/periodicos/capa_revista_1-princesa.png" alt="Capa do Periódico 2" />
+          </a>
+          <div class="item-info">
+            <div class="item-tag">Periódico</div>
+            <h3><a href="../../item_selecionado/periodicos/periodico_2_selecionado.html" style="text-decoration: none; color: inherit;">Revista Princesa</a></h3>
+            <p class="autor">O Cruzeiro (RJ)</p>
+            <p class="descricao collapsed">
+              DESCRIÇÃO DO PERIÓDICO 3.
+            </p>
+            <a href="#" class="toggle-descricao">Mostrar mais</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="paginacao">
+        <a href="#">«</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">»</a>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div id="footer"></div>
+
+  <script src="../../assets/js/script.js"></script>
+  <script src="../../assets/js/pesquisar.js"></script>
+  <script src="./periodicos.js"></script>
+
+
+</body>
+</html>

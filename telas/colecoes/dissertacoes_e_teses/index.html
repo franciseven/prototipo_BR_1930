@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BR 1930 - Dissertações e Teses</title>
+
+  <link rel="stylesheet" href="../../assets/css/header.css">
+  <link rel="stylesheet" href="../../assets/css/footer.css">
+  <link rel="stylesheet" href="../../assets/css/colecoes_pesquisa.css">
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <div class="overlay-conteudo">
+
+    <section class="hero">
+
+      <div class="caixa-pesquisa-geral">
+        <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" />
+        <button onclick="pesquisar()">Pesquisar</button>
+      </div>
+
+      <h1>Dissertações e Teses</h1>
+
+      <p>
+        Esta seção apresenta uma coleção de dissertações e teses catalogadas. Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
+      </p>
+
+      <div class="navegar-box">
+        <div class="navegar-header">Filtros de Navegação</div>
+        <div class="navegar-tabs" id="tabs">
+          <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
+          <button class="tab" data-target="filtros-autor">Autores</button>
+          <button class="tab" data-target="filtros-data">Data de Publicação</button>
+          <button class="tab" data-target="filtros-teses">Teses</button>
+          <button class="tab" data-target="filtros-dissertacao">Dissertações</button>
+          <button class="tab" data-target="filtros-titulo">Títulos</button>
+          <button class="tab" data-target="filtros-palavra_chave">Palavras-Chave</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-recentes">
+        <p>Exibindo as submissões mais recentes.</p>
+      </div>
+
+      <div class="filtros" id="filtros-autor" style="display:none;">
+        <label>Filtrar por Autor</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o autor)</option>
+            <option>Jivago Correia</option>
+          </select>
+          <input type="text" placeholder="Pesquisar por autor" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-data" style="display:none;">
+        <label>Filtrar resultados por ano ou mês</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o ano)</option>
+            <option>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+          </select>
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-titulo" style="display:none;">
+        <label>Pesquisar por Título</label>
+        <div class="filtros-inputs">
+          <input type="text" placeholder="Digite o título" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-palavra_chave" style="display:none;">
+        <label>Pesquisar por Palavra-Chave</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha uma Palavra-Chave)</option>
+            <option>Revolução</option>
+            <option>Princesa</option>
+          </select>
+          <input type="text" placeholder="Escreva uma palavra-chave" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="resultado-info">
+        Agora exibindo n de n
+      </div>
+
+      <div class="lista-itens">
+
+        <div class="item">
+          <a href="../../item_selecionado/teses/tese_1_selecionada.html">
+            <img src="../../imagens/capas_colecoes/teses/2012_CarolinaSoaresSousa.png" alt="Capa da Tese 1" />
+          </a>
+          <div class="item-info">
+            <div class="item-tag">Dissertação/Tese</div>
+            <h3><a href="../../item_selecionado/teses/tese_1_selecionada.html" style="text-decoration: none; color: inherit;">Política, A Arte de Lembrar e Esquecer: Os Projetos Políticos Paulistas (1933-1934)</a></h3>
+            <p class="autor">Carolina Soares Sousa</p>
+            <p class="descricao collapsed">
+              A Revolução de 1932 exigiu das forças em disputa de uma base de consenso. Visando o desarme dos paulistas, Getúlio Vargas indicou, em agosto de 1933, Armando de Salles Oliveira para o cargo de interventor. Tal indicação provocou o Partido republicano Paulista, que se encontrava como oposição, ansioso por retomar o poder. Em 1934 uma nova constituição parecia indicar a redefinição das alianças políticas que permitiriam, finalmente, a retomada dos projetos políticos paulistas para o Brasil com as necessárias adaptações da Revolução de 1930. O que significou a Revolução de 1930? E o percurso entre 1932 e 1934? Repensar estas questões implica retomar o diálogo e conflitos ocorridos no interior das elites políticas paulistas e analisar o jogo político por elas praticado em tal contexto. Nesse jogo político, a imprensa oficial dos principais partidos políticos paulistas cumprirá papel pedagógico, fazendo uso da memória das revoluções e 1930 e 1932 com o intuito de formar a opinião pública.
+            </p>
+            <a href="#" class="toggle-descricao">Mostrar mais</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="paginacao">
+        <a href="#">«</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">»</a>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div id="footer"></div>
+
+  <script src="../../assets/js/script.js"></script>
+  <script src="../../assets/js/pesquisar.js"></script>
+  <script src="./dissertacoes_e_teses.js"></script>
+  
+
+</body>
+</html>

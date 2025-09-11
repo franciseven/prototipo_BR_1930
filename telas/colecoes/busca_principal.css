@@ -1,0 +1,6 @@
+.filtro-controles {
+	display: flex;
+	gap: 15px;
+	margin: 25px 0;
+	flex-wrap: wrap;
+}

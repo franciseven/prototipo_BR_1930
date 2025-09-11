@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BR 1930 - Entrevistas</title>
+
+  <link rel="stylesheet" href="../../assets/css/header.css">
+  <link rel="stylesheet" href="../../assets/css/footer.css">
+  <link rel="stylesheet" href="../../assets/css/colecoes_pesquisa.css">
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <div class="overlay-conteudo">
+
+    <section class="hero">
+
+      <div class="caixa-pesquisa-geral">
+        <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" />
+        <button onclick="pesquisar()">Pesquisar</button>
+      </div>
+
+      <h1>Entrevistas</h1>
+
+      <p>
+        Esta seção apresenta uma coleção de entrevistas catalogadas. Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
+      </p>
+
+      <div class="navegar-box">
+        <div class="navegar-header">Filtros de Navegação</div>
+        <div class="navegar-tabs" id="tabs">
+          <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
+          <button class="tab" data-target="filtros-data">Data de Publicação</button>
+          <button class="tab" data-target="filtros-entrevistador">Entrevistadores</button>
+          <button class="tab" data-target="filtros-entrevistado">Entrevistados</button>
+          <button class="tab" data-target="filtros-formato">Formatos</button>
+          <button class="tab" data-target="filtros-instituicao">Instituições</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-recentes">
+        <p>Exibindo as submissões mais recentes.</p>
+      </div>
+
+      <div class="filtros" id="filtros-data" style="display:none;">
+        <label>Filtrar resultados por ano ou mês</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o ano)</option>
+            <option>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+          </select>
+
+          <select>
+            <option>(Escolha o mês)</option>
+            <option>Janeiro</option>
+            <option>Fevereiro</option>
+            <option>Março</option>
+            <option>Abril</option>
+            <option>Maio</option>
+            <option>Junho</option>
+            <option>Julho</option>
+            <option>Agosto</option>
+            <option>Setembro</option>
+            <option>Outubro</option>
+            <option>Novembro</option>
+            <option>Dezembro</option>
+          </select>
+
+          <select>
+            <option>(Escolha o dia)</option>
+            <option></option>
+          </select>
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-entrevistador" style="display:none;">
+        <label>Filtrar entrevista por entrevistador</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o entrevistador)</option>
+            <option>Fulano</option>
+            <option>Sicrano</option>
+            <option>Beltrano</option>
+          </select>
+          <input type="text" placeholder="Digite o entrevistador" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-entrevistado" style="display:none;">
+        <label>Filtrar entrevista por entrevistado</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o entrevistado)</option>
+            <option>José Américo</option>
+            <option>Rosa Godoy</option>
+          </select>
+          <input type="text" placeholder="Digite o entrevistado" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-formato" style="display:none;">
+        <label>Filtrar entrevista por formato</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha o formato)</option>
+            <option>Áudio</option>
+            <option>Vídeo</option>
+            <option>Texto</option>
+          </select>
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-instituicao" style="display:none;">
+        <label>Filtrar entrevista por instituição</label>
+        <div class="filtros-inputs">
+          <select>
+            <option>(Escolha a instituição)</option>
+            <option>FGV</option>
+            <option>FCJA</option>
+          </select>
+          <input type="text" placeholder="Digite a instituição" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="resultado-info">
+        Agora exibindo n de n
+      </div>
+
+      <div class="lista-itens">
+
+        <div class="item">
+          <a href="../../item_selecionado/entrevistas/entrevista_1_selecionado.html">
+            <img src="../../imagens/capas_colecoes/entrevistas/capa_entrevista_1.png" alt="Capa da Entrevista 1" />
+          </a>
+          <div class="item-info">
+            <div class="item-tag">Entrevista</div>
+            <h3><a href="../../item_selecionado/entrevistas/entrevista_1_selecionado.html" style="text-decoration: none; color: inherit;">ENTREVISTA 01 - PROFA. MONIQUE CITTADINO</a></h3>
+            <p class="autor">Projeto BR 1930</p>
+            <p class="descricao collapsed">
+              Entrevista com a professora da UFPB Monique Cittadino sobre a Revolução de 1930 na Paraíba.
+            </p>
+            <a href="#" class="toggle-descricao">Mostrar mais</a>
+          </div>
+        </div>
+
+        <div class="item">
+          <a href="../../item_selecionado/entrevistas/entrevista_2_selecionada.html">
+            <img src="../../imagens/capas_colecoes/entrevistas/capa_entrevista_impressa_1-.png" alt="Capa da Entrevista 2" />
+          </a>
+          <div class="item-info">
+            <div class="item-tag">Entrevista</div>
+            <h3><a href="../../item_selecionado/entrevistas/entrevista_2_selecionada.html" style="text-decoration: none; color: inherit;">Entrevista com José Pereira</a></h3>
+            <p class="autor">O Cruzeiro (RJ)</p>
+            <p class="descricao collapsed">
+              Entrevista com José Pereira que desligou o município paraibano de Princesa da comunidade estadual e o proclamou independente.
+            </p>
+            <a href="#" class="toggle-descricao">Mostrar mais</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="paginacao">
+        <a href="#">«</a>
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">»</a>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div id="footer"></div>
+
+  <script src="../../assets/js/script.js"></script>
+  <script src="../../assets/js/pesquisar.js"></script>
+  <script src="./entrevistas.js"></script>
+
+
+</body>
+</html>
