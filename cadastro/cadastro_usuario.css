@@ -74,7 +74,7 @@ select {
 .login-btn {
 	width: 100%;
 	padding: clamp(12px, 1.5vh, 18px);
-	background-color: #185898;
+	background-color: #5d8de3;
 	color: white;
 	border: none;
 	border-radius: 6px;
@@ -86,7 +86,7 @@ select {
 }
 
 .login-btn:hover {
-	background-color: #5d8de3;
+	background-color: #74b9ff;
 }
 
 .login-links {

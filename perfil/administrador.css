@@ -5,9 +5,9 @@
 .section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  border-bottom: 3px solid #1E90FF;
+  border-bottom: 3px solid #8B0000;
   padding-bottom: 6px;
-  color: #1E90FF;
+  color: #8B0000;
 }
 
 .container {
@@ -39,14 +39,13 @@
 .card h3 {
   margin: 0;
   font-size: 1.5rem;
-  color: #1E90FF;
+  color: #8B0000;
 }
 
 .card p {
   margin: 8px 0 0;
   font-size: 1.6rem;
   font-weight: bold;
-  color: #000000;
 }
 
 .tabela-container {
@@ -104,16 +103,16 @@
 
 .checkbox-group input[type="checkbox"] {
   transform: scale(1.2);
-  accent-color: #1E90FF;
+  accent-color: #8B0000;
 }
 
 .file-upload {
-  border: 2px dashed #1E90FF;
+  border: 2px dashed #8B0000;
   padding: 40px;
   text-align: center;
   border-radius: 12px;
   cursor: pointer;
-  color: #1E90FF;
+  color: #8B0000;
   font-size: 1.1rem;
 }
 
@@ -134,7 +133,7 @@
 }
 
 #submitContentBtn {
-  background-color: #185898;
+  background-color: #8B0000;
   color: white;
   font-weight: bold;
   font-size: 1.3rem;
@@ -146,13 +145,9 @@
   user-select: none;
 }
 
-#submitContentBtn:hover {
-  background-color: #5d8de3;
-}
-
 .graph-bar {
   height: 24px;
-  background: #1E90FF;
+  background: #8B0000;
   margin: 6px 0;
   border-radius: 4px;
   color: #fff;
@@ -170,7 +165,7 @@
 }
 
 .export-buttons button {
-  background: linear-gradient(135deg, #185898, #5d8de3);
+  background: linear-gradient(135deg, #8B0000, #a50000);
   color: #fff;
   border: none;
   padding: 12px 18px;
@@ -207,13 +202,13 @@
   height: 110px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #1E90FF;
+  border: 3px solid #8B0000;
 }
 
 .user-info h2 {
   margin: 0;
   font-size: 1.8rem;
-  color: #000000;
+  color: #8B0000;
 }
 
 .user-info p {
@@ -224,7 +219,7 @@
 }
 
 .user-actions button {
-  background-color: #185898;
+  background-color: #8B0000;
   color: #fff;
   border: none;
   padding: 12px 20px;
@@ -236,7 +231,7 @@
 }
 
 .user-actions button:hover {
-  background-color: #5d8de3;
+  background-color: #a50000;
 }
 
 .btn-profile-style {
@@ -260,43 +255,43 @@
 }
 
 .approveBtn {
-  background-color: #218838;
-}
-
-.approveBtn:hover {
   background-color: #28a745;
 }
 
+.approveBtn:hover {
+  background-color: #218838;
+}
+
 .rejectBtn {
-  background-color: #c82333;
+  background-color: #dc3545;
 }
 
 .rejectBtn:hover {
-  background-color: #dc3545;
-}
-
-.deleteBtn {
   background-color: #c82333;
 }
 
-.deleteBtn:hover {
+.deleteBtn {
   background-color: #dc3545;
 }
 
+.deleteBtn:hover {
+  background-color: #c82333;
+}
+
 .viewBtn {
-  background-color: #185898;
+  background-color: #007bff;
 }
 
 .viewBtn:hover {
-  background-color: #5d8de3;
+  background-color: #0069d9;
 }
 
 .downloadBtn {
-  background-color: #7f0ba2;
+  background-color: #20c997;
 }
 
 .downloadBtn:hover {
-  background-color: #a81bd3;
+  background-color: #17a589;
 }
 
 .user-stats.cards {
@@ -330,7 +325,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  background-color: #185898;
+  background-color: #cc5050cd;
   z-index: 0;
 }
 
