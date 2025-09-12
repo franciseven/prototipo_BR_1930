@@ -50,19 +50,19 @@
 }
 
 .btn-verify {
-	background-color: #1e90ff;
+	background-color: #185898;
 	color: #fff;
 	padding: 12px 20px;
 	font-size: 1rem;
 	border: none;
 	border-radius: 10px;
 	cursor: pointer;
-	width: 100%;
-	max-width: 100%;
+	width: 110%;
+	max-width: 110%;
 	transition: background-color 0.3s, transform 0.2s;
 }
 
 .btn-verify:hover {
-	background-color: #0d6efd;
+	background-color: #5d8de3;
 	transform: scale(1.03);
 }
