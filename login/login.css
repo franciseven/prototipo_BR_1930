@@ -60,7 +60,7 @@
 .login-btn {
   width: 100%;
   padding: 20px;
-  background-color: #185898;
+  background-color: #5d8de3;
   color: white;
   border: none;
   border-radius: 8px;
@@ -71,7 +71,7 @@
 }
 
 .login-btn:hover {
-  background-color: #5d8de3;
+  background-color: #74b9ff;
 }
 
 .login-links {
