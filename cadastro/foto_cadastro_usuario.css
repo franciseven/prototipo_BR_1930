@@ -17,7 +17,7 @@
 }
 
 .profile-box h2 {
-	color: #e87474;
+	color: #1E90FF;
 	margin-bottom: 10px;
 	font-size: 1.8rem;
 }
@@ -67,7 +67,7 @@
 }
 
 .btn-upload, .btn-remove, .btn-proceed {
-	background-color: #5d8de3;
+	background-color: #185898;
 	color: white;
 	padding: 12px 25px;
 	border: none;
@@ -81,7 +81,7 @@
 .btn-upload:hover,
 .btn-remove:hover,
 .btn-proceed:hover {
-	background-color: #74b9ff;
+	background-color: #5d8de3;
 	transform: scale(1.05);
 }
 
@@ -102,7 +102,7 @@
 }
 
 .file-input-wrapper .btn-upload {
-	background-color: #5d8de3;
+	background-color: #185898;
 	color: white;
 	padding: 12px 25px;
 	border: none;
@@ -114,6 +114,6 @@
 }
 
 .file-input-wrapper:hover .btn-upload {
-	background-color: #74b9ff;
+	background-color: #5d8de3;
 	transform: scale(1.05);
 }
