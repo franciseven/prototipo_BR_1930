@@ -320,6 +320,7 @@ select#language-selector:focus {
   overflow-wrap: break-word;
   max-width: 100%;
   text-align: justify;
+  margin-right: 10px;
 }
 
 .item-info .descricao.collapsed {
@@ -336,7 +337,6 @@ select#language-selector:focus {
 
 .item-info a:hover {
   text-decoration: underline;
-  background-color: #5d8de3;
 }
 
 .item-info .item-tag {
