@@ -177,13 +177,17 @@ select#language-selector:focus {
 .caixa-pesquisa-geral button {
   margin-left: 10px;
   padding: 12px 20px;
-  background-color: #0d6efd;
+  background-color: #185898;
   color: white;
   font-size: 1rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.caixa-pesquisa-geral button:hover {
+  background-color: #5d8de3;
 }
 
 .navegar-box {
