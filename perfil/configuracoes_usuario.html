@@ -113,31 +113,36 @@
       </form>
     </section>
 
-      <section class="section">
-        <h2>Foto de Perfil</h2>
-        <form>
-          <label for="fotoPerfil">Enviar nova foto:</label><br>
-          <input type="file" id="fotoPerfil" name="fotoPerfil" accept="image/*"><br><br>
-          <button type="submit">Atualizar Foto</button>
-        </form>
-      </section>
+    <section class="section">
+      <h2>Foto de Perfil</h2>
+      <form>
+        <div class="file-upload" onclick="document.getElementById('fileUpload').click()">
+          <p>
+            <strong data-i18n="contentSubmission.selectFile">Clique aqui para selecionar um arquivo</strong><br />
+          </p>
+          <input type="file" id="fileUpload" name="fileUpload" hidden />
+        </div>
+        <span id="fileNameDisplay" class="file-name-display"></span><br />
+        <button type="submit">Atualizar Foto</button>
+      </form>
+    </section>
 
-      <section class="section">
-        <h2>Alterar Senha</h2>
-        <form>
-          <label for="senhaAtual">Senha Atual:</label><br>
-          <input type="password" id="senhaAtual" name="senhaAtual" placeholder="Senha Atual"><br><br>
+    <section class="section">
+      <h2>Alterar Senha</h2>
+      <form>
+        <label for="senhaAtual">Senha Atual:</label><br>
+        <input type="password" id="senhaAtual" name="senhaAtual" placeholder="Senha Atual"><br><br>
 
-          <label for="novaSenha">Nova Senha:</label><br>
-          <input type="password" id="novaSenha" name="novaSenha" placeholder="Nova Senha"><br>
-          <small id="senha-ajuda" style="color: #c00; display: none;">A senha deve ter pelo menos 8 caracteres, incluindo maiúsculas, minúsculas, números e caracteres especiais.</small><br><br>
+        <label for="novaSenha">Nova Senha:</label><br>
+        <input type="password" id="novaSenha" name="novaSenha" placeholder="Nova Senha"><br>
+        <small id="senha-ajuda" style="color: #c00; display: none;">A senha deve ter pelo menos 8 caracteres, incluindo maiúsculas, minúsculas, números e caracteres especiais.</small><br>
 
-          <label for="confirmarSenha">Confirmar Nova Senha:</label><br>
-          <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Repita a Nova Senha"><br><br>
+        <label for="confirmarSenha">Confirmar Nova Senha:</label><br>
+        <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Repita a Nova Senha"><br><br>
 
-          <button type="submit">Alterar Senha</button>
-        </form>
-      </section>
+        <button type="submit">Alterar Senha</button>
+      </form>
+    </section>
   </main>
 
   <div id="footer"></div>

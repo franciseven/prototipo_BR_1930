@@ -214,6 +214,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.querySelectorAll("form").forEach((form) => {
+    const formTitle = form.closest("section")?.querySelector("h2")?.innerText || "";
+
+    if (formTitle.includes("Foto de Perfil")) {
+      const fileInput = form.querySelector("#fileUpload");
+      const fileNameDisplay = document.getElementById("fileNameDisplay");
+
+      if (fileInput && fileNameDisplay) {
+        fileInput.addEventListener("change", () => {
+          if (fileInput.files.length > 0) {
+            fileNameDisplay.textContent = `Arquivo selecionado: ${fileInput.files[0].name}`;
+          } else {
+            fileNameDisplay.textContent = "";
+          }
+        });
+      }
+    }
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
@@ -245,7 +262,8 @@ document.addEventListener('DOMContentLoaded', () => {
         showPopup();
         setTimeout(() => form.submit(), 1000);
       } else if (formTitle.includes("Foto de Perfil")) {
-        const fileInput = form.querySelector('input[type="file"]');
+        const fileInput = form.querySelector("#fileUpload");
+
         if (fileInput && fileInput.files.length > 0) {
           showPopup();
           setTimeout(() => form.submit(), 1000);

@@ -9,9 +9,9 @@
 .section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  border-bottom: 3px solid #e87474e9;
+  border-bottom: 3px solid #1E90FF;
   padding-bottom: 6px;
-  color: #e87474e9;
+  color: #1E90FF;
 }
 
 .custom-label {
@@ -49,7 +49,7 @@
 }
 
 button {
-  background-color: #e87474e9;
+  background-color: #185898;
   color: white;
   padding: 14px 22px;
   border: none;
@@ -61,7 +61,30 @@ button {
 }
 
 button:hover {
-  background-color: #d15d5d;
+  background-color: #5d8de3;
+}
+
+.file-upload {
+  border: 2px dashed #1E90FF;
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #1E90FF;
+  font-size: 1.1rem;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.file-name-display {
+  margin-top: 10px;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 form {
