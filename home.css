@@ -110,6 +110,7 @@
 
 .caixa-pesquisa-geral button:hover {
   background-color: #74b9ff;
+  transform: scale(1.03);
 }
 
 .browse-section {
@@ -218,6 +219,7 @@
 
 #popup-colab a:hover {
   background-color: #74b9ff;
+  transform: scale(1.03);
 }
 
 #popup-colab .close-btn {
