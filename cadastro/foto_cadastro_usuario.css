@@ -38,19 +38,28 @@
 }
 
 .file-input-wrapper {
-	position: relative;
-	overflow: hidden;
 	display: inline-block;
 	margin-bottom: 15px;
 }
 
-.file-input-wrapper input[type=file] {
-	font-size: 100px;
-	position: absolute;
-	left: 0;
-	top: 0;
-	opacity: 0;
+.btn-upload, .btn-remove, .btn-proceed {
+	background-color: #185898;
+	color: white;
+	padding: 12px 25px;
+	border: none;
+	border-radius: 10px;
 	cursor: pointer;
+	font-size: 1rem;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	margin: 5px;
+	display: inline-block;
+}
+
+.btn-upload:hover,
+.btn-remove:hover,
+.btn-proceed:hover {
+	background-color: #5d8de3;
+	transform: scale(1.05);
 }
 
 .profile-buttons {
@@ -64,56 +73,4 @@
 .profile-buttons div {
 	display: flex;
 	gap: 10px;
-}
-
-.btn-upload, .btn-remove, .btn-proceed {
-	background-color: #185898;
-	color: white;
-	padding: 12px 25px;
-	border: none;
-	border-radius: 10px;
-	cursor: pointer;
-	font-size: 1rem;
-	transition: background-color 0.3s ease, transform 0.2s ease;
-	margin: 5px;
-}
-
-.btn-upload:hover,
-.btn-remove:hover,
-.btn-proceed:hover {
-	background-color: #5d8de3;
-	transform: scale(1.05);
-}
-
-.file-input-wrapper {
-	position: relative;
-	display: inline-block;
-	margin-bottom: 15px;
-	cursor: pointer;
-}
-
-.file-input-wrapper input[type=file] {
-	font-size: 100px;
-	position: absolute;
-	left: 0;
-	top: 0;
-	opacity: 0;
-	cursor: pointer;
-}
-
-.file-input-wrapper .btn-upload {
-	background-color: #185898;
-	color: white;
-	padding: 12px 25px;
-	border: none;
-	border-radius: 10px;
-	font-size: 1rem;
-	transition: background-color 0.3s ease, transform 0.2s ease;
-	display: inline-block;
-	cursor: pointer;
-}
-
-.file-input-wrapper:hover .btn-upload {
-	background-color: #5d8de3;
-	transform: scale(1.05);
 }
