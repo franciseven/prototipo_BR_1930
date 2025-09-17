@@ -89,7 +89,7 @@ main.user-page {
 
 .upload-area input[type="text"],
 .upload-area textarea {
-  width: 100%;
+  width: 98.8%;
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ddd;
@@ -176,6 +176,7 @@ main.user-page {
   border-radius: 8px;
   background-color: #fafafa;
   transition: border-color 0.2s, background-color 0.2s;
+  width: 98.5%;
 }
 
 .autores input[type="text"]:focus {
@@ -226,7 +227,7 @@ main.user-page {
 .tabela-container {
   max-height: 350px;
   overflow-y: auto;
-  display: block;
+  display: flex;
 }
 
 .tabela-container table {

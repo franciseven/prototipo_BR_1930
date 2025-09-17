@@ -52,13 +52,12 @@
 .tabela-container {
   max-height: 350px;
   overflow-y: auto;
-  display:flex;
+  display: flex;
   border: 1px solid #ccc;
 }
 
 .tabela-container table {
   width: 100%;
-  border-collapse: collapse;
 }
 
 .tabela-container th {
@@ -126,7 +125,7 @@
 }
 
 .visibilidade-select {
-  width: 100%;
+  width: 100.1%;
   padding: 10px 14px;
   font-size: 1rem;
   border: 1px solid #ccc;
@@ -365,7 +364,7 @@
 
 .upload-area input[type="text"],
 .upload-area textarea {
-  width: 100%;
+  width: 98.8%;
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ddd;
@@ -395,6 +394,7 @@
   border-radius: 8px;
   background-color: #fafafa;
   transition: border-color 0.2s, background-color 0.2s;
+  width: 98.5%;
 }
 
 .autores input[type="text"]:focus {
