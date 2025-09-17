@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-i18n="titulo">BR 1930 (Início)</title>
 
+  <link rel="stylesheet" href="./assets/css/filtros_navegacao.css">
   <link rel="stylesheet" href="./assets/css/footer.css">
   <link rel="stylesheet" href="./assets/css/header.css">
   <link rel="stylesheet" href="home.css">
@@ -32,6 +33,106 @@
         <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" data-i18n-placeholder="placeholder" />
         <button onclick="pesquisar()" data-i18n="pesquisa_btn">Pesquisar</button>
       </div>
+
+      <button id="toggleFiltrosBtn" class="btn-busca-avancada">+ Busca Avançada</button>
+
+      <div id="filtrosAvancados" class="filtros-avancados">
+      
+        <div class="navegar-box">
+          <div class="navegar-header">Filtros de Navegação</div>
+          <div class="navegar-tabs" id="tabs">
+            <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
+            <button class="tab" data-target="filtros-autor">Autores</button>
+            <button class="tab" data-target="filtros-data">Data de Publicação</button>
+            <button class="tab" data-target="filtros-tipo">Tipos</button>
+            <button class="tab" data-target="filtros-formato">Formatos</button>
+          </div>
+        </div>
+
+        <div class="filtro-controles">
+          <button id="adicionarFiltroBtn" class="btn-filtro">Adicionar Filtro</button>
+          <button id="removerFiltroBtn" class="btn-filtro">Remover Filtro</button>
+          <button id="finalizarFiltrosBtn" class="btn-filtro">Finalizar Seleção de Filtros</button>
+        </div>
+
+        <div class="filtros" id="filtros-recentes">
+          <p>Exibindo as submissões mais recentes.</p>
+        </div>
+
+        <div class="filtros" id="filtros-autor" style="display:none;">
+          <label>Filtrar por Autor</label>
+          <div class="filtros-inputs">
+            <select>
+              <option>(Escolha o autor)</option>
+              <option>Wilson Braga</option>
+            </select>
+            <input type="text" placeholder="Digite o nome do autor" />
+            <button>Pesquisar</button>
+          </div>
+        </div>
+
+        <div class="filtros" id="filtros-data" style="display:none;">
+          <label>Filtrar resultados por ano ou mês</label>
+          <div class="filtros-inputs">
+            <select>
+              <option>(Escolha o ano)</option>
+              <option>2025</option>
+              <option>2024</option>
+              <option>2023</option>
+            </select>
+
+            <select>
+              <option>(Escolha o mês)</option>
+              <option>Janeiro</option>
+              <option>Fevereiro</option>
+              <option>Março</option>
+              <option>Abril</option>
+              <option>Maio</option>
+              <option>Junho</option>
+              <option>Julho</option>
+              <option>Agosto</option>
+              <option>Setembro</option>
+              <option>Outubro</option>
+              <option>Novembro</option>
+              <option>Dezembro</option>
+            </select>
+
+            <select>
+              <option>(Escolha o dia)</option>
+              <option></option>
+            </select>
+            <button>Pesquisar</button>
+          </div>
+        </div>
+
+        <div class="filtros" id="filtros-tipo" style="display:none;">
+          <label>Filtrar por Tipo</label>
+          <div class="filtros-inputs">
+            <select>
+              <option>(Escolha o tipo)</option>
+              <option>Músicas</option>
+              <option>Hinos</option>
+              <option>Discursos</option>
+            </select>
+            <button>Pesquisar</button>
+          </div>
+        </div>
+
+        <div class="filtros" id="filtros-formato" style="display:none;">
+          <label>Filtrar por Formato</label>
+          <div class="filtros-inputs">
+            <select>
+              <option>(Escolha o formato)</option>
+              <option>.mp3</option>
+              <option>.wav</option>
+              <option>.flac</option>
+              <option>.ogg</option>
+            </select>
+            <button>Pesquisar</button>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <section class="browse-section">
@@ -98,6 +199,7 @@
 
   <script src="./assets/js/script.js"></script>
   <script src="./home.js"></script>
+  <script src="./colecoes/busca_principal.js"></script>
   <script src="./assets/js/pesquisar.js"></script>
 
 

@@ -35,31 +35,6 @@ html, body {
   color: #003366;
 }
 
-.filtro-controles {
-  display: flex;
-  gap: 15px;
-  margin: 25px 0;
-  flex-wrap: wrap;
-}
-
-.btn-filtro {
-  background-color: #003366;
-  color: #fff;
-  border: none;
-  padding: 12px 20px;
-  font-size: 1.05rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  font-family: 'Georgia', serif;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.btn-filtro:hover {
-  background-color: #002244;
-  transform: translateY(-2px);
-}
-
 .hero {
   max-width: 960px;
   margin: 60px auto;
@@ -190,6 +165,38 @@ html, body {
 .filtros button:hover {
   background-color: #5d8de3;
   transform: scale(1.03);
+}
+
+.filtro-controles {
+  display: flex;
+  gap: 15px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.btn-filtro {
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.05rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Georgia', serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-filtro:hover {
+  background-color: #002244;
+  transform: translateY(-2px);
+}
+
+.filtro-controles {
+	display: flex;
+	gap: 15px;
+	margin: 25px 0;
+	flex-wrap: wrap;
 }
 
 .resultado-info {

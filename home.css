@@ -70,7 +70,12 @@
 .search-section {
   padding: 40px 20px;
   background-color: #f2f4f8;
-  text-align: center;
+}
+
+.filtros-avancados {
+  width: auto;
+  align-items: center;
+  display: flex;
 }
 
 .caixa-pesquisa-geral {
@@ -111,6 +116,38 @@
 .caixa-pesquisa-geral button:hover {
   background-color: #74b9ff;
   transform: scale(1.03);
+}
+
+.btn-busca-avancada {
+  display: block; 
+  margin: 20px auto 0;
+  margin-top: 20px;
+  padding: 7px;
+  background-color: #003366;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 50;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  transform: translateX(-260px);
+  min-width: 180px;
+  max-width: 180px;
+  text-align: center;
+}
+
+.btn-busca-avancada:hover {
+  background-color: #002244;
+  transform: translateX(-260px) scale(1.03);
+}
+
+.filtros-avancados {
+  display: none;
+  margin-top: 25px;
+  padding: 50px 20px;
+  max-width: 915px;
+  margin: 0 auto;
 }
 
 .browse-section {

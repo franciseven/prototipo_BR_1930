@@ -89,3 +89,14 @@ heroImages.forEach(img => {
     tooltip.style.opacity = '0';
   });
 });
+
+document.getElementById("toggleFiltrosBtn").addEventListener("click", function() {
+  const filtros = document.getElementById("filtrosAvancados");
+  if (filtros.style.display === "none" || filtros.style.display === "") {
+    filtros.style.display = "block";
+    this.textContent = "－ Busca Avançada";
+  } else {
+    filtros.style.display = "none";
+    this.textContent = "＋ Busca Avançada";
+  }
+});
