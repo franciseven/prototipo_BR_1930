@@ -30,6 +30,13 @@
 	margin-top: 100px;
 }
 
+.big-logo figcaption {
+  font-size: 0.9em;
+  color: #000000;
+  margin-top: 8px;
+  text-align: left;
+}
+
 .post-header {
 	text-align: center;
 	margin-bottom: 30px;
