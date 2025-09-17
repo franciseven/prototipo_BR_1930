@@ -50,6 +50,18 @@
   color: #000000;
 }
 
+.autor-card p {
+  font-size: 0.95rem;
+  color: #333;
+  padding: 0 10px 15px;
+}
+
+.autor-card h2, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
 .card-link {
 	text-decoration: none;
 	background: #ffffff;
