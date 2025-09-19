@@ -16,185 +16,189 @@
 
   <div id="header"></div>
 
-    <section class="hero">
-      <div class="hero-images">
-        <img src="./imagens/capa_inicio/rebeldes_princesa.jpeg" alt="Imagem 2" data-desc="Movimento de 30 - Rebeldes em Princesa/PB">
-        <img src="./imagens/capa_inicio/visita_presidente_revolucionario.jpeg" alt="Imagem 3" data-desc="Visita do presidente revolucionário do norte do Brasil">
-        <img src="./imagens/capa_inicio/sepultura_tenente_genesio.jpg" alt="Imagem 4" data-desc="Movimento de 30 - Sepultura do Tenente Genésio e os Companheiros - Água Branca/PB.">
-        <img src="./imagens/capa_inicio/joao_pessoa.jpeg" alt="Imagem 1" data-desc="Retrato de João Pessoa">
+  <div class="overlay-conteudo">
+
+      <section class="hero">
+        <div class="hero-images">
+          <img src="./imagens/capa_inicio/rebeldes_princesa.jpeg" alt="Imagem 2" data-desc="Movimento de 30 - Rebeldes em Princesa/PB">
+          <img src="./imagens/capa_inicio/visita_presidente_revolucionario.jpeg" alt="Imagem 3" data-desc="Visita do presidente revolucionário do norte do Brasil">
+          <img src="./imagens/capa_inicio/sepultura_tenente_genesio.jpg" alt="Imagem 4" data-desc="Movimento de 30 - Sepultura do Tenente Genésio e os Companheiros - Água Branca/PB.">
+          <img src="./imagens/capa_inicio/joao_pessoa.jpeg" alt="Imagem 1" data-desc="Retrato de João Pessoa">
+        </div>
+      </section>
+
+      <h1 data-i18n="titulo" class="hero-title">BR 1930 - A Caminho do Centenário</h1>
+      <p class="hero-description">Disponibilização de acervos documentais impressos e digitais sobre o período de 1930.</p>
+
+      <section class="search-section">
+        <div class="caixa-pesquisa-geral">
+          <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" data-i18n-placeholder="placeholder" />
+          <button onclick="pesquisar()" data-i18n="pesquisa_btn">Pesquisar</button>
+        </div>
+
+        <button id="toggleFiltrosBtn" class="btn-busca-avancada">+ Busca Avançada</button>
+
+        <div id="filtrosAvancados" class="filtros-avancados">
+        
+          <div class="navegar-box">
+            <div class="navegar-header">Filtros de Navegação</div>
+            <div class="navegar-tabs" id="tabs">
+              <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
+              <button class="tab" data-target="filtros-autor">Autores</button>
+              <button class="tab" data-target="filtros-data">Data de Publicação</button>
+              <button class="tab" data-target="filtros-tipo">Tipos</button>
+              <button class="tab" data-target="filtros-formato">Formatos</button>
+            </div>
+          </div>
+
+          <div class="filtro-controles">
+            <button id="adicionarFiltroBtn" class="btn-filtro">Adicionar Filtro</button>
+            <button id="removerFiltroBtn" class="btn-filtro">Remover Filtro</button>
+            <button id="finalizarFiltrosBtn" class="btn-filtro">Finalizar Seleção de Filtros</button>
+          </div>
+
+          <div class="filtros" id="filtros-recentes">
+            <p>Exibindo as submissões mais recentes.</p>
+          </div>
+
+          <div class="filtros" id="filtros-autor" style="display:none;">
+            <label>Filtrar por Autor</label>
+            <div class="filtros-inputs">
+              <select>
+                <option>(Escolha o autor)</option>
+                <option>Wilson Braga</option>
+              </select>
+              <input type="text" placeholder="Digite o nome do autor" />
+              <button>Pesquisar</button>
+            </div>
+          </div>
+
+          <div class="filtros" id="filtros-data" style="display:none;">
+            <label>Filtrar resultados por ano ou mês</label>
+            <div class="filtros-inputs">
+              <select>
+                <option>(Escolha o ano)</option>
+                <option>2025</option>
+                <option>2024</option>
+                <option>2023</option>
+              </select>
+
+              <select>
+                <option>(Escolha o mês)</option>
+                <option>Janeiro</option>
+                <option>Fevereiro</option>
+                <option>Março</option>
+                <option>Abril</option>
+                <option>Maio</option>
+                <option>Junho</option>
+                <option>Julho</option>
+                <option>Agosto</option>
+                <option>Setembro</option>
+                <option>Outubro</option>
+                <option>Novembro</option>
+                <option>Dezembro</option>
+              </select>
+
+              <select>
+                <option>(Escolha o dia)</option>
+                <option></option>
+              </select>
+              <button>Pesquisar</button>
+            </div>
+          </div>
+
+          <div class="filtros" id="filtros-tipo" style="display:none;">
+            <label>Filtrar por Tipo</label>
+            <div class="filtros-inputs">
+              <select>
+                <option>(Escolha o tipo)</option>
+                <option>Músicas</option>
+                <option>Hinos</option>
+                <option>Discursos</option>
+              </select>
+              <button>Pesquisar</button>
+            </div>
+          </div>
+
+          <div class="filtros" id="filtros-formato" style="display:none;">
+            <label>Filtrar por Formato</label>
+            <div class="filtros-inputs">
+              <select>
+                <option>(Escolha o formato)</option>
+                <option>.mp3</option>
+                <option>.wav</option>
+                <option>.flac</option>
+                <option>.ogg</option>
+              </select>
+              <button>Pesquisar</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="browse-section">
+
+        <a href="./colecoes/livros/index.html" class="browse-box-book">
+          <div class="icon">📚</div>
+          <h3>Livros</h3>
+          <p>Livros relacionados à década de 1930.</p>
+        </a>
+
+        <a href="./colecoes/periodicos/index.html" class="browse-box">
+          <h3>Periódicos</h3>
+          <p>Revistas e matérias jornalísticas sobre a década de 1930.</p>
+        </a>
+        
+        <a href="./colecoes/dissertacoes_e_teses/index.html" class="browse-box"><h3>Dissertações e Teses</h3><p>Informações sobre a década de 1930 através de dissertações e teses.</p></a>
+        
+        <a href="./colecoes/documentos/index.html" class="browse-box">
+          <h3>Documentos</h3>
+          <p>Documentos textuais sobre a trajetória de José Américo de Almeida no ano de 1930.</p>
+        </a>
+
+        <a href="./colecoes/entrevistas/index.html" class="browse-box">
+          <h3>Entrevistas</h3>
+          <p>Entrevistas de personagens e pesquisadores da década de 1930.</p>
+        </a>
+
+        <a href="./colecoes/imagens/index.html" class="browse-box">
+          <h3>Imagens</h3>
+          <p>Registros visuais sobre eventos sucedidos no descênio de 1930.</p>
+        </a>
+
+        <a href="./colecoes/audios/index.html" class="browse-box">
+          <h3>Áudios</h3>
+          <p>Gravações sobre os acontecimentos históricos ocorridos na década de 1930.</p>
+        </a>
+
+        <a href="./colecoes/videos/index.html" class="browse-box">
+          <h3>Vídeos</h3>
+          <p>Registros audiovisuais sobre a década de 1930.</p>
+        </a>
+
+        <a href="./colecoes/territorio_isabel/index.html" class="browse-box">
+          <h3>Território Livre de Princesa Isabel</h3>
+          <p>Documentos relativos ao Coronel José Pereira Lima e a "Revolta de Princesa"</p>
+        </a>
+
+        <a href="./colecoes/nossas_producoes/index.html" class="browse-box close">
+          <h3>Nossas Produções</h3>
+          <p>ESTA SEÇÃO ENCONTRA-SE INDISPONÍVEL NO MOMENTO.</p>
+        </a>
+        
+      </section>
+
+      <div id="popup-colab">
+        <div class="popup-content">
+          <button class="close-btn" onclick="document.getElementById('popup-colab').style.display='none'">x</button>
+          <p id="popup-text">Quer colaborar com a plataforma? Faça login para aproveitar novas funcionalidades como o envio de arquivos. Caso queira ajudar ainda mais, preencha o nosso formulário!</p>
+          <a href="https://forms.gle/yoC3z1ri5tgC8UzGA" target="_blank" id="popup-link">Acesse o formulário aqui</a>
+        </div>
       </div>
-    </section>
 
-    <h1 data-i18n="titulo" class="hero-title">BR 1930 - A Caminho do Centenário</h1>
-    <p class="hero-description">Disponibilização de acervos documentais impressos e digitais sobre o período de 1930.</p>
-
-    <section class="search-section">
-      <div class="caixa-pesquisa-geral">
-        <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" data-i18n-placeholder="placeholder" />
-        <button onclick="pesquisar()" data-i18n="pesquisa_btn">Pesquisar</button>
-      </div>
-
-      <button id="toggleFiltrosBtn" class="btn-busca-avancada">+ Busca Avançada</button>
-
-      <div id="filtrosAvancados" class="filtros-avancados">
-      
-        <div class="navegar-box">
-          <div class="navegar-header">Filtros de Navegação</div>
-          <div class="navegar-tabs" id="tabs">
-            <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
-            <button class="tab" data-target="filtros-autor">Autores</button>
-            <button class="tab" data-target="filtros-data">Data de Publicação</button>
-            <button class="tab" data-target="filtros-tipo">Tipos</button>
-            <button class="tab" data-target="filtros-formato">Formatos</button>
-          </div>
-        </div>
-
-        <div class="filtro-controles">
-          <button id="adicionarFiltroBtn" class="btn-filtro">Adicionar Filtro</button>
-          <button id="removerFiltroBtn" class="btn-filtro">Remover Filtro</button>
-          <button id="finalizarFiltrosBtn" class="btn-filtro">Finalizar Seleção de Filtros</button>
-        </div>
-
-        <div class="filtros" id="filtros-recentes">
-          <p>Exibindo as submissões mais recentes.</p>
-        </div>
-
-        <div class="filtros" id="filtros-autor" style="display:none;">
-          <label>Filtrar por Autor</label>
-          <div class="filtros-inputs">
-            <select>
-              <option>(Escolha o autor)</option>
-              <option>Wilson Braga</option>
-            </select>
-            <input type="text" placeholder="Digite o nome do autor" />
-            <button>Pesquisar</button>
-          </div>
-        </div>
-
-        <div class="filtros" id="filtros-data" style="display:none;">
-          <label>Filtrar resultados por ano ou mês</label>
-          <div class="filtros-inputs">
-            <select>
-              <option>(Escolha o ano)</option>
-              <option>2025</option>
-              <option>2024</option>
-              <option>2023</option>
-            </select>
-
-            <select>
-              <option>(Escolha o mês)</option>
-              <option>Janeiro</option>
-              <option>Fevereiro</option>
-              <option>Março</option>
-              <option>Abril</option>
-              <option>Maio</option>
-              <option>Junho</option>
-              <option>Julho</option>
-              <option>Agosto</option>
-              <option>Setembro</option>
-              <option>Outubro</option>
-              <option>Novembro</option>
-              <option>Dezembro</option>
-            </select>
-
-            <select>
-              <option>(Escolha o dia)</option>
-              <option></option>
-            </select>
-            <button>Pesquisar</button>
-          </div>
-        </div>
-
-        <div class="filtros" id="filtros-tipo" style="display:none;">
-          <label>Filtrar por Tipo</label>
-          <div class="filtros-inputs">
-            <select>
-              <option>(Escolha o tipo)</option>
-              <option>Músicas</option>
-              <option>Hinos</option>
-              <option>Discursos</option>
-            </select>
-            <button>Pesquisar</button>
-          </div>
-        </div>
-
-        <div class="filtros" id="filtros-formato" style="display:none;">
-          <label>Filtrar por Formato</label>
-          <div class="filtros-inputs">
-            <select>
-              <option>(Escolha o formato)</option>
-              <option>.mp3</option>
-              <option>.wav</option>
-              <option>.flac</option>
-              <option>.ogg</option>
-            </select>
-            <button>Pesquisar</button>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <section class="browse-section">
-
-      <a href="./colecoes/livros/index.html" class="browse-box-book">
-        <div class="icon">📚</div>
-        <h3>Livros</h3>
-        <p>Livros relacionados à década de 1930.</p>
-      </a>
-
-      <a href="./colecoes/periodicos/index.html" class="browse-box">
-        <h3>Periódicos</h3>
-        <p>Revistas e matérias jornalísticas sobre a década de 1930.</p>
-      </a>
-      
-      <a href="./colecoes/dissertacoes_e_teses/index.html" class="browse-box"><h3>Dissertações e Teses</h3><p>Informações sobre a década de 1930 através de dissertações e teses.</p></a>
-      
-      <a href="./colecoes/documentos/index.html" class="browse-box">
-        <h3>Documentos</h3>
-        <p>Documentos textuais sobre a trajetória de José Américo de Almeida no ano de 1930.</p>
-      </a>
-
-      <a href="./colecoes/entrevistas/index.html" class="browse-box">
-        <h3>Entrevistas</h3>
-        <p>Entrevistas de personagens e pesquisadores da década de 1930.</p>
-      </a>
-
-      <a href="./colecoes/imagens/index.html" class="browse-box">
-        <h3>Imagens</h3>
-        <p>Registros visuais sobre eventos sucedidos no descênio de 1930.</p>
-      </a>
-
-      <a href="./colecoes/audios/index.html" class="browse-box">
-        <h3>Áudios</h3>
-        <p>Gravações sobre os acontecimentos históricos ocorridos na década de 1930.</p>
-      </a>
-
-      <a href="./colecoes/videos/index.html" class="browse-box">
-        <h3>Vídeos</h3>
-        <p>Registros audiovisuais sobre a década de 1930.</p>
-      </a>
-
-      <a href="./colecoes/territorio_isabel/index.html" class="browse-box">
-        <h3>Território Livre de Princesa Isabel</h3>
-        <p>Documentos relativos ao Coronel José Pereira Lima e a "Revolta de Princesa"</p>
-      </a>
-
-      <a href="./colecoes/nossas_producoes/index.html" class="browse-box close">
-        <h3>Nossas Produções</h3>
-        <p>ESTA SEÇÃO ENCONTRA-SE INDISPONÍVEL NO MOMENTO.</p>
-      </a>
-      
-    </section>
-
-    <div id="popup-colab">
-      <div class="popup-content">
-        <button class="close-btn" onclick="document.getElementById('popup-colab').style.display='none'">x</button>
-        <p id="popup-text">Quer colaborar com a plataforma? Faça login para aproveitar novas funcionalidades como o envio de arquivos. Caso queira ajudar ainda mais, preencha o nosso formulário!</p>
-        <a href="https://forms.gle/yoC3z1ri5tgC8UzGA" target="_blank" id="popup-link">Acesse o formulário aqui</a>
-      </div>
     </div>
-
+    
   <div id="footer"></div>
 
   <script src="./assets/js/script.js"></script>

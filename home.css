@@ -1,3 +1,17 @@
+.html, body { 
+	background-image: url('../imagens/background/old-parchment\ \(1\).jpg'); 
+	background-size: cover; 
+	background-position: center; 
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+}
+
+.overlay-conteudo { 
+	background-color: rgba(255, 255, 255, 0.7); 
+	flex: 1; 
+	padding: 40px 20px; 
+}
+
 .hero {
   background: linear-gradient(to right, #f0f4f8, #e3ecf8);
   height: 42vh;
@@ -69,7 +83,7 @@
 
 .search-section {
   padding: 40px 20px;
-  background-color: #f2f4f8;
+  
 }
 
 .filtros-avancados {
@@ -93,7 +107,6 @@
   font-size: 1rem;
   border-radius: 10px;
   border: 1px solid #ccd6e6;
-  background-color: #ffffff;
   transition: border 0.2s ease;
 }
 
@@ -157,7 +170,6 @@
   padding: 50px 20px;
   max-width: 1400px;
   margin: 0 auto;
-  background-color: #fafafa;
 }
 
 .browse-box {
