@@ -17,7 +17,7 @@
 }
 
 .profile-box h2 {
-	color: #1E90FF;
+	color: #185898;
 	margin-bottom: 10px;
 	font-size: 1.8rem;
 }
@@ -33,7 +33,7 @@
 	height: 160px;
 	border-radius: 50%;
 	object-fit: cover;
-	border: 4px solid #1E90FF;
+	border: 4px solid #185898;
 	margin-bottom: 20px;
 }
 

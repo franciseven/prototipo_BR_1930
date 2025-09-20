@@ -28,7 +28,22 @@ html, body {
 .text-container h1 {
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: #1E90FF;
+  color: #185898;
+}
+
+.text-container h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #185898;
+  margin: 16px auto 0px auto;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.text-container h1:hover::after {
+  width: 515px;
 }
 
 .text-grid {
@@ -120,7 +135,7 @@ html, body {
 }
 
 .author-name:hover {
-  color: #007bff;
+  color: #5d8de3;
   cursor: pointer;
 }
 

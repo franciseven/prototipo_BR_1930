@@ -21,7 +21,7 @@
 .manual-container h1 {
 	font-size: 3.2rem;
 	margin-bottom: 30px;
-	color: #1E90FF;
+	color: #185898;
 	text-align: center;
 	border-bottom: 2px solid transparent;
 	padding-bottom: 15px;
@@ -32,7 +32,7 @@
   display: block;
   width: 100px;
   height: 4px;
-  background-color: #4682B4;
+  background-color: #185898;
   margin: 16px auto 0px auto;
   border-radius: 2px;
   transition: width 0.3s ease;

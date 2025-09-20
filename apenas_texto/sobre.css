@@ -32,7 +32,7 @@
   display: block;
   width: 100px;
   height: 4px;
-  background-color: #4682B4;
+  background-color: #185898;
   margin: 16px auto 0 auto;
   border-radius: 2px;
   transition: width 0.3s ease;
@@ -57,7 +57,7 @@
 
 .team-section h1 {
 	font-size: 3rem;
-	color: #1E90FF;
+	color: #185898;
 	margin-bottom: 50px;
 	text-align: center;
 	text-transform: uppercase;
@@ -69,7 +69,7 @@
   display: block;
   width: 100px;
   height: 4px;
-  background-color: #4682B4;
+  background-color: #185898;
   margin: 16px auto 0px auto;
   border-radius: 2px;
   transition: width 0.3s ease;
@@ -148,7 +148,7 @@
 	margin-bottom: 50px;
 	margin: 100px 0 50px 0;
   text-transform: uppercase;
-  color: #1E90FF;
+  color: #185898;
 }
 
 .other-members h2::after {
@@ -156,7 +156,7 @@
   display: block;
   width: 100px;
   height: 4px;
-  background-color: #4682B4;
+  background-color: #185898;
   margin: 16px auto 0 auto;
   border-radius: 2px;
   transition: width 0.3s ease;
