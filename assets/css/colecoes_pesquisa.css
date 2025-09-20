@@ -30,7 +30,7 @@ html, body {
 .section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  border-bottom: 3px solid #003366;
+  border-bottom: 3px solid #185898;
   padding-bottom: 6px;
   color: #003366;
 }
@@ -94,12 +94,12 @@ html, body {
 }
 
 .navegar-box {
-  border: 1px solid #003366;
+  border: 1px solid #185898;
   margin-bottom: 30px;
 }
 
 .navegar-header {
-  background-color: #003366;
+  background-color: #185898;
   color: #fff;
   font-size: 1.6rem;
   padding: 14px;
@@ -123,7 +123,7 @@ html, body {
 }
 
 .navegar-tabs .tab.active {
-  background-color: #003366;
+  background-color: #185898;
   color: #fff;
   font-weight: bold;
 }
@@ -153,7 +153,7 @@ html, body {
 }
 
 .filtros button {
-  background-color: #003366;
+  background-color: #185898;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -175,7 +175,7 @@ html, body {
 }
 
 .btn-filtro {
-  background-color: #003366;
+  background-color: #185898;
   color: #fff;
   border: none;
   padding: 12px 20px;
@@ -188,7 +188,7 @@ html, body {
 }
 
 .btn-filtro:hover {
-  background-color: #002244;
+  background-color: #5d8de3;
   transform: translateY(-2px);
 }
 
@@ -234,12 +234,12 @@ html, body {
 .item-info h3 {
   font-size: 1.4rem;
   margin: 0 0 8px;
-  color: #003366;
+  color: #185898;
   text-transform: uppercase;
 }
 
 .item-info h3:hover {
-  color: #1E90FF;
+  color: #5d8de3;
 }
 
 .item-info .autor {
@@ -254,7 +254,7 @@ html, body {
 
 .item-info .descricao {
   font-size: 1.05rem;
-  color: #333;
+  color: #000000;
   margin-bottom: 8px;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -270,7 +270,7 @@ html, body {
 
 .item-info a {
   font-size: 1.05rem;
-  color: #003366;
+  color: #185898;
   text-decoration: none;
   cursor: pointer;
 }
@@ -281,7 +281,7 @@ html, body {
 
 .item-info .item-tag {
   display: inline-block;
-  background-color: #003366;
+  background-color: #185898;
   color: #fff;
   font-size: 0.85rem;
   padding: 4px 8px;
@@ -308,6 +308,6 @@ html, body {
 
 .paginacao a.active,
 .paginacao a:hover {
-  background-color: #003366;
+  background-color: #185898;
   color: #fff;
 }

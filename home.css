@@ -136,7 +136,7 @@
   margin: 20px auto 0;
   margin-top: 20px;
   padding: 7px;
-  background-color: #003366;
+  background-color: #185898;
   color: #fff;
   font-size: 1rem;
   font-weight: 50;
@@ -144,15 +144,14 @@
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  transform: translateX(-260px);
   min-width: 180px;
   max-width: 180px;
   text-align: center;
 }
 
 .btn-busca-avancada:hover {
-  background-color: #002244;
-  transform: translateX(-260px) scale(1.03);
+  background-color: #5d8de3;
+  transform: scale(1.03);
 }
 
 .filtros-avancados {

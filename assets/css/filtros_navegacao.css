@@ -1,10 +1,10 @@
 .navegar-box {
-  border: 1px solid #003366;
+  border: 1px solid #185898;
   margin-bottom: 30px;
 }
 
 .navegar-header {
-  background-color: #003366;
+  background-color: #185898;
   color: #fff;
   font-size: 1.6rem;
   padding: 14px;
@@ -28,7 +28,7 @@
 }
 
 .navegar-tabs .tab.active {
-  background-color: #003366;
+  background-color: #185898;
   color: #fff;
   font-weight: bold;
 }
@@ -58,7 +58,7 @@
 }
 
 .filtros button {
-  background-color: #003366;
+  background-color: #185898;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -80,7 +80,7 @@
 }
 
 .btn-filtro {
-  background-color: #003366;
+  background-color: #185898;
   color: #fff;
   border: none;
   padding: 12px 20px;
@@ -93,7 +93,7 @@
 }
 
 .btn-filtro:hover {
-  background-color: #002244;
+  background-color: #5d8de3;
   transform: translateY(-2px);
 }
 
