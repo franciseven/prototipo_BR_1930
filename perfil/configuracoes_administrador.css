@@ -9,9 +9,9 @@
 .section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  border-bottom: 3px solid #1E90FF;
+  border-bottom: 3px solid #185898;
   padding-bottom: 6px;
-  color: #1E90FF;
+  color: #185898;
 }
 
 .custom-label {
@@ -62,15 +62,16 @@ button {
 
 button:hover {
   background-color: #5d8de3;
+  transform: scale(1.03);
 }
 
 .file-upload {
-  border: 2px dashed #1E90FF;
+  border: 2px dashed #185898;
   padding: 40px;
   text-align: center;
   border-radius: 12px;
   cursor: pointer;
-  color: #1E90FF;
+  color: #185898;
   font-size: 1.1rem;
   gap: 10px;
   display: flex;

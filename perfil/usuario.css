@@ -44,7 +44,7 @@ main.user-page {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #1E90FF;
+  border: 4px solid #185898;
 }
 
 .user-header h2 {
@@ -82,9 +82,9 @@ main.user-page {
 .section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  border-bottom: 3px solid #1E90FF;
+  border-bottom: 3px solid #185898;
   padding-bottom: 6px;
-  color: #1E90FF;
+  color: #185898;
 }
 
 .upload-area input[type="text"],
@@ -120,16 +120,16 @@ main.user-page {
 
 .checkbox-group input[type="checkbox"] {
   transform: scale(1.2);
-  accent-color: #1E90FF;
+  accent-color: #185898;
 }
 
 .file-upload {
-  border: 2px dashed #1E90FF;
+  border: 2px dashed #185898;
   padding: 40px;
   text-align: center;
   border-radius: 12px;
   cursor: pointer;
-  color: #1E90FF;
+  color: #185898;
   font-size: 1.1rem;
 }
 
@@ -180,7 +180,7 @@ main.user-page {
 }
 
 .autores input[type="text"]:focus {
-  border-color: #1E90FF;
+  border-color: #185898;
   outline: none;
   background-color: #fff;
 }
@@ -357,7 +357,7 @@ main.user-page {
 
 .stat-box strong {
   font-size: 1.7rem;
-  color: #1E90FF;
+  color: #185898;
   display: block;
   margin-top: 10px;
 }
@@ -407,7 +407,8 @@ table td button:hover {
 .colecoes h3 {
   margin-bottom: 20px;
   font-size: 1.7rem;
-  color: #1E90FF;
+  color: #185898;
+  border-bottom: 3px solid #185898;
 }
 
 .favoritos ul,
@@ -486,10 +487,8 @@ table td button:hover {
 }
 
 .tag:hover {
-  background-color: #0000EE;
+  background-color: #1e90ff;
   color: white;
-  border-color: #0000EE;
-  transform: scale(1.03);
 }
 
 .colecoes {
@@ -505,7 +504,7 @@ table td button:hover {
   margin-bottom: 20px;
   font-size: 1.7rem;
   font-weight: bold;
-  color: #1E90FF;
+  color: #185898;
 }
 
 .colecoes ul {
@@ -537,7 +536,7 @@ table td button:hover {
 
 .colecoes input[type="text"]:focus,
 .colecao input[type="text"]:focus {
-  border-color: #1E90FF;
+  border-color: #185898;
   outline: none;
   background-color: #fff;
 }
@@ -571,7 +570,7 @@ table td button:hover {
 
 .colecao h4 {
   margin-bottom: 10px;
-  color: #1E90FF;
+  color: #185898;
   font-size: 1.3rem;
 }
 

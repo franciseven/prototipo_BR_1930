@@ -5,9 +5,9 @@
 .section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  border-bottom: 3px solid #1E90FF;
+  border-bottom: 3px solid #185898;
   padding-bottom: 6px;
-  color: #1E90FF;
+  color: #185898;
 }
 
 .container {
@@ -39,7 +39,7 @@
 .card h3 {
   margin: 0;
   font-size: 1.5rem;
-  color: #1E90FF;
+  color: #185898;
 }
 
 .card p {
@@ -111,16 +111,16 @@
 
 .checkbox-group input[type="checkbox"] {
   transform: scale(1.03);
-  accent-color: #1E90FF;
+  accent-color: #185898;
 }
 
 .file-upload {
-  border: 2px dashed #1E90FF;
+  border: 2px dashed #185898;
   padding: 40px;
   text-align: center;
   border-radius: 12px;
   cursor: pointer;
-  color: #1E90FF;
+  color: #185898;
   font-size: 1.1rem;
 }
 
@@ -160,7 +160,7 @@
 
 .graph-bar {
   height: 24px;
-  background: #1E90FF;
+  background: #185898;
   margin: 6px 0;
   border-radius: 4px;
   color: #fff;
@@ -215,7 +215,7 @@
   height: 110px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #1E90FF;
+  border: 3px solid #185898;
 }
 
 .user-info h2 {
@@ -262,56 +262,56 @@
 }
 
 .btn-profile-style:not(.approveBtn):not(.rejectBtn):not(.viewBtn):not(.downloadBtn):not(.deleteBtn) {
-  background-color: #6c757d;
+  background-color: #6c8cd5;
 }
 
 .btn-profile-style:not(.approveBtn):not(.rejectBtn):not(.viewBtn):not(.downloadBtn):not(.deleteBtn):hover {
-  background-color: #5a6268;
+  background-color: #5a7bc2;
   transform: scale(1.03);
 }
 
 .approveBtn {
-  background-color: #218838;
+  background-color: #2e9aa8;
 }
 
 .approveBtn:hover {
-  background-color: #28a745;
+  background-color: #3a93bf;
   transform: scale(1.03);
 }
 
 .rejectBtn {
-  background-color: #c82333;
+  background-color: #344b8f;
 }
 
 .rejectBtn:hover {
-  background-color: #dc3545;
+  background-color: #3f5ba9;
   transform: scale(1.03);
 }
 
 .deleteBtn {
-  background-color: #c82333;
+  background-color: #344b8f;
 }
 
 .deleteBtn:hover {
-  background-color: #dc3545;
+  background-color: #3f5ba9;
   transform: scale(1.03);
 }
 
 .viewBtn {
-  background-color: #185898;
+  background-color: #155bb0;
 }
 
 .viewBtn:hover {
-  background-color: #5d8de3;
+  background-color: #1d6fd1;
   transform: scale(1.03);
 }
 
 .downloadBtn {
-  background-color: #7f0ba2;
+  background-color: #1f7db0;
 }
 
 .downloadBtn:hover {
-  background-color: #a81bd3;
+  background-color: #2696d1;
   transform: scale(1.03);
 }
 
@@ -398,7 +398,7 @@
 }
 
 .autores input[type="text"]:focus {
-  border-color: #1E90FF;
+  border-color: #185898;
   outline: none;
   background-color: #fff;
 }

@@ -44,11 +44,6 @@
 	transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.code-input:focus {
-	border-color: #1e90ff;
-	box-shadow: 0 0 8px rgba(30, 144, 255, 0.4);
-}
-
 .btn-verify {
 	background-color: #185898;
 	color: #fff;

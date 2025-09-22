@@ -20,15 +20,15 @@
 }
 
 .section p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 
 .section h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 20px;
   padding-bottom: 6px;
-  color: #1E90FF;
+  color: #185898;
   text-align: center;
 }
 
@@ -37,12 +37,12 @@
   display: block;
   width: 100px;
   height: 4px;
-  background-color: #4682B4;
+  background-color: #185898;
   margin: 16px auto 0px auto;
   border-radius: 2px;
   transition: width 0.3s ease;
 }
 
 .section h2:hover::after {
-  width: 375px;
+  width: 565px;
 }

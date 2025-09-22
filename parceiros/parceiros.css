@@ -18,9 +18,9 @@
 .partner-header h2 {
   font-size: 3rem;
   text-transform: uppercase;
-  color: #1E90FF;
+  color: #185898;
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   text-align: center;
   font-weight: 700;
   letter-spacing: 3px;
@@ -35,7 +35,7 @@
   display: block;
   width: 100px;
   height: 4px;
-  background-color: #4682B4;
+  background-color: #185898;
   margin: 16px auto 0 auto;
   border-radius: 2px;
   transition: width 0.3s ease;
@@ -47,10 +47,10 @@
 
 .partner-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, 400px);
   row-gap: 100px;
   column-gap: 20px;
-  align-items: stretch;
+  justify-content: center;
 }
 
 .partner-card {

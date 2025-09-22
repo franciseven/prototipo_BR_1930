@@ -47,6 +47,7 @@
 
 .login-btn:hover:enabled {
 	background-color: #5d8de3;
+	transform: scale(1.03);
 }
 
 #termos-texto {

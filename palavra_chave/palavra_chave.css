@@ -21,9 +21,9 @@ html, body {
 .section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  border-bottom: 3px solid #003366;
+  border-bottom: 3px solid #185898;
   padding-bottom: 6px;
-  color: #003366;
+  color: #185898;
 }
 
 .filtro-controles {
@@ -34,7 +34,7 @@ html, body {
 }
 
 .btn-filtro {
-  background-color: #003366;
+  background-color: #185898;
   color: #fff;
   border: none;
   padding: 12px 20px;
@@ -47,7 +47,7 @@ html, body {
 }
 
 .btn-filtro:hover {
-  background-color: #002244;
+  background-color: #5d8de3;
   transform: translateY(-2px);
 }
 
@@ -87,7 +87,6 @@ html, body {
 .hero h1:hover {
   background-color: #1e90ff;
   color: white;
-  border-color: #1e90ff;
 }
 
 .hero p {
@@ -119,13 +118,18 @@ html, body {
 .caixa-pesquisa-geral button {
   margin-left: 10px;
   padding: 12px 20px;
-  background-color: #0d6efd;
+  background-color: #185898;
   color: white;
   font-size: 1rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.caixa-pesquisa-geral button:hover {
+  background-color: #5d8de3;
+  transform: scale(1.03);
 }
 
 .resultado-info {
@@ -144,6 +148,7 @@ html, body {
   display: flex;
   border-bottom: 1px solid #ddd;
   padding-bottom: 20px;
+  background-color: #ffffffac;
 }
 
 .item img {
@@ -162,7 +167,12 @@ html, body {
 .item-info h3 {
   font-size: 1.4rem;
   margin: 0 0 8px;
-  color: #003366;
+  color: #185898;
+  text-transform: uppercase;
+}
+
+.item-info h3:hover {
+  color: #5d8de3;
 }
 
 .item-info .autor {
@@ -183,6 +193,7 @@ html, body {
   overflow-wrap: break-word;
   max-width: 100%;
   text-align: justify;
+  margin-right: 10px;
 }
 
 .item-info .descricao.collapsed {
@@ -192,7 +203,7 @@ html, body {
 
 .item-info a {
   font-size: 1.05rem;
-  color: #003366;
+  color: #185898;
   text-decoration: none;
   cursor: pointer;
 }
@@ -203,7 +214,7 @@ html, body {
 
 .item-info .item-tag {
   display: inline-block;
-  background-color: #003366;
+  background-color: #185898;
   color: #fff;
   font-size: 0.85rem;
   padding: 4px 8px;
@@ -212,6 +223,7 @@ html, body {
 }
 
 .paginacao {
+  margin-top: auto;
   display: flex;
   justify-content: center;
   gap: 6px;
@@ -219,8 +231,9 @@ html, body {
 
 .paginacao a {
   padding: 8px 14px;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   color: #003366;
+  background-color: #ffffffb5;
   text-decoration: none;
   font-size: 1.05rem;
   border-radius: 5px;
@@ -228,6 +241,6 @@ html, body {
 
 .paginacao a.active,
 .paginacao a:hover {
-  background-color: #003366;
+  background-color: #185898;
   color: #fff;
 }
