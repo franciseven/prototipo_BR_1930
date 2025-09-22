@@ -141,9 +141,8 @@
 }
 
 .tag:hover {
-	background-color: #0000EE;
+	background-color: #1e90ff;
 	color: white;
-	border-color: #0000EE;
 }
 
 #overlay {
