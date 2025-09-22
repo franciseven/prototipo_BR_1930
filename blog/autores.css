@@ -3,7 +3,6 @@
   margin: 0 auto;
   padding: 50px 20px;
   text-align: center;
-  font-family: 'Arial', sans-serif;
   color: #000;
   flex: 1
 }
@@ -12,6 +11,7 @@
   font-size: 3rem;
   margin-bottom: 40px;
   color: #185898;
+  text-transform: uppercase;
 }
 
 .autores-container h1::after {
@@ -26,7 +26,7 @@
 }
 
 .autores-container h1:hover::after {
-	width: 210px;
+	width: 270px;
 }
 
 .cards-container {
@@ -44,6 +44,8 @@
   padding: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .autor-card:hover {
@@ -88,6 +90,7 @@
 	border: 2px solid #111827;
 	box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 	transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: auto;
 }
 
 .card-link:hover {
