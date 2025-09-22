@@ -25,6 +25,7 @@
 	text-align: center;
 	border-bottom: 2px solid transparent;
 	padding-bottom: 15px;
+	text-transform: uppercase;
 }
 
 .manual-container h1::after {
