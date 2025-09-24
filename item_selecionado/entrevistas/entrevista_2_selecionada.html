@@ -56,9 +56,21 @@
         Arquivo protegido por direitos autorais. Qualquer uso sem autorização levará a pessoa a ser julgada de acordo com as leis cabíveis.
       </p>
       <div class="overlay-buttons">
-        <a href="caminho/do/arquivo.pdf" download>Acessar Agora</a>
+        <a href="caminho/do/arquivo.pdf" 
+          download class="acessarAgora" 
+          data-restricao="idade">
+          Acessar Agora
+        </a>
         <button class="close-overlay">Fechar</button>
       </div>
+    </div>
+  </div>
+
+  <div id="restritoOverlay" class="restrito-overlay">
+    <div class="restrito-box">
+      <h2>Restrito</h2>
+      <p>Conteúdo proibido para menores de 18 anos.</p>
+      <button id="fecharAviso">Fechar</button>
     </div>
   </div>
 
