@@ -38,7 +38,7 @@
   width: calc(100% / 3);
   height: 100%;
   object-fit: contain;
-  border-right: 5px solid #000;
+  border-right: 10px solid #000;
   box-sizing: border-box;
 }
 
