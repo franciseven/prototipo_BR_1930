@@ -8,38 +8,51 @@
 
 .overlay-conteudo { 
 	background-color: rgba(255, 255, 255, 0.7); 
-	flex: 1; 
-	padding: 40px 20px; 
+	flex: 1;
 }
 
 .hero {
   background: linear-gradient(to right, #f0f4f8, #e3ecf8);
-  height: 42vh;
+  height: 50vh;
   width: 100%;
   overflow: hidden;
 }
 
-.hero-images {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
+.slideshow {
+  position: relative;
+  width: 100%;
   height: 100%;
-  overflow: hidden;
   border: 10px solid #000000;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
-.hero-images img {
-  flex: 1 1 auto;
-  width: 100%;
+.slide-track {
+  display: flex;
+  width: max-content;
   height: 100%;
-  object-fit: cover;
-  box-sizing: border-box;
-  border-right: 8px solid #000000;
+  animation: scrollSlide 200s linear infinite;
 }
 
-.hero-images img:last-child {
-  border-right: none;
+.slide-track img {
+  width: calc(100% / 3);
+  height: 100%;
+  object-fit: contain;
+  border-right: 5px solid #000;
+  box-sizing: border-box;
+}
+
+.slide-show:hover .slide-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollSlide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .tooltip {
