@@ -55,7 +55,6 @@ select {
 	border-radius: 6px;
 	font-size: clamp(14px, 1vw, 18px);
 	box-sizing: border-box;
-	font-family: 'Georgia', serif;
 }
 
 .custom-label {

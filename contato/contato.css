@@ -36,7 +36,6 @@
 	margin-bottom: 15px;
 	border: 1px solid #ccc;
 	border-radius: 15px;
-	font-family: 'Georgia', serif;
 	font-size: 1.1rem;
 	box-sizing: border-box;
 }
@@ -62,7 +61,6 @@
 
 .custom-label {
 	display: block;
-	font-family: 'Georgia', serif;
 	font-weight: 600;
 	font-size: 1rem;
 	margin-bottom: 0.4em;
