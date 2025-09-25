@@ -12,8 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const linkForm = "https://forms.com";
 
+  let idade = prompt("Por favor, informe sua idade:");
+
   function pedirIdade() {
-    let idade = prompt("Por favor, informe sua idade:");
     if (idade === null || idade.trim() === "") return null;
     idade = parseInt(idade);
     if (isNaN(idade)) {
@@ -27,7 +28,43 @@ document.addEventListener("DOMContentLoaded", () => {
     botao.addEventListener("click", function(event) {
       
       const tipo = this.dataset.restricao;
+      
+      /* Aplicar depois para consertar o escopo
+      switch (tipo) {
+        case "livre":
+          return;
 
+        case "referencia":
+          event.preventDefault();
+          window.open(this.href, "_blank");
+          return;
+
+        case "idade":
+          const idade = pedirIdade();
+          if (idade < 18) {
+					event.preventDefault();
+          overlayRestrito.style.display = "flex";
+          return;
+          } else return;
+
+        case "pago":
+          event.preventDefault();
+          overlayPago.style.display = "flex";
+          return;
+        
+        case "idade-pago":
+          event.preventDefault();
+          const idade = pedirIdade();
+          if (idade < 18) {
+          overlayRestrito.style.display = "flex";
+          return;
+          }
+          overlayPago.style.display = "flex";
+          return;
+      }
+      */
+
+      
 			if (tipo === "livre") {
 				return;
 			}
@@ -63,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
         overlayPago.style.display = "flex";
         return;
       }
+      
     });
   });
 
