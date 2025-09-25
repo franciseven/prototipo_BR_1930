@@ -216,6 +216,7 @@
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #185898;
+  margin-bottom: 134px;
 }
 
 .user-info h2 {
