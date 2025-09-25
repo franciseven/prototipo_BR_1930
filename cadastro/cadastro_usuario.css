@@ -68,12 +68,10 @@ select {
 
 .custom-label:hover {
 	color: #5d8de3;
-	cursor: pointer;
 }
 
 .custom-label span:hover {
 	color: #5d8de3;
-	cursor: pointer;
 }
 
 .login-btn {
@@ -105,6 +103,7 @@ select {
 .login-links a {
 	color: #5d8de3;
 	text-decoration: none;
+	font-size: 1rem;
 }
 
 .login-links a:hover {

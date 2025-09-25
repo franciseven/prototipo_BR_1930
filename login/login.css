@@ -56,6 +56,23 @@
   box-sizing: border-box;
 }
 
+.custom-label {
+	display: block;
+	margin-top: 3.5vh;
+	font-weight: bold;
+	font-size: clamp(14px, 1vw, 18px);
+	color: #555;
+  text-align: left;
+}
+
+.custom-label:hover {
+	color: #5d8de3;
+}
+
+.custom-label span:hover {
+	color: #5d8de3;
+}
+
 .login-btn {
   width: 100%;
   padding: 20px;
