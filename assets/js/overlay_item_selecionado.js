@@ -12,9 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const linkForm = "https://forms.com";
 
-  let idade = prompt("Por favor, informe sua idade:");
-
   function pedirIdade() {
+    let idade = prompt("Por favor, informe sua idade:");
     if (idade === null || idade.trim() === "") return null;
     idade = parseInt(idade);
     if (isNaN(idade)) {
