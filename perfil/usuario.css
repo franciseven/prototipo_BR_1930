@@ -230,6 +230,10 @@ main.user-page {
   font-size: 1rem;
 }
 
+.contribuicoes {
+  margin-bottom: 50px;
+}
+
 .tabela-container {
   max-height: 350px;
   overflow-y: auto;
@@ -250,8 +254,7 @@ main.user-page {
   padding: 12px;
   text-align: center;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: auto;
 }
 
 .tabela-container td {
@@ -260,8 +263,7 @@ main.user-page {
   gap: 8px;
   text-align: center;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: auto;
 }
 
 .info-btn {
