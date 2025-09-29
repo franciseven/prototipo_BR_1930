@@ -61,3 +61,51 @@ window.addEventListener("DOMContentLoaded", () => {
   loadHTML("header", "header.html");
   loadHTML("footer", "footer.html");
 });
+
+
+// --- Seção de bloqueio de download de imagens sem autorização ---
+
+// Função que aplica o bloqueio a uma imagem
+function bloquearImagem(img) {
+  // Bloqueia clique direito
+  img.addEventListener('contextmenu', e => {
+    e.preventDefault();
+    alert("Salvar imagens sem autorização não é permitido!");
+  });
+
+  // Bloqueia arrastar
+  img.addEventListener('dragstart', e => e.preventDefault());
+}
+
+// Aplica bloqueio às imagens já existentes
+document.querySelectorAll('img').forEach(bloquearImagem);
+
+// Observa alterações no DOM para novas imagens
+const observer = new MutationObserver(mutations => {
+  mutations.forEach(mutation => {
+    mutation.addedNodes.forEach(node => {
+      if (node.tagName === 'IMG') {
+        bloquearImagem(node);
+      } else if (node.querySelectorAll) {
+        node.querySelectorAll('img').forEach(bloquearImagem);
+      }
+    });
+  });
+});
+
+// Configuração do observer: observa todo o documento
+observer.observe(document.body, { childList: true, subtree: true });
+
+// Bloqueia atalhos de teclado comuns (Ctrl+S, Ctrl+Shift+S, Ctrl+U, Ctrl+Shift+I, PrintScreen)
+document.addEventListener('keydown', e => {
+  if (
+    (e.ctrlKey && (e.key === 's' || e.key === 'S')) ||
+    (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 's') ||
+    (e.ctrlKey && e.key.toLowerCase() === 'u') ||
+    (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') ||
+    e.key === 'PrintScreen'
+  ) {
+    e.preventDefault();
+    alert("Ação bloqueada!");
+  }
+});
