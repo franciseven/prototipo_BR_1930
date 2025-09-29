@@ -1,5 +1,5 @@
-// Versão do popup com fechamento temporário, reaparecendo o mesmo quando a tela é reiniciada
 window.addEventListener('load', () => {
+  // Versão do popup com fechamento temporário, reaparecendo o mesmo quando a tela é reiniciada
   // --- Popup Colab ---
   const popup = document.getElementById('popup-colab');
   const closeBtn = popup.querySelector('.close-btn');
@@ -45,45 +45,22 @@ window.addEventListener('load', () => {
 
   // --- Slideshow ---
   const track = document.querySelector('.slide-track');
-  const images = Array.from(track.children);
+  const images = Array.from(track.querySelectorAll('img'));
 
-  // Clona imagens para loop contínuo
-  images.forEach(img => {
-    const clone = img.cloneNode(true);
-    track.appendChild(clone);
-  });
-
-  const allImages = Array.from(track.querySelectorAll('img'));
-  let loadedCount = 0;
-
-  function startAnimation() {
-    track.style.animationPlayState = 'running';
-  }
-
-  // Espera todas as imagens carregarem
-  allImages.forEach(img => {
-    if (img.complete) {
-      loadedCount++;
-    } else {
-      img.addEventListener('load', () => {
-        loadedCount++;
-        if (loadedCount === allImages.length) {
-          startAnimation();
-        }
-      });
-    }
-  });
-
-  if (loadedCount === allImages.length) {
-    startAnimation();
-  }
+  track.innerHTML += track.innerHTML;
+  const totalImages = images.length;
+  track.style.width = `${(totalImages * 2) * (100 / 3)}%`;
+  const duration = totalImages * 15;
+  track.style.animationDuration = `${duration}s`;
 
   // --- Tooltip ---
+  const images_tooltip = track.querySelectorAll('img');
   const tooltip = document.createElement('div');
+
   tooltip.className = 'tooltip';
   document.body.appendChild(tooltip);
 
-  allImages.forEach(img => {
+  images_tooltip.forEach(img => {
     img.addEventListener('mouseenter', e => {
       // Pausa a animação
       track.style.animationPlayState = 'paused';
@@ -108,8 +85,7 @@ window.addEventListener('load', () => {
       tooltip.style.opacity = '0';
     });
   });
-});
-
+})
 
 
 

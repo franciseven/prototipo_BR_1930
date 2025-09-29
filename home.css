@@ -28,21 +28,24 @@
 }
 
 .slide-track {
-  display: flex;
-  width: max-content;
+  white-space: nowrap;
   height: 100%;
-  animation: scrollSlide 200s linear infinite;
+  animation: scrollSlide linear infinite;
+  font-size: 0;
+  line-height: 0;
 }
 
 .slide-track img {
-  width: calc(100% / 3);
+  display: inline-block;
+  vertical-align: middle;
+  flex: 0 0 calc(100% / 3);
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   border-right: 10px solid #000;
   box-sizing: border-box;
 }
 
-.slide-show:hover .slide-track:hover {
+.slideshow:hover .slide-track {
   animation-play-state: paused;
 }
 
