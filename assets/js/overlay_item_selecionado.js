@@ -6,6 +6,7 @@ document.querySelector('.download-link').addEventListener('click', function (e) 
 document.addEventListener("DOMContentLoaded", () => {
   const overlayRestrito = document.getElementById("restritoOverlay");
   const overlayPago = document.getElementById("pagoOverlay");
+  const cadastroAviso = document.getElementById("cadastroAviso");
 
   const fecharAviso = document.getElementById("fecharAviso");
   const fecharPago = document.getElementById("fecharPago");
@@ -34,6 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
         case "referencia": {
           event.preventDefault();
           window.open(this.href, "_blank");
+          return;
+        }
+
+        case "cadastro": {
+          event.preventDefault();
+          cadastroAviso.style.display = "flex";
           return;
         }
 
@@ -80,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (fecharAviso) {
     fecharAviso.addEventListener("click", () => {
+      cadastroAviso.style.display = "none";
       overlayRestrito.style.display = "none";
     });
   }
