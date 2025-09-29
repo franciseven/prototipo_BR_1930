@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const fecharAviso = document.getElementById("fecharAviso");
   const fecharPago = document.getElementById("fecharPago");
+  const fecharCadastro = document.getElementById("fecharCadastro");
 
 	const linkForm = "https://forms.com";
 
@@ -87,10 +88,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (fecharAviso) {
     fecharAviso.addEventListener("click", () => {
-      cadastroAviso.style.display = "none";
       overlayRestrito.style.display = "none";
     });
   }
+
+  if (fecharCadastro) {
+    fecharCadastro.addEventListener("click", () => {
+      cadastroAviso.style.display = "none";
+    })
+  };
 
   if (fecharPago) {
     fecharPago.addEventListener("click", () => {
