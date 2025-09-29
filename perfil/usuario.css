@@ -251,16 +251,13 @@ main.user-page {
   z-index: 2;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
-  padding: 12px;
   text-align: center;
   white-space: nowrap;
   overflow: auto;
 }
 
 .tabela-container td {
-  padding: 8px;
   border: 1px solid #ccc;
-  gap: 8px;
   text-align: center;
   white-space: nowrap;
   overflow: auto;
