@@ -50,40 +50,48 @@ window.addEventListener('load', () => {
   track.innerHTML += track.innerHTML;
   const totalImages = images.length;
   track.style.width = `${(totalImages * 2) * (100 / 3)}%`;
-  const duration = totalImages * 15;
+  const duration = totalImages * 10;
   track.style.animationDuration = `${duration}s`;
 
   // --- Tooltip ---
-  const images_tooltip = track.querySelectorAll('img');
   const tooltip = document.createElement('div');
-
   tooltip.className = 'tooltip';
   document.body.appendChild(tooltip);
 
-  images_tooltip.forEach(img => {
-    img.addEventListener('mouseenter', e => {
-      // Pausa a animação
-      track.style.animationPlayState = 'paused';
+  let mouseX = 0, mouseY = 0;
+  let rafId = null;
 
-      // Mostra tooltip da imagem correta
-      const desc = img.getAttribute('data-desc');
+  function updateTooltipPosition() {
+    tooltip.style.left = (mouseX + 15) + 'px';
+    tooltip.style.top = (mouseY + 15) + 'px';
+    rafId = null;
+  }
+
+  track.addEventListener('mouseover', e => {
+    if (e.target.tagName === 'IMG') {
+      track.style.animationPlayState = 'paused';
+      const desc = e.target.getAttribute('data-desc');
       if (desc) {
         tooltip.textContent = desc;
         tooltip.style.opacity = '1';
       }
-    });
+    }
+  });
 
-    img.addEventListener('mousemove', e => {
-      // Atualiza posição do tooltip
-      tooltip.style.left = (e.pageX + 15) + 'px';
-      tooltip.style.top = (e.pageY + 15) + 'px';
-    });
+  track.addEventListener('mousemove', e => {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
 
-    img.addEventListener('mouseleave', () => {
-      // Retoma a animação
+    if (!rafId) {
+      rafId = requestAnimationFrame(updateTooltipPosition);
+    }
+  });
+
+  track.addEventListener('mouseout', e => {
+    if (e.target.tagName === 'IMG') {
       track.style.animationPlayState = 'running';
       tooltip.style.opacity = '0';
-    });
+    }
   });
 })
 
