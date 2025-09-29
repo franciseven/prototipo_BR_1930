@@ -25,81 +25,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".acessarAgora").forEach(botao => {
     botao.addEventListener("click", function(event) {
-      
       const tipo = this.dataset.restricao;
-      
-      /* Aplicar depois para consertar o escopo
+
       switch (tipo) {
         case "livre":
           return;
 
-        case "referencia":
+        case "referencia": {
           event.preventDefault();
           window.open(this.href, "_blank");
           return;
+        }
 
-        case "idade":
+        case "idade": {
           const idade = pedirIdade();
-          if (idade < 18) {
-					event.preventDefault();
-          overlayRestrito.style.display = "flex";
-          return;
-          } else return;
-
-        case "pago":
-          event.preventDefault();
-          overlayPago.style.display = "flex";
-          return;
-        
-        case "idade-pago":
-          event.preventDefault();
-          const idade = pedirIdade();
-          if (idade < 18) {
-          overlayRestrito.style.display = "flex";
-          return;
+          if (idade !== null && idade < 18) {
+            event.preventDefault();
+            overlayRestrito.style.display = "flex";
+            return;
           }
-          overlayPago.style.display = "flex";
-          return;
-      }
-      */
-
-      
-			if (tipo === "livre") {
-				return;
-			}
-
-      if (tipo === "referencia") {
-        event.preventDefault();
-        window.open(this.href, "_blank");
-        return;
-      }
-
-      if (tipo === "idade") {
-        const idade = pedirIdade();
-        if (idade < 18) {
-					event.preventDefault();
-          overlayRestrito.style.display = "flex";
-          return;
-        } else return;
-      }
-
-      if (tipo === "pago") {
-        event.preventDefault();
-        overlayPago.style.display = "flex";
-        return;
-      }
-
-      if (tipo === "idade-pago") {
-        event.preventDefault();
-        const idade = pedirIdade();
-        if (idade < 18) {
-          overlayRestrito.style.display = "flex";
           return;
         }
-        overlayPago.style.display = "flex";
-        return;
+
+        case "pago": {
+          event.preventDefault();
+          overlayPago.style.display = "flex";
+          return;
+        }
+
+        case "idade-pago": {
+          const idade = pedirIdade();
+          if (idade !== null && idade < 18) {
+            event.preventDefault();
+            overlayRestrito.style.display = "flex";
+            return;
+          }
+          event.preventDefault();
+          overlayPago.style.display = "flex";
+          return;
+        }
+
+        default:
+          return;
       }
-      
     });
   });
 
