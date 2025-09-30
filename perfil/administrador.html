@@ -99,12 +99,12 @@
 
       <div class="upload-area">
         <label for="titulo" data-i18n="contentSubmission.titleLabel">Título:</label><br />
-        <input type="text" id="titulo" name="titulo" /><br /><br />
+        <input type="text" id="titulo" placeholder="Digite o título do item" name="titulo" /><br /><br />
 
         <label data-i18n="contentSubmission.authorLabel">Autor(a):</label><br />
         <div class="autores" id="author-input-group">
           <input type="text" id="autorInput" placeholder="Digite o nome do autor" />
-          <button type="button" id="addAuthorBtn">Adicionar autor</button>
+          <button type="button" id="addAuthorBtn">Adicionar Autor</button>
           <ul id="authorsList"></ul>
         </div>
 
@@ -144,9 +144,15 @@
     </div>
 
     <div class="section">
-      <h2 data-i18n="history.title">Histórico de Submissões</h2>
+      <h2 data-i18n="history.title">Meu Histórico de Submissões</h2>
+
+      <button id="expandTableBtn" class="ADICIONAR" style="margin-bottom:10px;">
+        🔍
+      </button>
+
       <div class="tabela-container">
         <table>
+
           <tr>
             <th data-i18n="history.titleCol">Título</th>
             <th data-i18n="history.dateCol">Data</th>
@@ -156,6 +162,7 @@
             <th data-i18n="history.activityCol">Atividade</th>
             <th data-i18n="adminContentSubmission.actionsCol">Ação</th>
           </tr>
+
           <tr>
             <td data-i18n="adminContentSubmission.content.generalPhoto">Mapa Paraibano dos Anos 30</td>
             <td>12/08/2025</td>
@@ -164,11 +171,13 @@
             <td>v2.0</td>
             <td>Alteração de Palavra-Chave</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
           <tr>
             <td data-i18n="adminContentSubmission.content.generalPhoto">Mapa Paraibano dos Anos 30</td>
             <td>12/08/2025</td>
@@ -177,13 +186,33 @@
             <td>v1.0</td>
             <td>Upload</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
+          <tr>
+            <td data-i18n="adminContentSubmission.content.generalPhoto">Como se Combate o Cangaceirismo na Parahyba</td>
+            <td>15/08/2025</td>
+            <td>Matheus Silveira</td>
+            <td data-i18n="adminContentSubmission.approved">Atualizado</td>
+            <td>v2.0</td>
+            <td>Adição de Palavra-Chave</td>
+            <td>
+              <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
+              <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
+            </td>
+          </tr>
+
         </table>
       </div>
+
+      <!-- Tabela modal para expandir a tabela (colocar aqui) -->
+
     </div>
 
     <div class="section">
@@ -192,38 +221,67 @@
           <table>
             <tr>
               <th data-i18n="pendingReviews.titleCol">Título</th>
-              <th data-i18n="pendingReviews.authorCol">Autor</th>
               <th data-i18n="pendingReviews.userCol">Usuário</th>
               <th data-i18n="pendingReviews.dateCol">Data</th>
               <th data-i18n="pendingReviews.visibilityCol">Visibilidade</th>
+              <th data-i18n="pendingReviews.statusCol">Status</th>
               <th data-i18n="pendingReviews.actionCol">Ação</th>
             </tr>
+
             <tr>
               <td>História Urbana de João Pessoa</td>
-              <td>Maurício Andrade Tamares Gomez</td>
               <td>Fernanda Pereira Matos</td>
               <td>15/05/2025</td>
-              <td>Censurado - Conteúdo proibido para menores de idade</td>
+              <td>Restrito - Conteúdo proibido para menores de 18 anos</td>
+              <td>Pendente</td>
               <td>
                 <button class="btn-profile-style approveBtn" data-i18n="pendingReviews.approveBtn">Aprovar</button>
-                <button class="btn-profile-style rejectBtn" data-i18n="pendingReviews.rejectBtn">Rejeitar</button>
+                <button class="btn-profile-style approve_partialBtn">Aprovar Parcialmente</button>
                 <button class="btn-profile-style downloadBtn" data-i18n="pendingReviews.downloadBtn">Baixar</button>
+                <button class="btn-profile-style rejectBtn" data-i18n="pendingReviews.rejectBtn">Rejeitar</button>
               </td>
             </tr>
+
+            <tr>
+              <td>História Urbana de João Pessoa</td>
+              <td>Fernanda Pereira Matos</td>
+              <td>20/05/2025</td>
+              <td>Restrito - Conteúdo proibido para menores de 18 anos</td>
+              <td>Parcialmente Aprovado</td>
+              <td>
+                <button class="btn-profile-style approveBtn" data-i18n="pendingReviews.approveBtn">Aprovar</button>
+                <button class="btn-profile-style approve_partialBtn">Aprovação Parcial</button>
+                <button class="btn-profile-style downloadBtn" data-i18n="pendingReviews.downloadBtn">Baixar</button>
+                <button class="btn-profile-style rejectBtn" data-i18n="pendingReviews.rejectBtn">Rejeitar</button>
+              </td>
+            </tr>
+
             <tr>
               <td>Um Estudo Sobre A Revolução de 1930</td>
-              <td>Maurício Andrade Tamares Gomez</td>
               <td>Fernanda Pereira Matos</td>
-              <td>15/05/2025</td>
-              <td>Censurado - Conteúdo proibido para menores de idade</td>
+              <td>22/08/2025</td>
+              <td>Restrito - Conteúdo proibido para menores de 18 anos</td>
+              <td>Pendente</td>
               <td>
                 <button class="btn-profile-style approveBtn" data-i18n="pendingReviews.approveBtn">Aprovar</button>
-                <button class="btn-profile-style rejectBtn" data-i18n="pendingReviews.rejectBtn">Rejeitar</button>
+                <button class="btn-profile-style approve_partialBtn">Aprovar Parcialmente</button>
                 <button class="btn-profile-style downloadBtn" data-i18n="pendingReviews.downloadBtn">Baixar</button>
+                <button class="btn-profile-style rejectBtn" data-i18n="pendingReviews.rejectBtn">Rejeitar</button>
               </td>
             </tr>
+
           </table>
         </div>
+
+        <div id="modal_unico" class="modal-flutuante">
+          <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+            <h3 id="modal_titulo">Mensagem</h3>
+            <textarea id="modal_mensagem" placeholder="Escreva sua mensagem" rows="5"></textarea>
+            <button onclick="enviarSolicitacao()">Enviar Observação</button>
+          </div>
+        </div>
+
     </div>
 
     <div class="section">
@@ -240,20 +298,7 @@
             <th data-i18n="adminContentSubmission.activityCol">Atividade</th>
             <th data-i18n="adminContentSubmission.actionCol">Ação</th>
           </tr>
-          <tr>
-            <td data-i18n="adminContentSubmission.content.generalPhoto">MÚSICA EM HOMENAGEM A JOÃO PESSOA</td>
-            <td>11/11/2025</td>
-            <td>Matheus Silveira</td>
-            <td>Matheus Silveira</td>
-            <td data-i18n="adminContentSubmission.approved">Original</td>
-            <td>v1.0</td>
-            <td>Upload</td>
-            <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
-              <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
-              <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
-            </td>
-          </tr>
+
           <tr>
             <td data-i18n="adminContentSubmission.content.generalPhoto">COMO SE COMBATE O CANGACEIRISMO NA PARAHYBA</td>
             <td>11/11/2025</td>
@@ -263,11 +308,29 @@
             <td>v1.0</td>
             <td>Upload</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
+          <tr>
+            <td data-i18n="adminContentSubmission.content.generalPhoto">MÚSICA EM HOMENAGEM A JOÃO PESSOA</td>
+            <td>11/11/2025</td>
+            <td>Matheus Silveira</td>
+            <td>Matheus Silveira</td>
+            <td data-i18n="adminContentSubmission.approved">Original</td>
+            <td>v1.0</td>
+            <td>Upload</td>
+            <td>
+              <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
+              <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
+            </td>
+          </tr>
+
           <tr>
             <td data-i18n="adminContentSubmission.content.generalPhoto">POLÍTICA, A ARTE DE LEMBRAR E ESQUECER: OS PROJETOS POLÍTICOS PAULISTAS (1933-1934)</td>
             <td>11/11/2025</td>
@@ -277,11 +340,13 @@
             <td>v1.0</td>
             <td>Upload</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
           <tr>
             <td data-i18n="adminContentSubmission.content.generalPhoto">TELEGRAMA 313</td>
             <td>11/11/2025</td>
@@ -291,11 +356,13 @@
             <td>v1.0</td>
             <td>Upload</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
           <tr>
             <td data-i18n="adminContentSubmission.content.generalPhoto">ENTREVISTA 01 - PROFA. MONIQUE CITTADINO</td>
             <td>11/11/2025</td>
@@ -305,11 +372,13 @@
             <td>v1.0</td>
             <td>Upload</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
           <tr>
             <td data-i18n="adminContentSubmission.content.generalPhoto">ENTREVISTA COM JOSÉ PEREIRA</td>
             <td>11/11/2025</td>
@@ -319,11 +388,13 @@
             <td>v1.0</td>
             <td>Upload</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
           <tr>
             <td data-i18n="adminContentSubmission.content.generalPhoto">RETRATO DE JOÃO PESSOA</td>
             <td>11/11/2025</td>
@@ -333,11 +404,13 @@
             <td>v1.0</td>
             <td>Upload</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
           <tr>
             <td data-i18n="adminContentSubmission.content.generalPhoto">O ANO DO NEGO</td>
             <td>11/11/2025</td>
@@ -347,11 +420,13 @@
             <td>v1.0</td>
             <td>Upload</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
           <tr>
             <td data-i18n="adminContentSubmission.content.generalPhoto">O DIA DA REVOLUÇÃO</td>
             <td>11/11/2025</td>
@@ -361,11 +436,13 @@
             <td>v1.0</td>
             <td>Upload</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
           <tr>
             <td data-i18n="adminContentSubmission.content.generalPhoto">REVISTA PRINCESA</td>
             <td>11/11/2025</td>
@@ -375,11 +452,13 @@
             <td>v1.0</td>
             <td>Upload</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
           <tr>
             <td data-i18n="adminContentSubmission.content.generalPhoto">O HOMEM DE AREIA</td>
             <td>11/11/2025</td>
@@ -389,11 +468,13 @@
             <td>v1.0</td>
             <td>Upload</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
           <tr>
             <td data-i18n="adminContentSubmission.content.generalPhoto">Mapa Paraibano dos Anos 30</td>
             <td>12/08/2025</td>
@@ -403,11 +484,13 @@
             <td>v2.0</td>
             <td>Alteração de Palavra-Chave</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
           <tr>
             <td data-i18n="adminContentSubmission.content.generalPhoto">Mapa Paraibano dos Anos 30</td>
             <td>12/08/2025</td>
@@ -417,11 +500,13 @@
             <td>v1.0</td>
             <td>Upload</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
           <tr>
             <td>Filmagem em 1930</td>
             <td>10/07/2025</td>
@@ -431,11 +516,13 @@
             <td>v2.0</td>
             <td>Alteração dos Metadados</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
           <tr>
             <td>Filmagem em 1930</td>
             <td>02/07/2025</td>
@@ -445,11 +532,13 @@
             <td>v1.0</td>
             <td>Upload</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
+
           <tr>
             <td>Fotografia do General José Antônio Flores da Cunha</td>
             <td>22/06/2025</td>
@@ -459,24 +548,43 @@
             <td>v2.0</td>
             <td>Edição de Título</td>
             <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
-            <tr>
-              <td>Fotografia de General</td>
-              <td>02/06/2025</td>
-              <td>Matheus Silveira</td>
-              <td>Matheus Silveira</td>
-              <td>Original</td>
-              <td>v1.0</td>
-              <td>Upload</td>
-              <td>
-              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+          </tr>
+            
+          <tr>
+            <td>Fotografia de General</td>
+            <td>02/06/2025</td>
+            <td>Matheus Silveira</td>
+            <td>Matheus Silveira</td>
+            <td>Original</td>
+            <td>v1.0</td>
+            <td>Upload</td>
+            <td>
               <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
               <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
-            </tr>
+          </tr>
+
+          <tr>
+            <td data-i18n="adminContentSubmission.content.generalPhoto">COMO SE COMBATE O CANGACEIRISMO NA PARAHYBA</td>
+            <td>15/11/2025</td>
+            <td>Matheus Silveira</td>
+            <td>Carlos Oliveira da Silva</td>
+            <td data-i18n="adminContentSubmission.approved">Atualizado</td>
+            <td>v2.0</td>
+            <td>Adição de Palavra-Chave</td>
+            <td>
+              <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
+              <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
+            </td>
           </tr>
         </table>
       </div>

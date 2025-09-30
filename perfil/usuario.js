@@ -228,4 +228,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  document.querySelectorAll('.solicitacaoBtn').forEach(btn => {
+    btn.addEventListener('click', abrirModal);
+  });
+
+  document.getElementById("ver_observacao").addEventListener("click", function() {
+    window.open("https://mail.google.com/", "_blank");
+  });
+
+  document.getElementById("visualizar").addEventListener("click", function() {
+    window.open("./arquivo.html"), "_blank";
+  })
+
 });
