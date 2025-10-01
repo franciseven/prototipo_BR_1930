@@ -50,24 +50,75 @@
 }
 
 .tabela-container {
-  max-height: 350px;
+  max-height: 500px;
   overflow-y: auto;
-  display: flex;
   border: 1px solid #ccc;
+  position: relative;
+}
+
+.title-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title-container h2 {
+  flex: 1;
+  margin: 0;
+  border-bottom: 3px solid #185898;
+  font-size: 2em;
+  padding-bottom: 5px;
+  padding-right: 60px;
+  box-sizing: border-box;
+}
+
+.table-expanded {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  z-index: 1;
+}
+
+#titleFullscreen_fluxo,
+#titleFullscreen_pendentes,
+#titleFullscreen_historico {
+  display: none;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+.tabela-container.fullscreen #titleFullscreen_fluxo,
+.tabela-container.fullscreen #titleFullscreen_pendentes,
+.tabela-container.fullscreen #titleFullscreen_pendentes {
+  display: block;
 }
 
 .tabela-container table {
   width: 100%;
+  border-collapse: collapse;
 }
 
-.tabela-container th {
+.tabela-container thead th {
   position: sticky;
   top: 0;
-  z-index: 2;
   background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  z-index: 5;
+  border-bottom: 2px solid #ccc;
   padding: 12px;
   text-align: center;
+}
+
+.tabela-container tbody tr {
+  background-color: #fff;
 }
 
 .tabela-container td {
@@ -76,16 +127,90 @@
   text-align: center;
 }
 
-.tabela-container table tr:last-child {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
 .tabela-container td:last-child {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
   padding: 12px;
+}
+
+.tabela-container.fullscreen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 92%;
+  height: 95%;
+  background: white;
+  z-index: 1000;
+  padding: 20px; 
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  max-height: 100%;
+}
+
+.tabela-container.fullscreen .tabela-scroll {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.tabela-container.fullscreen table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-container.fullscreen thead th {
+  position: sticky;
+  top: 0;
+  background-color: #f0f0f0;
+  z-index: 10;
+  border-bottom: 2px solid #ccc;
+  padding: 12px;
+}
+
+.tabela-container.fullscreen tbody tr {
+  background-color: #fff;
+}
+
+.tabela-container.fullscreen td {
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+
+.close-fullscreen {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1101;
+}
+
+body.noscroll {
+  overflow: hidden;
+}
+
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  display: none;
+}
+
+.fullscreen-overlay.active {
+  display: block;
 }
 
 .checkbox-group {
