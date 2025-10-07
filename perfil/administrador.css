@@ -50,13 +50,6 @@
   color: #000000;
 }
 
-.tabela-container {
-  max-height: 500px;
-  overflow-y: auto;
-  border: 1px solid #ccc;
-  position: relative;
-}
-
 .title-container {
   position: relative;
   display: flex;
@@ -72,6 +65,13 @@
   padding-bottom: 5px;
   padding-right: 60px;
   box-sizing: border-box;
+}
+
+.tabela-container {
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  position: relative;
 }
 
 .table-expanded {
@@ -141,7 +141,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 92%;
+  width: 90%;
   height: 95%;
   background: white;
   z-index: 1000;
