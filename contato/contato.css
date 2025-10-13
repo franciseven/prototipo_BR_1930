@@ -1,3 +1,16 @@
+.html, body { 
+	background-image: url('../imagens/background/old-parchment\ \(1\).jpg'); 
+	background-size: cover; 
+	background-position: center; 
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+}
+
+.overlay-conteudo { 
+	background-color: rgba(255, 255, 255, 0.7); 
+	flex: 1;
+}
+
 .section {
 	margin-bottom: 50px;
 }
