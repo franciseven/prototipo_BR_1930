@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
   const popup = document.getElementById('popup-colab');
   const closeBtn = popup.querySelector('.close-btn');
   let timeoutId;
-  let remainingTime = 10000;
+  let remainingTime = 20000;
   let startTime;
 
   setTimeout(() => {
