@@ -106,25 +106,13 @@ document.addEventListener('keydown', e => {
     e.key === 'PrintScreen'
   ) {
     e.preventDefault();
-    alert("Ação bloqueada!");
+    alert("Acesso a comandos bloqueado!");
   }
 });
-
-/* Funções para impedir o botão direito, exceto em elementos já presentes nas telas
-
-// Função que determina se o elemento é válido para exibir menu
-function isElementoValido(element) {
-  // Aqui consideramos como válidos: imagens, links, textos (p, h1-h6, span), e outros elementos que você quiser
-  const elementosValidos = ['IMG', 'A', 'P', 'SPAN', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'BUTTON', 'DIV'];
-  return elementosValidos.includes(element.tagName);
-}
 
 // Evento global de clique direito
 document.addEventListener('contextmenu', e => {
-  if (!isElementoValido(e.target)) {
     // Bloqueia clique direito em áreas vazias
     e.preventDefault();
-  }
+    alert("Acesso ao menu de contexto bloqueado!");
 });
-
-*/
