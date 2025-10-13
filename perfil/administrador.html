@@ -17,44 +17,37 @@
 
   <div class="container">
 
-    <div class="user-profile">
-      <div class="user-header">
-        <img src="../imagens/perfil/admin/administrador_perfil.png" alt="Foto do Administrador" class="profile-photo" />
-        <div class="user-info">
-          <h2>Carlos Oliveira da Silva</h2>
-          <p data-i18n="user.institution">Instituto Federal de Educação da Paraíba</p>
-          <p>carlos_oliveria@gmail.com</p>
-          <p data-i18n="user.formacao">Doutorado</p>
-          <p data-i18n="user.local">PB/João Pessoa (Brasil)</p>
-          
-          <div class="user-actions">
-            <a href="./configuracoes_administrador.html">
-              <button data-i18n="configuracoes">Configurações</button>
-            </a>
+    <section class="user-header">
+      <img src="../imagens/perfil/admin/administrador_perfil.png" alt="Foto do Administrador" class="profile-pic" />
+      <div class="info-compact">
+        <h2>Carlos Oliveira da Silva</h2>
+        <p data-i18n="universidade">Instituto Federal de Educação da Paraíba</p>
+        <p>carlos_oliveria@gmail.com</p>
+        <p data-i18n="formacao">Doutorado</p>
+        <p data-i18n="local">PB/João Pessoa (Brasil)</p>
 
-            <a href="../login/index.html">
-              <button data-i18n="sair">Sair</button>
-            </a>
-          </div>
-          
-        </div>
+        <a href="./configuracoes_administrador.html"><button data-i18n="configuracoes">Configurações</button></a>
+        <a href="../login/index.html"><button data-i18n="sair">Sair</button></a>
       </div>
+    </section>
 
-      <div class="user-stats cards">
+    <div class="section">
+      <h2 data-i18n="generalStats.title">Painel Geral</h2>
+      <div class="cards">
         <div class="card">
-          <h3 data-i18n="stats.totalContributions">Contribuições Totais</h3>
+          <h3>Contribuições Totais</h3>
           <p>X</p>
         </div>
         <div class="card">
-          <h3 data-i18n="stats.approvedContributions">Contribuições Aprovadas</h3>
+          <h3>Contribuições Aprovadas</h3>
           <p>X</p>
         </div>
         <div class="card">
-          <h3 data-i18n="stats.rejectedContributions">Contribuições Rejeitadas</h3>
+          <h3>Contribuições Rejeitadas</h3>
           <p>X</p>
         </div>
         <div class="card">
-          <h3 data-i18n="stats.pendingContributions">Contribuições em Análise</h3>
+          <h3>Contribuições em Análise</h3>
           <p>X</p>
         </div>
       </div>

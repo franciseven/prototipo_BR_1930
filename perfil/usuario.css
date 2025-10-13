@@ -33,6 +33,35 @@ main.user-page {
   padding: 50px 80px;
 }
 
+.cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 25px;
+  flex: 1 1 260px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #185898;
+}
+
+.card p {
+  margin: 8px 0 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #000000;
+}
+
 .user-header {
   background-color: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -90,6 +119,7 @@ main.user-page {
   border-bottom: 3px solid #185898;
   padding-bottom: 6px;
   color: #185898;
+  margin-top: 15px;
 }
 
 .upload-area input[type="text"],
