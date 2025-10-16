@@ -30,8 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const tipo = this.dataset.restricao;
 
       switch (tipo) {
-        case "livre":
-          return;
 
         case "referencia": {
           event.preventDefault();
