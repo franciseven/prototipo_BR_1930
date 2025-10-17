@@ -24,6 +24,14 @@
   background-blend-mode: lighten
 }
 
+.login-container figcaption {
+  font-size: 0.9em;
+  color: #000000;
+  margin-top: 1000px;
+  margin-right: 500px;
+  text-align: left;
+}
+
 .login-box {
   background-color: #fff;
   border-radius: 100px;
