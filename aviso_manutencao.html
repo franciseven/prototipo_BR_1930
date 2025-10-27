@@ -8,7 +8,6 @@
 
   <link rel="stylesheet" href="../assets/css/header.css">
 	<link rel="stylesheet" href="../assets/css/footer.css">
-	<link rel="stylesheet" href="./aviso_manutencao.css">
 </head>
 
 <body>
@@ -33,3 +32,60 @@
 
 </body>
 </html>
+
+<style>
+.html, body {
+	background-image: url('../imagens/background/old-parchment\ \(1\).jpg'); 
+	background-size: cover; 
+	background-position: center; 
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+}
+
+.overlay-conteudo { 
+	background-color: rgba(255, 255, 255, 0.7); 
+	flex: 1;
+  display: flex;
+}
+
+.container {
+  background-color: transparent;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+  flex: 1;
+}
+
+.container img {
+  animation: pulse 3s infinite;
+}
+
+.container h1 {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: #185898;
+  margin-bottom: 30px;
+}
+
+.container h2 {
+  font-size: 1.2rem;
+  color: #185898;
+  margin-bottom: 100px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+</style>
