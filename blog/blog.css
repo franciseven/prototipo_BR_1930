@@ -117,42 +117,6 @@
 	font-size: 1.3rem;
 }
 
-.texts-cta {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.texts-button {
-  display: inline-block;
-  background: linear-gradient(90deg, #1E90FF, #4682B4);
-  color: #ffffff;
-  padding: 20px 36px;
-  border-radius: 12px;
-  font-size: 1.3rem;
-  font-weight: 700;
-  text-decoration: none;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  line-height: 1.5;
-  max-width: 90%;
-}
-
-.texts-button:hover,
-.texts-button:focus-visible {
-  background: linear-gradient(90deg, #5d8de3, #1E90FF);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
-  outline: none;
-}
-
-.texts-subtext {
-  display: block;
-  font-size: 1rem;
-  font-weight: normal;
-  margin-top: 8px;
-  color: #ffffff;
-}
-
 .navegacao {
 	display: flex;
 	justify-content: space-between;
@@ -179,4 +143,40 @@
 
 .proximo {
 	text-align: right;
+}
+
+.instruction-box {
+  border: 2px solid #4a90e2;
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  color: #333;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.instruction-box p {
+  margin-bottom: 10px;
+}
+
+.instruction-box .texts-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #4a90e2;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.instruction-box .texts-button:hover {
+  background-color: #357ABD;
+}
+
+.highlight-link {
+  color: #4a90e2;
+  font-weight: bold;
+  text-decoration: underline;
 }
