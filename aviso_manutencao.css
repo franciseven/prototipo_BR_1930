@@ -1,4 +1,4 @@
-.html, body { 
+.html, body {
 	background-image: url('../imagens/background/old-parchment\ \(1\).jpg'); 
 	background-size: cover; 
 	background-position: center; 
@@ -15,7 +15,6 @@
 .container {
   background-color: transparent;
   text-align: center;
-  box-shadow: 0px 8px 25px #ffffff;
   animation: fadeIn 1.2s ease-in-out;
   flex: 1;
 }
