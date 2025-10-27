@@ -9,6 +9,7 @@
 }
 
 .login-container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,11 +26,17 @@
 }
 
 .login-container figcaption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1;
+  pointer-events: none;
   font-size: 0.9em;
   color: #000000;
   margin-top: 1000px;
   margin-right: 500px;
   text-align: left;
+  width: fit-content;
 }
 
 .login-box {
