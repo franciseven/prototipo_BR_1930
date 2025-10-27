@@ -116,3 +116,80 @@
 .social-media a img:hover {
 	transform: scale(1.1);
 }
+
+.editor-wrapper {
+	background: white;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.editor-container {
+	min-height: 200px;
+}
+
+.ql-toolbar {
+	border: none;
+	border-bottom: 1px solid #ccc;
+}
+
+.attachments {
+	margin-top: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.attachment {
+	background: #e9ecef;
+	padding: 8px 12px;
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.attachment span {
+	font-size: 14px;
+}
+
+.attachment button {
+	background: none;
+	border: none;
+	color: #c00;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 10px;
+}
+
+.clip-button {
+	background: none;
+	border: none;
+	font-size: 22px;
+	cursor: pointer;
+}
+
+button[type="submit"] {
+	padding: 10px 20px;
+	background-color: #4a90e2;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+button[type="submit"]:hover {
+	background-color: #357ABD;
+}
+
+input[type="file"] {
+	display: none;
+}

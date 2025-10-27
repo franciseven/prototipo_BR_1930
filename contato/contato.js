@@ -338,4 +338,60 @@ document.addEventListener('DOMContentLoaded', () => {
 			formulario.submit();
 		}
 	});
+
+	// Uso do Quill como editor de texto para Mensagem
+  const quill = new Quill('#editor', {
+    theme: 'snow',
+    placeholder: 'Digite aqui sua mensagem...',
+    modules: {
+      toolbar: '#toolbar'
+    }
+  });
+
+  const attachmentsContainer = document.getElementById('attachments');
+
+  const fileInput = document.createElement('input');
+  fileInput.setAttribute('type', 'file');
+  fileInput.setAttribute('multiple', true);
+  fileInput.style.display = 'none';
+  document.body.appendChild(fileInput);
+
+  const toolbar = quill.getModule('toolbar');
+  toolbar.addHandler('link', () => {
+    fileInput.click();
+  });
+
+  fileInput.addEventListener('change', (e) => {
+    for (const file of e.target.files) {
+      addAttachment(file);
+    }
+    fileInput.value = '';
+  });
+
+  quill.root.addEventListener('drop', handleFileDrop, false);
+  quill.root.addEventListener('dragover', (e) => e.preventDefault(), false);
+
+  function handleFileDrop(e) {
+    e.preventDefault();
+    const files = e.dataTransfer.files;
+    for (const file of files) {
+      addAttachment(file);
+    }
+  }
+
+  function addAttachment(file) {
+    const card = document.createElement('div');
+    card.className = 'attachment';
+    card.innerHTML = `<span>${file.name}</span> <button type="button">×</button>`;
+    card.querySelector('button').onclick = () => card.remove();
+    attachmentsContainer.appendChild(card);
+  }
+
+  document.getElementById('mensagemForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const conteudo = quill.root.innerHTML;
+    const anexos = Array.from(document.querySelectorAll('.attachment span')).map(el => el.textContent);
+
+    alert(`📧 Mensagem enviada:\n\n${conteudo}\n\n📎 Anexos:\n${anexos.join('\n')}`);
+  });
 });
