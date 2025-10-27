@@ -109,6 +109,35 @@ main.user-page {
   transform: scale(1.03);
 }
 
+.user-banner {
+  position: relative;
+  background-image: url('../imagens/background/blue_rectangle.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.banner-content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
+}
+
+.banner-content p {
+  font-size: 1rem;
+}
+
 .section {
   margin-bottom: 50px;
 }
