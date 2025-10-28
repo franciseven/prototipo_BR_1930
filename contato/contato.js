@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // =======================
   // CONTROLES DE LOCALIDADE
   // =======================
-
   estadoSelect.addEventListener('change', () => {
     const estado = estadoSelect.value;
 
@@ -236,37 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  selectAssunto.addEventListener('change', function () {
-    if (this.value === 'outro') {
-      outroAssuntoInput.style.display = 'block';
-      outroAssuntoInput.setAttribute('required', 'required');
-    } else {
-      outroAssuntoInput.style.display = 'none';
-      outroAssuntoInput.removeAttribute('required');
-      outroAssuntoInput.value = '';
-    }
-  });
-
-  function todosObrigatoriosPreenchidos(form) {
-    const campos = form.querySelectorAll('[required]');
-    for (const campo of campos) {
-      if (campo.offsetParent === null) continue;
-      const valor = (campo.value || '').trim();
-      if (!valor) return false;
-    }
-    return true;
-  }
-
-  function textoSelecionado(id) {
-    const el = document.getElementById(id);
-    if (!el) return '';
-    if (el.tagName.toLowerCase() === 'select') {
-      const opt = el.options[el.selectedIndex];
-      return opt ? opt.textContent.trim() : (el.value || '').trim();
-    }
-    return (el.value || '').trim();
-  }
-
   // =======================
   // CONFIGURAÇÃO DO QUILL
   // =======================
@@ -279,7 +247,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const attachmentsContainer = document.getElementById('attachments');
-
   const fileInput = document.createElement('input');
   fileInput.setAttribute('type', 'file');
   fileInput.setAttribute('multiple', true);
@@ -309,7 +276,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // =======================
+  // FUNÇÃO DE ANEXOS
+  // =======================
   function addAttachment(file) {
+    const assuntoAtual = selectAssunto.value;
+    const extensao = file.name.split('.').pop().toLowerCase();
+
+    // 🔒 Se assunto for "Artigo - Blog", só aceita .docx
+    if (assuntoAtual === 'blog' && extensao !== 'docx') {
+      alert('Apenas arquivos .docx são permitidos para o assunto "Artigo - Blog".');
+      return;
+    }
+
     const card = document.createElement('div');
     card.className = 'attachment';
     card.innerHTML = `<span>${file.name}</span> <button type="button">x</button>`;
@@ -318,10 +297,72 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =======================
+  // RESTRIÇÃO DE ARQUIVOS POR ASSUNTO
+  // =======================
+  selectAssunto.addEventListener('change', function () {
+    if (this.value === 'outro') {
+      outroAssuntoInput.style.display = 'block';
+      outroAssuntoInput.setAttribute('required', 'required');
+    } else {
+      outroAssuntoInput.style.display = 'none';
+      outroAssuntoInput.removeAttribute('required');
+      outroAssuntoInput.value = '';
+    }
+
+    // 🎯 Define tipos de arquivo permitidos conforme assunto
+    if (this.value === 'blog') {
+      fileInput.setAttribute('accept', '.docx');
+    } else {
+      fileInput.removeAttribute('accept');
+    }
+  });
+
+	// =======================
+	// EXIBIR PDF SE ASSUNTO FOR BLOG
+	// =======================
+	selectAssunto.addEventListener('change', function () {
+		const pdfExistente = document.getElementById('pdf-blog');
+		if (pdfExistente) pdfExistente.remove(); // remove PDF anterior, se houver
+
+		if (this.value === 'blog') {
+			const pdfEmbed = document.createElement('embed');
+			pdfEmbed.id = 'pdf-blog';
+			pdfEmbed.src = './INSTRUÇÕES_PARA_ENVIO_DE_ARTIGO_AO_BLOG.pdf';
+			pdfEmbed.type = 'application/pdf';
+			pdfEmbed.width = '499px';
+			pdfEmbed.height = '150px';
+			
+			// Insere abaixo da label de Assunto
+			const labelAssunto = document.querySelector('label[for="assunto"]');
+			labelAssunto.insertAdjacentElement('afterend', pdfEmbed);
+		}
+	});
+
+  // =======================
   // ENVIO DO FORMULÁRIO
   // =======================
   formulario.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    function todosObrigatoriosPreenchidos(form) {
+      const campos = form.querySelectorAll('[required]');
+      for (const campo of campos) {
+        if (campo.offsetParent === null) continue;
+        const valor = (campo.value || '').trim();
+        if (!valor) return false;
+      }
+      return true;
+    }
+
+    function textoSelecionado(id) {
+      const el = document.getElementById(id);
+      if (!el) return '';
+      if (el.tagName.toLowerCase() === 'select') {
+        const opt = el.options[el.selectedIndex];
+        return opt ? opt.textContent.trim() : (el.value || '').trim();
+      }
+      return (el.value || '').trim();
+    }
 
     if (!todosObrigatoriosPreenchidos(formulario)) return;
 
@@ -340,11 +381,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const assuntoTexto = textoSelecionado('assunto');
     const outroAssunto = textoSelecionado('outro-assunto');
 
-    // Pega o conteúdo do Quill
     const mensagemHTML = quill.root.innerHTML.trim();
     const mensagemTexto = quill.getText().trim();
 
-    // Pega os anexos
     const anexos = Array.from(document.querySelectorAll('.attachment span')).map(el => el.textContent);
 
     let linhas = [];
