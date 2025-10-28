@@ -151,6 +151,66 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("visibility").value = "livre";
     });
   });
+
+  // =======================
+  // CONFIGURAÇÃO DO QUILL
+  // =======================
+  const quill = new Quill('#editor', {
+    theme: 'snow',
+    placeholder: 'Digite aqui sua mensagem...',
+    modules: {
+      toolbar: '#toolbar'
+    }
+  });
+
+  const attachmentsContainer = document.getElementById('attachments');
+  fileInput.setAttribute('type', 'file');
+  fileInput.setAttribute('multiple', true);
+  fileInput.style.display = 'none';
+  document.body.appendChild(fileInput);
+
+  const toolbar = quill.getModule('toolbar');
+  toolbar.addHandler('link', () => {
+    fileInput.click();
+  });
+
+  fileInput.addEventListener('change', (e) => {
+    for (const file of e.target.files) {
+      addAttachment(file);
+    }
+    fileInput.value = '';
+  });
+
+  quill.root.addEventListener('drop', handleFileDrop, false);
+  quill.root.addEventListener('dragover', (e) => e.preventDefault(), false);
+
+  function handleFileDrop(e) {
+    e.preventDefault();
+    const files = e.dataTransfer.files;
+    for (const file of files) {
+      addAttachment(file);
+    }
+  }
+
+  // =======================
+  // FUNÇÃO DE ANEXOS
+  // =======================
+  function addAttachment(file) {
+    const assuntoAtual = selectAssunto.value;
+    const extensao = file.name.split('.').pop().toLowerCase();
+
+    // Se assunto for "Artigo - Blog", só aceita .docx
+    if (assuntoAtual === 'blog' && extensao !== 'docx') {
+      alert('Apenas arquivos .docx são permitidos para o assunto "Artigo - Blog".');
+      return;
+    }
+
+    const card = document.createElement('div');
+    card.className = 'attachment';
+    card.innerHTML = `<span>${file.name}</span> <button type="button">x</button>`;
+    card.querySelector('button').onclick = () => card.remove();
+    attachmentsContainer.appendChild(card);
+  }
 });
 
 let modalTipo = "";

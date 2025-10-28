@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const assuntoAtual = selectAssunto.value;
     const extensao = file.name.split('.').pop().toLowerCase();
 
-    // 🔒 Se assunto for "Artigo - Blog", só aceita .docx
+    // Se assunto for "Artigo - Blog", só aceita .docx
     if (assuntoAtual === 'blog' && extensao !== 'docx') {
       alert('Apenas arquivos .docx são permitidos para o assunto "Artigo - Blog".');
       return;
@@ -309,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
       outroAssuntoInput.value = '';
     }
 
-    // 🎯 Define tipos de arquivo permitidos conforme assunto
+    // Define tipos de arquivo permitidos conforme assunto
     if (this.value === 'blog') {
       fileInput.setAttribute('accept', '.docx');
     } else {
