@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (this.value === 'blog') {
 			const pdfEmbed = document.createElement('embed');
 			pdfEmbed.id = 'pdf-blog';
-			pdfEmbed.src = './INSTRUÇÕES_PARA_ENVIO_DE_ARTIGO_AO_BLOG.pdf';
+			pdfEmbed.src = './INSTRUCOES_PARA_ENVIO_DE_ARTIGO_AO_BLOG.pdf';
 			pdfEmbed.type = 'application/pdf';
 			pdfEmbed.width = '499px';
 			pdfEmbed.height = '150px';
