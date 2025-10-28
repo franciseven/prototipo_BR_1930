@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // =======================
   const quill = new Quill('#editor', {
     theme: 'snow',
-    placeholder: 'Digite aqui sua mensagem...',
+    placeholder: 'Digite o texto do blog',
     modules: {
       toolbar: '#toolbar'
     }
