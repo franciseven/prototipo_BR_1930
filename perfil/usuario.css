@@ -64,7 +64,7 @@ main.user-page {
 
 .user-banner {
   position: relative;
-  background-image: url('../imagens/background/blue_rectangle.jpg');
+  background-image: url('../imagens/background/banner_usuario_admin.png');
   background-size: cover;
   background-position: center;
   height: 200px;
@@ -87,8 +87,8 @@ main.user-page {
   margin-bottom: 0.2rem;
 }
 
-.banner-content p {
-  font-size: 1rem;
+.banner-content h3 {
+  font-size: 1.3rem;
 }
 
 .user-header {
