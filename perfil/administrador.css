@@ -286,7 +286,6 @@ body.noscroll {
 
 .custom-label {
 	display: block;
-	font-weight: 600;
 	font-size: 1rem;
 	color: #333333;
 	transition: color 0.3s ease;
@@ -295,6 +294,16 @@ body.noscroll {
 
 .custom-label:hover {
 	color: #0077cc;
+}
+
+.upload-area select {
+	width: 100%;
+	padding: 12px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	font-size: 1.1rem;
+	box-sizing: border-box;
 }
 
 .editor-wrapper {

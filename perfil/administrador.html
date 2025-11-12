@@ -103,7 +103,7 @@
         <input type="text" id="titulo" placeholder="Digite o título do item" name="titulo" /><br /><br />
 
         <label for="data" data-i18n="contentSubmission.dataLabel">Data:</label><br />
-        <input type="date" id="proprietario" class="custom-label" placeholder="Digite a data do item" name="data" /><br />
+        <input type="date" id="data" class="custom-label" placeholder="Digite a data do item" name="data" /><br />
 
         <label data-i18n="contentSubmission.authorLabel">Autor(a):</label><br />
         <div class="autores" id="author-input-group">
@@ -112,7 +112,33 @@
           <ul id="authorsList"></ul>
         </div>
 
-        <label data-i18n="contentSubmission.keywordLabel">Palavras-chave:</label><br />
+        <label for="proprietario" data-i18n="contentSubmission.ownerLabel">Proprietário:</label><br />
+        <select id="proprietario" name="proprietario">
+          <option value="matheus_silveira">Matheus Silveira</option>
+          <option value="fernanda_pereira_matos">Fernanda Pereira Matos</option>
+          <option value="administrador">Administrador</option>
+          <option value="outro">Outro</option>
+        </select><br /><br />
+
+        <div id="outro-proprietario-container" class="autores">
+          <input type="text" id="novo-proprietario" placeholder="Digite o nome do proprietário" />
+          <button type="button" id="adicionar-proprietario-btn">Adicionar</button><br /><br />
+        </div>
+
+        <label data-i18n="contentSubmission.collectionLabel">Coleção:</label><br />
+        <div class="checkbox-group" id="colecoes-checkboxes">
+          <label><input type="checkbox" name="colecao" value="audio"> Áudio</label>
+          <label><input type="checkbox" name="colecao" value="tese"> Dissertação/Tese</label>
+          <label><input type="checkbox" name="colecao" value="documento"> Documento</label>
+          <label><input type="checkbox" name="colecao" value="entrevista"> Entrevista</label>
+          <label><input type="checkbox" name="colecao" value="imagem"> Imagem</label>
+          <label><input type="checkbox" name="colecao" value="livro"> Livro</label>
+          <label><input type="checkbox" name="colecao" value="periodico"> Periódico</label>
+          <label><input type="checkbox" name="colecao" value="video"> Vídeo</label>
+          <label><input type="checkbox" name="colecao" value="terriorio"> Território de Princesa Isabel</label>
+        </div><br />
+
+        <label data-i18n="contentSubmission.collectionLabel">Palavras-Chave:</label><br />
         <div class="checkbox-group" id="metadados-checkboxes">
           <label><input type="checkbox" name="keyword" value="audio"> Áudio</label>
           <label><input type="checkbox" name="keyword" value="tese"> Dissertação/Tese</label>
@@ -122,10 +148,16 @@
           <label><input type="checkbox" name="keyword" value="livro"> Livro</label>
           <label><input type="checkbox" name="keyword" value="periodico"> Periódico</label>
           <label><input type="checkbox" name="keyword" value="video"> Vídeo</label>
-          <label><input type="checkbox" name="keyword" value="terriorio"> Território de Princesa Isabel</label>
-        </div><br />
+          <label><input type="checkbox" name="keyword" value="territorio"> Território de Princesa Isabel</label>
+          <label><input type="checkbox" name="keyword" value="outro" id="outro-checkbox"> Outro</label>
+        </div>
 
-        <div class="file-upload" onclick="document.getElementById('fileUpload').click()">
+        <div id="outro-input-container" class="autores">
+          <input type="text" id="novo-item" placeholder="Digite uma nova palavra-chave" />
+          <button type="button" id="adicionar-btn">Adicionar</button><br /><br />
+        </div>
+
+        <br /><br /><div class="file-upload" onclick="document.getElementById('fileUpload').click()">
           <p><strong data-i18n="contentSubmission.selectFile">Clique aqui para selecionar um arquivo</strong><br /></p>
           <input type="file" id="fileUpload" name="fileUpload" hidden />
         </div><br />

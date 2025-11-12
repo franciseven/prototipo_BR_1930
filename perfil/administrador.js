@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   let authors = [];
+  let uploadedFiles = [];
 
   const addAuthorBtn = document.getElementById('addAuthorBtn');
   const autorInput = document.getElementById('autorInput');
@@ -7,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("submitContentBtn");
   const fileInput = document.getElementById("fileUpload");
 
+  // =======================
+  // EXIBIÇÃO DO NOME DO ARQUIVO
+  // =======================
   const fileNameDisplay = document.createElement("p");
   fileNameDisplay.style.fontWeight = "bold";
   fileNameDisplay.style.marginTop = "8px";
@@ -15,12 +19,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fileInput.addEventListener("change", () => {
     if (fileInput.files.length > 0) {
-      fileNameDisplay.textContent = `Arquivo selecionado: ${fileInput.files[0].name}`;
+      uploadedFiles = Array.from(fileInput.files).map(f => f.name);
+      fileNameDisplay.textContent = `Arquivos selecionados: ${uploadedFiles.join(", ")}`;
     } else {
+      uploadedFiles = [];
       fileNameDisplay.textContent = "";
     }
   });
 
+  // =======================
+  // AUTORES
+  // =======================
   addAuthorBtn.addEventListener('click', () => {
     const newAuthor = autorInput.value.trim();
 
@@ -59,9 +68,60 @@ document.addEventListener("DOMContentLoaded", () => {
     autorInput.value = '';
   });
 
+  // =======================
+  // DINÂMICA DO PROPRIETÁRIO
+  // =======================
+  const proprietarioSelect = document.getElementById("proprietario");
+  const outroProprietarioContainer = document.getElementById("outro-proprietario-container");
+  const novoProprietarioInput = document.getElementById("novo-proprietario");
+  const adicionarProprietarioBtn = document.getElementById("adicionar-proprietario-btn");
+
+  outroProprietarioContainer.style.display = "none";
+
+  proprietarioSelect.addEventListener("change", () => {
+    if (proprietarioSelect.value === "outro") {
+      outroProprietarioContainer.style.display = "block";
+      novoProprietarioInput.focus();
+    } else {
+      outroProprietarioContainer.style.display = "none";
+      novoProprietarioInput.value = "";
+    }
+  });
+
+  adicionarProprietarioBtn.addEventListener("click", () => {
+    const novoNome = novoProprietarioInput.value.trim();
+
+    if (novoNome === "") {
+      alert("Digite um nome para o novo proprietário.");
+      return;
+    }
+
+    const jaExiste = Array.from(proprietarioSelect.options).some(
+      opt => opt.text.toLowerCase() === novoNome.toLowerCase()
+    );
+    if (jaExiste) {
+      alert("Esse proprietário já existe na lista.");
+      return;
+    }
+
+    const novaOpcao = document.createElement("option");
+    novaOpcao.value = novoNome.toLowerCase().replace(/\s+/g, "_");
+    novaOpcao.text = novoNome;
+
+    proprietarioSelect.insertBefore(novaOpcao, proprietarioSelect.querySelector('option[value="outro"]'));
+    proprietarioSelect.value = novaOpcao.value;
+
+    novoProprietarioInput.value = "";
+    outroProprietarioContainer.style.display = "none";
+  });
+
+  // =======================
+  // RESETAR FORMULÁRIO
+  // =======================
   function resetForm() {
     document.getElementById("titulo").value = "";
     authors = [];
+    uploadedFiles = [];
     authorsList.innerHTML = "";
     document.querySelectorAll("input[name='keyword']").forEach(cb => cb.checked = false);
     fileInput.value = "";
@@ -70,13 +130,78 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("visibility").value = "restrito";
   }
 
+  // =======================
+  // CHECKBOX “OUTRO”
+  // =======================
+  const outroCheckbox = document.getElementById("outro-checkbox");
+  const outroContainer = document.getElementById("outro-input-container");
+  const adicionarBtn = document.getElementById("adicionar-btn");
+  const novoItemInput = document.getElementById("novo-item");
+
+  outroContainer.style.display = "none";
+
+  outroCheckbox.addEventListener("change", function() {
+    if (this.checked) {
+      outroContainer.style.display = "block";
+      novoItemInput.focus();
+    } else {
+      outroContainer.style.display = "none";
+      novoItemInput.value = "";
+    }
+  });
+
+  adicionarBtn.addEventListener("click", function() {
+    const novoValor = novoItemInput.value.trim();
+    if (novoValor === "") return;
+
+    const grupo = outroCheckbox.closest(".checkbox-group");
+    const checkboxes = grupo.querySelectorAll('input[type="checkbox"]');
+
+    for (const cb of checkboxes) {
+      if (cb.value.toLowerCase() === novoValor.toLowerCase()) {
+        alert("Essa palavra-chave já existe!");
+        novoItemInput.value = "";
+        novoItemInput.focus();
+        return;
+      }
+    }
+
+    const novoLabel = document.createElement("label");
+    const novoCheckbox = document.createElement("input");
+    novoCheckbox.type = "checkbox";
+    novoCheckbox.name = "keyword";
+    novoCheckbox.value = novoValor.toLowerCase();
+
+    novoLabel.appendChild(novoCheckbox);
+    novoLabel.appendChild(document.createTextNode(" " + novoValor));
+
+    grupo.insertBefore(novoLabel, outroCheckbox.parentElement);
+
+    novoItemInput.value = "";
+    novoItemInput.focus();
+  });
+
+  // =======================
+  // ENVIO DOS DADOS
+  // =======================
   btn.addEventListener("click", function (e) {
     e.preventDefault();
+
     const titulo = document.getElementById("titulo").value.trim();
     const anotacoes = document.getElementById("annotation").value.trim();
-    const arquivo = fileInput.files[0];
     const visibilidade = document.getElementById("visibility").options[document.getElementById("visibility").selectedIndex].text;
-    const metadadosSelecionados = Array.from(document.querySelectorAll("input[name='keyword']:checked")).map(checkbox => checkbox.value);
+
+    const dataValor = document.getElementById("data").value;
+
+    const proprietarioValor = proprietarioSelect.options[proprietarioSelect.selectedIndex].text;
+
+    const colecaoCheckboxes = document.querySelectorAll("#colecoes-checkboxes input[type='checkbox']:checked");
+    const colecaoValor = Array.from(colecaoCheckboxes).map(cb => cb.value);
+
+    const palavrasChaveCheckboxes = document.querySelectorAll("#metadados-checkboxes input[type='checkbox']:checked");
+    const palavrasChaveValor = Array.from(palavrasChaveCheckboxes)
+      .filter(cb => cb.id !== "outro-checkbox")
+      .map(cb => cb.value);
 
     if (!titulo) {
       alert("Por favor, preencha o campo Título.");
@@ -86,22 +211,29 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Por favor, adicione pelo menos um autor.");
       return;
     }
-    if (!arquivo) {
+    if (uploadedFiles.length === 0) {
       alert("Por favor, selecione um arquivo para upload.");
       return;
     }
-    if (metadadosSelecionados.length === 0) {
-      alert("Por favor, selecione pelo menos um metadado.");
+    if (colecaoValor.length === 0) {
+      alert("Por favor, selecione pelo menos uma coleção.");
+      return;
+    }
+    if (palavrasChaveValor.length === 0) {
+      alert("Por favor, selecione pelo menos uma palavra-chave.");
       return;
     }
 
     const dados = {
       titulo,
       autores: authors,
+      data: dataValor,
+      proprietario: proprietarioValor,
+      colecoes: colecaoValor,
+      palavrasChave: palavrasChaveValor,
       anotacoes,
-      metadados: metadadosSelecionados,
       visibilidade,
-      arquivo
+      arquivos: uploadedFiles
     };
 
     console.log("Dados a enviar:", dados);
@@ -110,19 +242,27 @@ document.addEventListener("DOMContentLoaded", () => {
       `Conteúdo enviado com sucesso!\n\n` +
       `Título: ${titulo}\n` +
       `Autores: ${authors.join(", ")}\n` +
+      `Data: ${dataValor}\n` +
+      `Proprietário: ${proprietarioValor}\n` +
+      `Coleções: ${colecaoValor.join(", ")}\n` +
+      `Palavras-Chave: ${palavrasChaveValor.join(", ")}\n` +
       `Anotações: ${anotacoes ? anotacoes : 'Nenhuma anotação'}\n` +
-      `Metadados: ${metadadosSelecionados.join(", ")}\n` +
       `Visibilidade: ${visibilidade}\n` +
-      `Arquivo enviado: ${arquivo.name}`
+      `Arquivos enviados: ${uploadedFiles.join(", ")}`
     );
 
     resetForm();
   });
 
+
+  // =======================
+  // BOTÃO DE EDIÇÃO (EXEMPLO)
+  // =======================
   document.querySelectorAll(".editBtn").forEach(btn => {
     btn.addEventListener("click", () => {
       document.getElementById("titulo").value = "Como se Combate o Cangaceirismo na Parahyba";
       authors = ["Jornal A Manhã (RJ)"];
+      uploadedFiles = ["capa_territorio_1.jpg"];
       authorsList.innerHTML = "";
       authors.forEach(author => {
         const li = document.createElement("li");
@@ -142,11 +282,11 @@ document.addEventListener("DOMContentLoaded", () => {
         li.appendChild(removeBtn);
         authorsList.appendChild(li);
       });
-      const palavrasChave = ["terriorio", "periodico"];
+      const palavrasChave = ["territorio", "periodico"];
       document.querySelectorAll("input[name='keyword']").forEach(cb => {
         cb.checked = palavrasChave.includes(cb.value);
       });
-      fileNameDisplay.textContent = "Arquivo anexado: capa_territorio_1.jpg";
+      fileNameDisplay.textContent = "Arquivo anexado: " + uploadedFiles.join(", ");
       document.getElementById("annotation").value = "";
       document.getElementById("visibility").value = "livre";
     });
@@ -164,22 +304,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const attachmentsContainer = document.getElementById('attachments');
-  fileInput.setAttribute('type', 'file');
-  fileInput.setAttribute('multiple', true);
-  fileInput.style.display = 'none';
-  document.body.appendChild(fileInput);
-
   const toolbar = quill.getModule('toolbar');
-  toolbar.addHandler('link', () => {
-    fileInput.click();
-  });
-
-  fileInput.addEventListener('change', (e) => {
-    for (const file of e.target.files) {
-      addAttachment(file);
-    }
-    fileInput.value = '';
-  });
+  toolbar.addHandler('link', () => fileInput.click());
 
   quill.root.addEventListener('drop', handleFileDrop, false);
   quill.root.addEventListener('dragover', (e) => e.preventDefault(), false);
@@ -187,24 +313,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleFileDrop(e) {
     e.preventDefault();
     const files = e.dataTransfer.files;
-    for (const file of files) {
-      addAttachment(file);
-    }
+    for (const file of files) addAttachment(file);
   }
 
-  // =======================
-  // FUNÇÃO DE ANEXOS
-  // =======================
   function addAttachment(file) {
-    const assuntoAtual = selectAssunto.value;
-    const extensao = file.name.split('.').pop().toLowerCase();
-
-    // Se assunto for "Artigo - Blog", só aceita .docx
-    if (assuntoAtual === 'blog' && extensao !== 'docx') {
-      alert('Apenas arquivos .docx são permitidos para o assunto "Artigo - Blog".');
-      return;
-    }
-
     const card = document.createElement('div');
     card.className = 'attachment';
     card.innerHTML = `<span>${file.name}</span> <button type="button">x</button>`;
@@ -212,118 +324,3 @@ document.addEventListener("DOMContentLoaded", () => {
     attachmentsContainer.appendChild(card);
   }
 });
-
-let modalTipo = "";
-
-function abrirModal(tipo) {
-  modalTipo = tipo;
-
-  const titulo = document.getElementById("modal_titulo");
-  if (tipo === "parcial") titulo.textContent = "Mensagem de Aprovação Parcial";
-  if (tipo === "aprovacao") titulo.textContent = "Mensagem de Aprovação Completa";
-  if (tipo === "rejeicao") titulo.textContent = "Mensagem de Rejeição";
-  if (tipo === "remocao") titulo.textContent = "Mensagem de Remoção";
-
-  document.getElementById("modal_mensagem").value = "";
-  document.getElementById("modal_unico").style.display = "flex";
-}
-
-function fecharModal() {
-  document.getElementById("modal_unico").style.display = "none";
-  modalTipo = "";
-}
-
-function enviarSolicitacao() {
-  const mensagem = document.getElementById("modal_mensagem").value.trim();
-  if (!mensagem) {
-    alert("Por favor, escreva a observação antes de enviar.");
-    return;
-  }
-
-  alert("Observação enviada com sucesso!");
-
-  if (modalTipo === "aprovacao") {
-    alert("Conteúdo Aprovado e enviado à base de dados!");
-  } 
-  else if (modalTipo === "rejeicao") {
-    alert("Conteúdo Rejeitado e não anexado à base de dados!");
-  } else if (modalTipo === "remocao") {
-    alert("Conteúdo Removido da base de dados!");
-  }
-
-  fecharModal();
-}
-
-window.addEventListener("click", function (event) {
-  const modal = document.getElementById("modal_unico");
-  if (event.target === modal) {
-    fecharModal();
-  }
-});
-
-document.querySelectorAll(".approve_partialBtn").forEach((btn) => {
-  btn.addEventListener("click", () => abrirModal("parcial"));
-});
-
-document.querySelectorAll(".approveBtn").forEach((btn) => {
-  btn.addEventListener("click", () => abrirModal("aprovacao"));
-});
-
-document.querySelectorAll(".rejectBtn").forEach((btn) => {
-  btn.addEventListener("click", () => abrirModal("rejeicao"));
-});
-
-document.querySelectorAll(".deleteBtn").forEach((btn) => {
-  btn.addEventListener("click", () => abrirModal("remocao"));
-});
-
-document.querySelectorAll(".viewBtn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    alert("Visualizando o conteúdo selecionado!");
-  });
-});
-
-document.querySelectorAll(".downloadBtn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    alert("Baixando o conteúdo selecionado!");
-  });
-});
-
-function configurarFullscreen(botaoId, containerId, titleId) {
-  const tabelaContainer = document.getElementById(containerId);
-  const expandBtn = document.getElementById(botaoId);
-  const fullscreenTitle = document.getElementById(titleId);
-
-  const closeBtn = document.createElement("button");
-  closeBtn.innerHTML = "✖";
-  closeBtn.classList.add("close-fullscreen");
-  closeBtn.style.display = "none";
-  document.body.appendChild(closeBtn);
-
-  const overlay = document.createElement("div");
-  overlay.classList.add("fullscreen-overlay");
-  document.body.appendChild(overlay);
-
-  expandBtn.addEventListener("click", () => {
-    tabelaContainer.classList.add("fullscreen");
-    overlay.classList.add("active");
-    document.body.classList.add("noscroll");
-    closeBtn.style.display = "block";
-    fullscreenTitle.style.display = "block";
-  });
-
-  function closeFullscreen() {
-    tabelaContainer.classList.remove("fullscreen");
-    overlay.classList.remove("active");
-    document.body.classList.remove("noscroll");
-    closeBtn.style.display = "none";
-    fullscreenTitle.style.display = "none";
-  }
-
-  closeBtn.addEventListener("click", closeFullscreen);
-  overlay.addEventListener("click", closeFullscreen);
-}
-
-configurarFullscreen("table_extension_historico", "tabelaContainer_historico", "titleFullscreen_historico");
-configurarFullscreen("table_extension_pendentes", "tabelaContainer_pendentes", "titleFullscreen_pendentes");
-configurarFullscreen("table_extension_fluxo", "tabelaContainer_fluxo", "titleFullscreen_fluxo");

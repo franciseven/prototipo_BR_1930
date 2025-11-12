@@ -161,6 +161,18 @@ main.user-page {
   margin-top: 5px;
 }
 
+.custom-label {
+	display: block;
+	font-size: 1rem;
+	color: #333333;
+	transition: color 0.3s ease;
+	user-select: none;
+}
+
+.custom-label:hover {
+	color: #0077cc;
+}
+
 .checkbox-group {
   display: flex;
   flex-wrap: wrap;

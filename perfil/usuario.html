@@ -67,6 +67,9 @@
           <label for="titulo" data-i18n="contentSubmission.titleLabel">Título:</label><br />
           <input type="text" id="titulo" placeholder="Digite o título do item" name="titulo" /><br /><br />
 
+          <label for="data" data-i18n="contentSubmission.dataLabel">Data:</label><br />
+          <input type="date" id="data" class="custom-label" placeholder="Digite a data do item" name="data" /><br />          
+
           <label data-i18n="contentSubmission.authorLabel">Autor(a):</label><br />
           <div class="autores" id="author-input-group">
             <input type="text" id="autorInput" placeholder="Digite o nome do autor" />
@@ -74,7 +77,7 @@
             <ul id="authorsList"></ul>
           </div>
 
-          <label data-i18n="contentSubmission.keywordLabel">Palavras-chave:</label><br />
+          <label data-i18n="contentSubmission.collectionLabel">Coleção:</label><br />
           <div class="checkbox-group" id="metadados-checkboxes">
             <label><input type="checkbox" name="keyword" value="audio"> Áudio</label>
             <label><input type="checkbox" name="keyword" value="tese"> Dissertação/Tese</label>
@@ -87,7 +90,26 @@
             <label><input type="checkbox" name="keyword" value="terriorio"> Território de Princesa Isabel</label>
           </div><br />
 
-          <div class="file-upload" onclick="document.getElementById('fileUpload').click()">
+          <label data-i18n="contentSubmission.collectionLabel">Palavras-Chave:</label><br />
+          <div class="checkbox-group" id="metadados-checkboxes">
+            <label><input type="checkbox" name="keyword" value="audio"> Áudio</label>
+            <label><input type="checkbox" name="keyword" value="tese"> Dissertação/Tese</label>
+            <label><input type="checkbox" name="keyword" value="documento"> Documento</label>
+            <label><input type="checkbox" name="keyword" value="entrevista"> Entrevista</label>
+            <label><input type="checkbox" name="keyword" value="imagem"> Imagem</label>
+            <label><input type="checkbox" name="keyword" value="livro"> Livro</label>
+            <label><input type="checkbox" name="keyword" value="periodico"> Periódico</label>
+            <label><input type="checkbox" name="keyword" value="video"> Vídeo</label>
+            <label><input type="checkbox" name="keyword" value="territorio"> Território de Princesa Isabel</label>
+            <label><input type="checkbox" name="keyword" value="outro" id="outro-checkbox"> Outro</label><br />
+          </div>
+
+          <div id="outro-input-container" class="autores" display="none">
+            <input type="text" id="novo-item" placeholder="Digite uma nova palavra-chave" />
+            <button type="button" id="adicionar-btn">Adicionar</button><br /><br />
+          </div>
+
+          <br /><br /><div class="file-upload" onclick="document.getElementById('fileUpload').click()">
             <p><strong data-i18n="contentSubmission.selectFile">Clique aqui para selecionar um arquivo</strong><br /></p>
             <input type="file" id="fileUpload" name="fileUpload" hidden />
           </div><br />

@@ -50,6 +50,54 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const outroCheckbox = document.getElementById("outro-checkbox");
+  const outroContainer = document.getElementById("outro-input-container");
+  const adicionarBtn = document.getElementById("adicionar-btn");
+  const novoItemInput = document.getElementById("novo-item");
+
+  outroContainer.style.display = "none";
+
+  outroCheckbox.addEventListener("change", function() {
+    if (this.checked) {
+      outroContainer.style.display = "block";
+      novoItemInput.focus();
+    } else {
+      outroContainer.style.display = "none";
+      novoItemInput.value = "";
+    }
+  });
+
+  adicionarBtn.addEventListener("click", function() {
+    const novoValor = novoItemInput.value.trim();
+    if (novoValor === "") return;
+
+    const grupo = outroCheckbox.closest(".checkbox-group");
+    const checkboxes = grupo.querySelectorAll('input[type="checkbox"]');
+
+    for (const cb of checkboxes) {
+      if (cb.value.toLowerCase() === novoValor.toLowerCase()) {
+        alert("⚠️ Essa palavra-chave já existe!");
+        novoItemInput.value = "";
+        novoItemInput.focus();
+        return;
+      }
+    }
+
+    const novoLabel = document.createElement("label");
+    const novoCheckbox = document.createElement("input");
+    novoCheckbox.type = "checkbox";
+    novoCheckbox.name = "keyword";
+    novoCheckbox.value = novoValor.toLowerCase();
+
+    novoLabel.appendChild(novoCheckbox);
+    novoLabel.appendChild(document.createTextNode(" " + novoValor));
+
+    grupo.insertBefore(novoLabel, outroCheckbox.parentElement);
+
+    novoItemInput.value = "";
+    novoItemInput.focus();
+  });
+
   btn.addEventListener("click", function (e) {
     e.preventDefault();
 
