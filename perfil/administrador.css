@@ -818,3 +818,21 @@ body.noscroll {
   cursor: default;
   font-size: 1rem;
 }
+
+.submit-btn {
+  background-color: #185898;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 16px 40px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+}
+
+.submit-btn:hover {
+  background-color: #5d8de3;
+  transform: scale(1.03);
+}

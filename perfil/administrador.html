@@ -182,44 +182,56 @@
       <h2 data-i18n="contentSubmission.title">Submissão Para o Blog</h2>
 
       <div class="upload-area">
-        <label for="titulo" data-i18n="contentSubmission.titleLabel">Título:</label><br />
-        <input type="text" id="titulo" placeholder="Digite o título do item" name="titulo" /><br /><br />
+        <label for="blog_titulo" data-i18n="contentSubmission.titleLabel">Título:</label><br />
+        <input type="text" id="blog_titulo" placeholder="Digite o título do item" name="blog_titulo" /><br /><br />
 
-        <label for="proprietario" data-i18n="contentSubmission.ownerLabel">Proprietário:</label><br />
-        <input type="text" id="proprietario" placeholder="Digite o proprietário do item" name="proprietario" /><br /><br />
+        <label for="blog_proprietario" data-i18n="contentSubmission.ownerLabel">Proprietário:</label><br />
+        <select id="blog_proprietario" name="proprietario">
+          <option value="matheus_silveira">Matheus Silveira</option>
+          <option value="fernanda_pereira_matos">Fernanda Pereira Matos</option>
+          <option value="administrador">Administrador</option>
+          <option value="outro">Outro</option>
+        </select><br /><br />
+
+        <div id="blog-outro-proprietario-container" class="autores">
+          <input type="text" id="blog-novo-proprietario" placeholder="Digite o nome do proprietário" />
+          <button type="button" id="blog-adicionar-proprietario-btn">Adicionar</button><br /><br />
+        </div>
 
         <label data-i18n="contentSubmission.authorLabel">Autor(a):</label><br />
-        <div class="autores" id="author-input-group">
-          <input type="text" id="autorInput" placeholder="Digite o nome do autor" />
-        </div><br />
+        <div class="autores" id="blog_author-input-group">
+          <input type="text" id="blog_autorInput" placeholder="Digite o nome do autor" />
+          <button type="button" id="blog_addAuthorBtn">Adicionar Autor</button>
+          <ul id="blog_authorsList"></ul>
+        </div>        
 
-        <div class="file-upload" onclick="document.getElementById('fileUpload').click()">
+        <div class="file-upload" onclick="document.getElementById('blog_fileUploadAutor').click()">
           <p><strong data-i18n="contentSubmission.selectFile">Clique aqui para enviar uma foto de perfil do autor</strong><br /></p>
-          <input type="file" id="fileUpload" name="fileUpload" hidden />
+          <input type="file" id="blog_fileUploadAutor" name="blog_fileUploadAutor" hidden />
         </div><br />
 
-        <label for="data" data-i18n="contentSubmission.dataLabel">Data:</label><br />
-        <input type="date" id="proprietario" class="custom-label" placeholder="Digite a data do item" name="data" /><br />
+        <label for="blog_data" data-i18n="contentSubmission.dataLabel">Data:</label><br />
+        <input type="date" id="blog_data" class="custom-label" placeholder="Digite a data do item" name="blog_data" /><br />
 
-        <label for="lattes" data-i18n="contentSubmission.lattesLabel">Link do Lattes:</label><br />
-        <input type="text" id="lattes" placeholder="Digite o link do lattes do autor" name="lattes" /><br /><br />
+        <label for="blog_lattes" data-i18n="contentSubmission.lattesLabel">Link do Lattes:</label><br />
+        <input type="text" id="blog_lattes" placeholder="Digite o link do lattes do autor" name="blog_lattes" /><br /><br />
 
-        <label for="descricao" data-i18n="contentSubmission.descricaoLabel">Descrição do Item:</label><br />
-        <input type="text" id="descricao" placeholder="Digite a descrição do item" name="descricao" /><br /><br />
+        <label for="blog_descricao" data-i18n="contentSubmission.descricaoLabel">Descrição do Item:</label><br />
+        <input type="text" id="blog_descricao" placeholder="Digite a descrição do item" name="blog_descricao" /><br /><br />
 
-        <div class="file-upload" onclick="document.getElementById('fileUpload').click()">
+        <div class="file-upload" onclick="document.getElementById('blog_fileUploadCapa').click()">
           <p><strong data-i18n="contentSubmission.selectFile">Clique aqui para selecionar uma capa para o blog</strong><br /></p>
-          <input type="file" id="fileUpload" name="fileUpload" hidden />
+          <input type="file" id="blog_fileUploadCapa" name="blog_fileUploadCapa" hidden />
         </div><br />
 
-        <label for="fonte" data-i18n="contentSubmission.fonteLabel">Fonte do Item:</label><br />
-        <input type="text" id="lattes" placeholder="Digite a fonte do item" name="fonte" /><br /><br />
+        <label for="blog_fonte" data-i18n="contentSubmission.fonteLabel">Fonte do Item (origem):</label><br />
+        <input type="text" id="blog_fonte" placeholder="Digite a fonte do item" name="blog_fonte" /><br /><br />
 
-        <label for="annotation" data-i18n="contentSubmission.annotationsLabel">Anotações sobre o conteúdo:</label><br />
-        <input type="text" id="annotation" placeholder="Digite anotações sobre o conteúdo" name="annotation" /><br /><br />
+        <label for="blog_annotation" data-i18n="contentSubmission.annotationsLabel">Anotações sobre o conteúdo:</label><br />
+        <input type="text" id="blog_annotation" placeholder="Digite anotações sobre o conteúdo" name="blog_annotation" /><br /><br />
 
         <div class="editor-wrapper">
-          <div id="toolbar">
+          <div id="blog_toolbar">
             <select class="ql-header">
               <option value="1"></option>
               <option value="2"></option>
@@ -232,12 +244,12 @@
             <button class="ql-list" value="bullet"></button>
           </div>
 
-          <div id="editor" class="editor-container"></div>
+          <div id="blog_editor" class="editor-container"></div>
         </div>
 
-        <div class="attachments" id="attachments"></div>
+        <div class="attachments" id="blog_attachments"></div>
 
-        <br /><button id="submitContentBtn" data-i18n="contentSubmission.submitButton">Enviar Conteúdo</button>
+        <br /><button id="blog_submitContentBtn" class="submit-btn" data-i18n="contentSubmission.submitButton">Enviar Conteúdo</button>
       </div>
     </div>
 

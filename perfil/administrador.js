@@ -324,3 +324,260 @@ document.addEventListener("DOMContentLoaded", () => {
     attachmentsContainer.appendChild(card);
   }
 });
+
+// =======================
+// FUNÇÃO PARA O BLOG
+// =======================
+document.addEventListener("DOMContentLoaded", () => {
+  // =======================
+  // VARIÁVEIS DO BLOG
+  // =======================
+  let blogAuthors = [];
+  let blogUploadedFilesAutor = [];
+  let blogUploadedFilesCapa = [];
+
+  const blogTitulo = document.getElementById("blog_titulo");
+  const blogAutorInput = document.getElementById("blog_autorInput");
+  const blogAddAuthorBtn = document.getElementById("blog_addAuthorBtn");
+  const blogAuthorsList = document.getElementById("blog_authorsList");
+  const blogFileUploadAutor = document.getElementById("blog_fileUploadAutor");
+  const blogFileUploadCapa = document.getElementById("blog_fileUploadCapa");
+  const blogSubmitBtn = document.getElementById("blog_submitContentBtn");
+  const blogAnnotation = document.getElementById("blog_annotation");
+  const blogDescricao = document.getElementById("blog_descricao");
+  const blogFonte = document.getElementById("blog_fonte");
+  const blogData = document.getElementById("blog_data");
+  const blogProprietarioSelect = document.getElementById("blog_proprietario");
+  const blogOutroProprietarioContainer = document.getElementById("blog-outro-proprietario-container");
+  const blogNovoProprietarioInput = document.getElementById("blog-novo-proprietario");
+  const blogAdicionarProprietarioBtn = document.getElementById("blog-adicionar-proprietario-btn");
+
+  // =======================
+  // DINÂMICA DO PROPRIETÁRIO (BLOG)
+  // =======================
+  blogOutroProprietarioContainer.style.display = "none";
+
+  blogProprietarioSelect.addEventListener("change", () => {
+    if (blogProprietarioSelect.value === "outro") {
+      blogOutroProprietarioContainer.style.display = "block";
+      blogNovoProprietarioInput.focus();
+    } else {
+      blogOutroProprietarioContainer.style.display = "none";
+      blogNovoProprietarioInput.value = "";
+    }
+  });
+
+  blogAdicionarProprietarioBtn.addEventListener("click", () => {
+    const novoNome = blogNovoProprietarioInput.value.trim();
+
+    if (novoNome === "") {
+      alert("Digite um nome para o novo proprietário.");
+      return;
+    }
+
+    const jaExiste = Array.from(blogProprietarioSelect.options).some(
+      opt => opt.text.toLowerCase() === novoNome.toLowerCase()
+    );
+    if (jaExiste) {
+      alert("Esse proprietário já existe na lista.");
+      return;
+    }
+
+    const novaOpcao = document.createElement("option");
+    novaOpcao.value = novoNome.toLowerCase().replace(/\s+/g, "_");
+    novaOpcao.text = novoNome;
+
+    blogProprietarioSelect.insertBefore(
+      novaOpcao,
+      blogProprietarioSelect.querySelector('option[value="outro"]')
+    );
+    blogProprietarioSelect.value = novaOpcao.value;
+
+    blogNovoProprietarioInput.value = "";
+    blogOutroProprietarioContainer.style.display = "none";
+  });
+
+  // =======================
+  // EXIBIÇÃO DO NOME DO ARQUIVO (AUTOR)
+  // =======================
+  const blogFileAutorDisplay = document.createElement("p");
+  blogFileAutorDisplay.style.fontWeight = "bold";
+  blogFileAutorDisplay.style.marginTop = "8px";
+  blogFileAutorDisplay.style.color = "#444";
+  blogFileUploadAutor.parentNode.insertBefore(blogFileAutorDisplay, blogFileUploadAutor.nextSibling);
+
+  blogFileUploadAutor.addEventListener("change", () => {
+    if (blogFileUploadAutor.files.length > 0) {
+      blogUploadedFilesAutor = Array.from(blogFileUploadAutor.files).map(f => f.name);
+      blogFileAutorDisplay.textContent = `Arquivo selecionado: ${blogUploadedFilesAutor.join(", ")}`;
+    } else {
+      blogUploadedFilesAutor = [];
+      blogFileAutorDisplay.textContent = "";
+    }
+  });
+
+  // =======================
+  // EXIBIÇÃO DO NOME DO ARQUIVO (CAPA)
+  // =======================
+  const blogFileCapaDisplay = document.createElement("p");
+  blogFileCapaDisplay.style.fontWeight = "bold";
+  blogFileCapaDisplay.style.marginTop = "8px";
+  blogFileCapaDisplay.style.color = "#444";
+  blogFileUploadCapa.parentNode.insertBefore(blogFileCapaDisplay, blogFileUploadCapa.nextSibling);
+
+  blogFileUploadCapa.addEventListener("change", () => {
+    if (blogFileUploadCapa.files.length > 0) {
+      blogUploadedFilesCapa = Array.from(blogFileUploadCapa.files).map(f => f.name);
+      blogFileCapaDisplay.textContent = `Arquivo selecionado: ${blogUploadedFilesCapa.join(", ")}`;
+    } else {
+      blogUploadedFilesCapa = [];
+      blogFileCapaDisplay.textContent = "";
+    }
+  });
+
+  // =======================
+  // ADICIONAR AUTOR (HTML fixo)
+  // =======================
+  blogAddAuthorBtn.addEventListener("click", () => {
+    const newAuthor = blogAutorInput.value.trim();
+    if (!newAuthor) {
+      alert("Favor inserir pelo menos um autor ao clicar no botão");
+      return;
+    }
+    if (blogAuthors.includes(newAuthor)) {
+      alert("Autores com o mesmo nome não são permitidos.");
+      return;
+    }
+    blogAuthors.push(newAuthor);
+
+    const li = document.createElement("li");
+    li.textContent = newAuthor;
+
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "×";
+    removeBtn.style.marginLeft = "8px";
+    removeBtn.style.color = "red";
+    removeBtn.style.border = "none";
+    removeBtn.style.background = "transparent";
+    removeBtn.style.cursor = "pointer";
+    removeBtn.title = "Remover autor";
+
+    removeBtn.addEventListener("click", () => {
+      blogAuthorsList.removeChild(li);
+      blogAuthors = blogAuthors.filter(a => a !== newAuthor);
+    });
+
+    li.appendChild(removeBtn);
+    blogAuthorsList.appendChild(li);
+    blogAutorInput.value = "";
+  });
+
+  // =======================
+  // QUILL EDITOR
+  // =======================
+  const blogQuill = new Quill("#blog_editor", {
+    theme: "snow",
+    placeholder: "Digite o texto do blog",
+    modules: { toolbar: "#blog_toolbar" }
+  });
+
+  const blogAttachmentsContainer = document.getElementById("blog_attachments");
+  const blogToolbar = blogQuill.getModule("toolbar");
+  blogToolbar.addHandler("link", () => blogFileUploadCapa.click());
+
+  blogQuill.root.addEventListener("drop", handleBlogFileDrop, false);
+  blogQuill.root.addEventListener("dragover", (e) => e.preventDefault(), false);
+
+  function handleBlogFileDrop(e) {
+    e.preventDefault();
+    const files = e.dataTransfer.files;
+    for (const file of files) addBlogAttachment(file);
+  }
+
+  function addBlogAttachment(file) {
+    const card = document.createElement("div");
+    card.className = "attachment";
+    card.innerHTML = `<span>${file.name}</span> <button type="button">x</button>`;
+    card.querySelector("button").onclick = () => card.remove();
+    blogAttachmentsContainer.appendChild(card);
+  }
+
+  // =======================
+  // ENVIO DE DADOS DO BLOG
+  // =======================
+  blogSubmitBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const titulo = blogTitulo.value.trim();
+    const anotacoes = blogAnnotation.value.trim();
+    const descricao = blogDescricao.value.trim();
+    const fonte = blogFonte.value.trim();
+    const dataValor = blogData.value;
+    const lattesLink = document.getElementById("blog_lattes").value.trim();
+    const editorContent = blogQuill.root.innerHTML;
+    const proprietarioFinal =
+      blogProprietarioSelect.options[blogProprietarioSelect.selectedIndex].text;
+
+    // === Validação ===
+    if (!titulo) return alert("Preencha o título.");
+    if (blogAuthors.length === 0) return alert("Adicione pelo menos um autor.");
+    if (blogUploadedFilesAutor.length === 0) return alert("Selecione a foto do autor.");
+    if (blogUploadedFilesCapa.length === 0) return alert("Selecione a capa do blog.");
+
+    // === Dados reunidos ===
+    const blogDataToSend = {
+      titulo,
+      autores: blogAuthors,
+      data: dataValor,
+      proprietario: proprietarioFinal,
+      descricao,
+      fonte,
+      anotacoes,
+      lattes: lattesLink,
+      editorContent,
+      arquivosAutor: blogUploadedFilesAutor,
+      arquivosCapa: blogUploadedFilesCapa
+    };
+
+    console.log("Dados do Blog a enviar:", blogDataToSend);
+
+    const resumoEditor =
+      editorContent.replace(/<[^>]*>?/gm, "").slice(0, 120) +
+      (editorContent.length > 120 ? "..." : "");
+
+    alert(
+      `📰 Submissão para o Blog concluída!\n\n` +
+        `Título: ${titulo}\n` +
+        `Autores: ${blogAuthors.join(", ")}\n` +
+        `Data: ${dataValor}\n` +
+        `Proprietário: ${proprietarioFinal}\n` +
+        `Lattes: ${lattesLink || "—"}\n` +
+        `Descrição: ${descricao || "—"}\n` +
+        `Fonte: ${fonte || "—"}\n` +
+        `Anotações: ${anotacoes || "—"}\n` +
+        `Texto do Blog: ${resumoEditor || "—"}\n` +
+        `Foto do Autor: ${blogUploadedFilesAutor.join(", ")}\n` +
+        `Capa do Blog: ${blogUploadedFilesCapa.join(", ")}`
+    );
+
+    // === Reset ===
+    blogTitulo.value = "";
+    blogAuthors = [];
+    blogAuthorsList.innerHTML = "";
+    blogAutorInput.value = "";
+    blogUploadedFilesAutor = [];
+    blogUploadedFilesCapa = [];
+    blogFileAutorDisplay.textContent = "";
+    blogFileCapaDisplay.textContent = "";
+    blogDescricao.value = "";
+    blogFonte.value = "";
+    blogAnnotation.value = "";
+    document.getElementById("blog_lattes").value = "";
+    blogData.value = "";
+    blogProprietarioSelect.value = "matheus_silveira";
+    blogOutroProprietarioContainer.style.display = "none";
+    blogNovoProprietarioInput.value = "";
+    blogQuill.root.innerHTML = "";
+    blogAttachmentsContainer.innerHTML = "";
+  });
+});
