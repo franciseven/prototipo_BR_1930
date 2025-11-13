@@ -582,117 +582,117 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-  let modalTipo = "";
+let modalTipo = "";
 
-  function abrirModal(tipo) {
-    modalTipo = tipo;
+function abrirModal(tipo) {
+  modalTipo = tipo;
 
-    const titulo = document.getElementById("modal_titulo");
-    if (tipo === "parcial") titulo.textContent = "Mensagem de Aprovação Parcial";
-    if (tipo === "aprovacao") titulo.textContent = "Mensagem de Aprovação Completa";
-    if (tipo === "rejeicao") titulo.textContent = "Mensagem de Rejeição";
-    if (tipo === "remocao") titulo.textContent = "Mensagem de Remoção";
+  const titulo = document.getElementById("modal_titulo");
+  if (tipo === "parcial") titulo.textContent = "Mensagem de Aprovação Parcial";
+  if (tipo === "aprovacao") titulo.textContent = "Mensagem de Aprovação Completa";
+  if (tipo === "rejeicao") titulo.textContent = "Mensagem de Rejeição";
+  if (tipo === "remocao") titulo.textContent = "Mensagem de Remoção";
 
-    document.getElementById("modal_mensagem").value = "";
-    document.getElementById("modal_unico").style.display = "flex";
+  document.getElementById("modal_mensagem").value = "";
+  document.getElementById("modal_unico").style.display = "flex";
+}
+
+function fecharModal() {
+  document.getElementById("modal_unico").style.display = "none";
+  modalTipo = "";
+}
+
+function enviarSolicitacao() {
+  const mensagem = document.getElementById("modal_mensagem").value.trim();
+  if (!mensagem) {
+    alert("Por favor, escreva a observação antes de enviar.");
+    return;
   }
 
-  function fecharModal() {
-    document.getElementById("modal_unico").style.display = "none";
-    modalTipo = "";
+  alert("Observação enviada com sucesso!");
+
+  if (modalTipo === "aprovacao") {
+    alert("Conteúdo Aprovado e enviado à base de dados!");
+  } 
+  else if (modalTipo === "rejeicao") {
+    alert("Conteúdo Rejeitado e não anexado à base de dados!");
+  } else if (modalTipo === "remocao") {
+    alert("Conteúdo Removido da base de dados!");
   }
 
-  function enviarSolicitacao() {
-    const mensagem = document.getElementById("modal_mensagem").value.trim();
-    if (!mensagem) {
-      alert("Por favor, escreva a observação antes de enviar.");
-      return;
-    }
+  fecharModal();
+}
 
-    alert("Observação enviada com sucesso!");
-
-    if (modalTipo === "aprovacao") {
-      alert("Conteúdo Aprovado e enviado à base de dados!");
-    } 
-    else if (modalTipo === "rejeicao") {
-      alert("Conteúdo Rejeitado e não anexado à base de dados!");
-    } else if (modalTipo === "remocao") {
-      alert("Conteúdo Removido da base de dados!");
-    }
-
+window.addEventListener("click", function (event) {
+  const modal = document.getElementById("modal_unico");
+  if (event.target === modal) {
     fecharModal();
   }
+});
 
-  window.addEventListener("click", function (event) {
-    const modal = document.getElementById("modal_unico");
-    if (event.target === modal) {
-      fecharModal();
-    }
+document.querySelectorAll(".approve_partialBtn").forEach((btn) => {
+  btn.addEventListener("click", () => abrirModal("parcial"));
+});
+
+document.querySelectorAll(".approveBtn").forEach((btn) => {
+  btn.addEventListener("click", () => abrirModal("aprovacao"));
+});
+
+document.querySelectorAll(".rejectBtn").forEach((btn) => {
+  btn.addEventListener("click", () => abrirModal("rejeicao"));
+});
+
+document.querySelectorAll(".deleteBtn").forEach((btn) => {
+  btn.addEventListener("click", () => abrirModal("remocao"));
+});
+
+document.querySelectorAll(".viewBtn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    alert("Visualizando o conteúdo selecionado!");
+  });
+});
+
+document.querySelectorAll(".downloadBtn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    alert("Baixando o conteúdo selecionado!");
+  });
+});
+
+function configurarFullscreen(botaoId, containerId, titleId) {
+  const tabelaContainer = document.getElementById(containerId);
+  const expandBtn = document.getElementById(botaoId);
+  const fullscreenTitle = document.getElementById(titleId);
+
+  const closeBtn = document.createElement("button");
+  closeBtn.innerHTML = "✖";
+  closeBtn.classList.add("close-fullscreen");
+  closeBtn.style.display = "none";
+  document.body.appendChild(closeBtn);
+
+  const overlay = document.createElement("div");
+  overlay.classList.add("fullscreen-overlay");
+  document.body.appendChild(overlay);
+
+  expandBtn.addEventListener("click", () => {
+    tabelaContainer.classList.add("fullscreen");
+    overlay.classList.add("active");
+    document.body.classList.add("noscroll");
+    closeBtn.style.display = "block";
+    fullscreenTitle.style.display = "block";
   });
 
-  document.querySelectorAll(".approve_partialBtn").forEach((btn) => {
-    btn.addEventListener("click", () => abrirModal("parcial"));
-  });
-
-  document.querySelectorAll(".approveBtn").forEach((btn) => {
-    btn.addEventListener("click", () => abrirModal("aprovacao"));
-  });
-
-  document.querySelectorAll(".rejectBtn").forEach((btn) => {
-    btn.addEventListener("click", () => abrirModal("rejeicao"));
-  });
-
-  document.querySelectorAll(".deleteBtn").forEach((btn) => {
-    btn.addEventListener("click", () => abrirModal("remocao"));
-  });
-
-  document.querySelectorAll(".viewBtn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      alert("Visualizando o conteúdo selecionado!");
-    });
-  });
-
-  document.querySelectorAll(".downloadBtn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      alert("Baixando o conteúdo selecionado!");
-    });
-  });
-
-  function configurarFullscreen(botaoId, containerId, titleId) {
-    const tabelaContainer = document.getElementById(containerId);
-    const expandBtn = document.getElementById(botaoId);
-    const fullscreenTitle = document.getElementById(titleId);
-
-    const closeBtn = document.createElement("button");
-    closeBtn.innerHTML = "✖";
-    closeBtn.classList.add("close-fullscreen");
+  function closeFullscreen() {
+    tabelaContainer.classList.remove("fullscreen");
+    overlay.classList.remove("active");
+    document.body.classList.remove("noscroll");
     closeBtn.style.display = "none";
-    document.body.appendChild(closeBtn);
-
-    const overlay = document.createElement("div");
-    overlay.classList.add("fullscreen-overlay");
-    document.body.appendChild(overlay);
-
-    expandBtn.addEventListener("click", () => {
-      tabelaContainer.classList.add("fullscreen");
-      overlay.classList.add("active");
-      document.body.classList.add("noscroll");
-      closeBtn.style.display = "block";
-      fullscreenTitle.style.display = "block";
-    });
-
-    function closeFullscreen() {
-      tabelaContainer.classList.remove("fullscreen");
-      overlay.classList.remove("active");
-      document.body.classList.remove("noscroll");
-      closeBtn.style.display = "none";
-      fullscreenTitle.style.display = "none";
-    }
-
-    closeBtn.addEventListener("click", closeFullscreen);
-    overlay.addEventListener("click", closeFullscreen);
+    fullscreenTitle.style.display = "none";
   }
 
-  configurarFullscreen("table_extension_historico", "tabelaContainer_historico", "titleFullscreen_historico");
-  configurarFullscreen("table_extension_pendentes", "tabelaContainer_pendentes", "titleFullscreen_pendentes");
-  configurarFullscreen("table_extension_fluxo", "tabelaContainer_fluxo", "titleFullscreen_fluxo");
+  closeBtn.addEventListener("click", closeFullscreen);
+  overlay.addEventListener("click", closeFullscreen);
+}
+
+configurarFullscreen("table_extension_historico", "tabelaContainer_historico", "titleFullscreen_historico");
+configurarFullscreen("table_extension_pendentes", "tabelaContainer_pendentes", "titleFullscreen_pendentes");
+configurarFullscreen("table_extension_fluxo", "tabelaContainer_fluxo", "titleFullscreen_fluxo");
