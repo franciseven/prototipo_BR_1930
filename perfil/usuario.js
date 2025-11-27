@@ -50,6 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // =======================
+  // CHECKBOX “OUTRO”
+  // =======================
   const outroCheckbox = document.getElementById("outro-checkbox");
   const outroContainer = document.getElementById("outro-input-container");
   const adicionarBtn = document.getElementById("adicionar-btn");
@@ -76,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (const cb of checkboxes) {
       if (cb.value.toLowerCase() === novoValor.toLowerCase()) {
-        alert("⚠️ Essa palavra-chave já existe!");
+        alert("Essa palavra-chave já existe!");
         novoItemInput.value = "";
         novoItemInput.focus();
         return;
@@ -106,8 +109,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const arquivo = fileInput.files[0];
     const visibilidade = document.getElementById("visibility").options[document.getElementById("visibility").selectedIndex].text;
 
-    const metadadosSelecionados = Array.from(document.querySelectorAll("input[name='keyword']:checked"))
-      .map(checkbox => checkbox.value);
+    const colecaoCheckboxes = document.querySelectorAll("#colecao-checkboxes input[type='checkbox']:checked");
+    const colecaoValor = Array.from(colecaoCheckboxes).map(cb => cb.value)
+
+    const palavrasChaveCheckboxes = document.querySelectorAll("#metadados-checkboxes input[type='checkbox']:checked");
+    const metadadosSelecionados = Array.from(palavrasChaveCheckboxes)
+      .filter(cb => cb.id !== "outro-checkbox")
+      .map(cb => cb.value);
 
     if (!titulo) {
       alert("Por favor, preencha o campo Título.");
@@ -124,6 +132,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    if (colecaoValor.length === 0) {
+      alert("Por favor, selecione pelo menos uma coleção.");
+      return;
+    }
+
     if (metadadosSelecionados.length === 0) {
       alert("Por favor, selecione pelo menos um metadado.");
       return;
@@ -133,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
       titulo,
       autores: authors,
       anotacoes,
+      colecoes: colecaoValor,
       metadados: metadadosSelecionados,
       visibilidade,
       arquivo
@@ -146,6 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `Título: ${titulo}\n` +
       `Autores: ${authors.join(", ")}\n` +
       `Anotações: ${anotacoes ? anotacoes : 'Nenhuma anotação'}\n` +
+      `Coleções: ${colecaoValor.join(", ")}\n` +
       `Metadados: ${metadadosSelecionados.join(", ")}\n` +
       `Visibilidade: ${visibilidade}\n` +
       `Arquivo enviado: ${arquivo.name}`
