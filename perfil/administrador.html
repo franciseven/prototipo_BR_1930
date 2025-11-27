@@ -114,6 +114,7 @@
 
         <label for="proprietario" data-i18n="contentSubmission.ownerLabel">Proprietário:</label><br />
         <select id="proprietario" name="proprietario">
+          <option value="" disabled selected>Selecione o Proprietário</option>
           <option value="matheus_silveira">Matheus Silveira</option>
           <option value="fernanda_pereira_matos">Fernanda Pereira Matos</option>
           <option value="administrador">Administrador</option>
@@ -167,7 +168,8 @@
 
         <label for="visibility">Visibilidade:</label>
         <select id="visibility" name="visibility" class="visibilidade-select">
-          <option value="restrito">Restrito - Conteúdo proibido para menores de 18 anos</option>
+            <option value="" disabled selected>Selecione a visibilidade</option>
+            <option value="restrito">Restrito - Conteúdo proibido para menores de 18 anos</option>
             <option value="livre">Acesso livre - Sem restrições</option>
             <option value="referencia">Referência - Conteúdo bloqueado por direitos autorais, apenas referenciar</option>
             <option value="pago">Item Pago - Demanda pagamento para desbloquear</option>
@@ -330,6 +332,24 @@
                   <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
                 </td>
               </tr>
+
+              <tr>
+                <td>GEN-0000001</td>
+                <td data-i18n="adminContentSubmission.content.generalPhoto">Exemplo Aleatório</td>
+                <td>01/06/2025</td>
+                <td>Carlos Oliveia da Silva</td>
+                <td data-i18n="adminContentSubmission.approved">Original</td>
+                <td>v1.0</td>
+                <td>Upload</td>
+                <td>5 MB</td>
+                <td>
+                  <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+                  <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+                  <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
+                  <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
+                </td>
+              </tr>
+
             </tbody>
           </table>
         </div>
@@ -778,6 +798,25 @@
                   <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
                 </td>
               </tr>
+
+              <tr>
+                <td>GEN-0000001</td>
+                <td>Exemplo Aleatório</td>
+                <td>01/06/2025</td>
+                <td>Carlos Oliveira da Silva</td>
+                <td>Carlos Oliveira da Silva</td>
+                <td>Original</td>
+                <td>v1.0</td>
+                <td>Upload</td>
+                <td>5 MB</td>
+                <td>
+                  <button class="btn-profile-style downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+                  <button class="btn-profile-style viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+                  <button class="btn-profile-style editBtn" data-i18n="adminContentSubmission.viewBtn">Editar</button>
+                  <button class="btn-profile-style deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
+                </td>
+              </tr>
+
             </tbody>
           </table>
         </div>
