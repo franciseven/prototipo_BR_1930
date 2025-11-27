@@ -53,7 +53,7 @@
         <label>Filtrar vídeo por autor</label>
         <div class="filtros-inputs">
           <select>
-            <option>(Escolha o autor)</option>
+            <option value="" disabled selected>(Escolha o autor)</option>
             <option>Fulano</option>
             <option>Sicrano</option>
             <option>Beltrano</option>
@@ -68,14 +68,14 @@
         <label>Filtrar resultados por ano ou mês</label>
         <div class="filtros-inputs">
           <select>
-            <option>(Escolha o ano)</option>
+            <option value="" disabled selected>(Escolha o ano)</option>
             <option>2025</option>
             <option>2024</option>
             <option>2023</option>
           </select>
 
           <select>
-            <option>(Escolha o mês)</option>
+            <option value="" disabled selected>(Escolha o mês)</option>
             <option>Janeiro</option>
             <option>Fevereiro</option>
             <option>Março</option>
@@ -91,7 +91,7 @@
           </select>
 
           <select>
-            <option>(Escolha o dia)</option>
+            <option value="" disabled selected>(Escolha o dia)</option>
             <option></option>
           </select>
           <button>Pesquisar</button>
@@ -102,7 +102,7 @@
         <label>Filtrar vídeo por duração</label>
         <div class="filtros-inputs">
           <select>
-            <option>(Escolha a duração)</option>
+            <option value="" disabled selected>(Escolha a duração)</option>
             <option>Maior para o menor</option>
             <option>Menor para o maior</option>
             <option>Maior que 5 minutos</option>
@@ -116,7 +116,7 @@
         <label>Filtrar vídeo por formato</label>
         <div class="filtros-inputs">
           <select>
-            <option>(Escolha o formato)</option>
+            <option value="" disabled selected>(Escolha o formato)</option>
             <option>.mp4</option>
             <option>.avi</option>
             <option>.wmv</option>
@@ -129,14 +129,14 @@
         <label>Filtrar vídeo por filmagem</label>
         <div class="filtros-inputs">
           <select id="filmagens-select">
-            <option value="">(Escolha a filmagem)</option>
+            <option value="" disabled selected>(Escolha a filmagem)</option>
             <option value="duracao">Duração</option>
             <option value="formato">Formato</option>
             <option value="autor">Autor</option>
           </select>
 
           <select id="filmagens-duracao-select" style="display: none;">
-            <option value="">(Escolha a duração)</option>
+            <option value="" disabled selected>(Escolha a duração)</option>
             <option value="maior-menor">Maior para o menor</option>
             <option value="menor-maior">Menor para o maior</option>
             <option value="maior-5">Maior que 5 minutos</option>
@@ -144,14 +144,14 @@
           </select>
 
           <select id="filmagens-formato-select" style="display: none;">
-            <option value="">(Escolha o formato)</option>
+            <option value="" disabled selected>(Escolha o formato)</option>
             <option value="mp4">.mp4</option>
             <option value="avi">.avi</option>
             <option value="wmv">.wmv</option>
           </select>
 
           <select id="filmagens-autor-select" style="display: none;">
-            <option value="">(Escolha o autor)</option>
+            <option value="" disabled selected>(Escolha o autor)</option>
             <option value="fulano">Fulano</option>
             <option value="sicrano">Sicrano</option>
             <option value="beltrano">Beltrano</option>
@@ -169,14 +169,14 @@
         <label>Filtrar vídeo por entrevista</label>
         <div class="filtros-inputs">
           <select id="entrevistas-select">
-            <option value="">(Escolha a entrevista)</option>
+            <option value="" disabled selected>(Escolha a entrevista)</option>
             <option value="duracao">Duração</option>
             <option value="formato">Formato</option>
             <option value="autor">Autor</option>
           </select>
 
           <select id="entrevistas-duracao-select" style="display: none;">
-            <option value="">(Escolha a duração)</option>
+            <option value="" disabled selected>(Escolha a duração)</option>
             <option value="maior-menor">Maior para o menor</option>
             <option value="menor-maior">Menor para o maior</option>
             <option value="maior-5">Maior que 5 minutos</option>
@@ -184,14 +184,14 @@
           </select>
 
           <select id="entrevistas-formato-select" style="display: none;">
-            <option value="">(Escolha o formato)</option>
+            <option value="" disabled selected>(Escolha o formato)</option>
             <option value="mp4">.mp4</option>
             <option value="avi">.avi</option>
             <option value="wmv">.wmv</option>
           </select>
 
           <select id="entrevistas-autor-select" style="display: none;">
-            <option value="">(Escolha o entrevistado)</option>
+            <option value="" disabled selected>(Escolha o entrevistado)</option>
             <option value="fulano">Fulano</option>
             <option value="sicrano">Sicrano</option>
             <option value="beltrano">Beltrano</option>
@@ -208,14 +208,14 @@
         <label>Filtrar vídeo por documentário</label>
         <div class="filtros-inputs">
           <select id="documentarios-select">
-            <option value="">(Escolha o documentário)</option>
+            <option value="" disabled selected>(Escolha o documentário)</option>
             <option value="duracao">Duração</option>
             <option value="formato">Formato</option>
             <option value="autor">Autor</option>
           </select>
 
           <select id="documentarios-duracao-select" style="display: none;">
-            <option value="">(Escolha a duração)</option>
+            <option value="" disabled selected>(Escolha a duração)</option>
             <option value="maior-menor">Maior para o menor</option>
             <option value="menor-maior">Menor para o maior</option>
             <option value="maior-5">Maior que 5 minutos</option>
@@ -223,14 +223,14 @@
           </select>
 
           <select id="documentarios-formato-select" style="display: none;">
-            <option value="">(Escolha o formato)</option>
+            <option value="" disabled selected>(Escolha o formato)</option>
             <option value="mp4">.mp4</option>
             <option value="avi">.avi</option>
             <option value="wmv">.wmv</option>
           </select>
 
           <select id="documentarios-autor-select" style="display: none;">
-            <option value="">(Escolha o autor)</option>
+            <option value="" disabled selected>(Escolha o autor)</option>
             <option value="fulano">Fulano</option>
             <option value="sicrano">Sicrano</option>
             <option value="beltrano">Beltrano</option>
@@ -246,7 +246,7 @@
         <label>Filtrar vídeo por filmes</label>
         <div class="filtros-inputs">
           <select id="filmes-select">
-            <option value="">(Escolha o filme)</option>
+            <option value="" disabled selected>(Escolha o filme)</option>
             <option value="autor">Autor</option>
             <option value="duracao">Duração</option>
             <option value="formato">Formato</option>
@@ -255,7 +255,7 @@
           </select>
 
           <select id="filmes-duracao-select" style="display: none;">
-            <option value="">(Escolha a duração)</option>
+            <option value="" disabled selected>(Escolha a duração)</option>
             <option value="maior-menor">Maior para o menor</option>
             <option value="menor-maior">Menor para o maior</option>
             <option value="maior-5">Maior que 5 minutos</option>
@@ -263,14 +263,14 @@
           </select>
 
           <select id="filmes-formato-select" style="display: none;">
-            <option value="">(Escolha o formato)</option>
+            <option value="" disabled selected>(Escolha o formato)</option>
             <option value="mp4">.mp4</option>
             <option value="avi">.avi</option>
             <option value="wmv">.wmv</option>
           </select>
 
           <select id="filmes-autor-select" style="display: none;">
-            <option value="">(Escolha o autor)</option>
+            <option value="" disabled selected>(Escolha o autor)</option>
             <option value="fulano">Fulano</option>
             <option value="sicrano">Sicrano</option>
             <option value="beltrano">Beltrano</option>
