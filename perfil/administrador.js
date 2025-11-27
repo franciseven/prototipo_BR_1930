@@ -652,6 +652,13 @@ document.querySelectorAll(".viewBtn").forEach((btn) => {
   });
 });
 
+document.querySelectorAll(".viewBtnAmostra").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    alert("Visualizando o conteúdo selecionado!");
+    href="../colecoes/audios/index.html";
+  });
+});
+
 document.querySelectorAll(".downloadBtn").forEach((btn) => {
   btn.addEventListener("click", () => {
     alert("Baixando o conteúdo selecionado!");
