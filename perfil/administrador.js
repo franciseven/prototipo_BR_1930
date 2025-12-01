@@ -68,9 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
     autorInput.value = '';
   });
 
-  // =======================
+  // ========================
   // DINÂMICA DO PROPRIETÁRIO
-  // =======================
+  // ========================
   const proprietarioSelect = document.getElementById("proprietario");
   const outroProprietarioContainer = document.getElementById("outro-proprietario-container");
   const novoProprietarioInput = document.getElementById("novo-proprietario");
