@@ -4,22 +4,76 @@ document.addEventListener("DOMContentLoaded", () => {
   const addAuthorBtn = document.getElementById('addAuthorBtn');
   const autorInput = document.getElementById('autorInput');
   const authorsList = document.getElementById('authorsList');
+
   const btn = document.getElementById("submitContentBtn");
   const fileInput = document.getElementById("fileUpload");
+  const dropArea = document.getElementById("fileDropArea");
 
+  // ===========================
+  // EXIBIÇÃO DO NOME DO ARQUIVO
+  // ===========================
   const fileNameDisplay = document.createElement("p");
   fileNameDisplay.style.fontWeight = "bold";
   fileNameDisplay.style.marginTop = "8px";
   fileNameDisplay.style.color = "#444";
   fileInput.parentNode.insertBefore(fileNameDisplay, fileInput.nextSibling);
 
-  fileInput.addEventListener("change", () => {
-    if (fileInput.files.length > 0) {
-      fileNameDisplay.textContent = `Arquivo selecionado: ${fileInput.files[0].name}`;
+  // Atualiza exibição
+  function updateFileDisplay(files) {
+    uploadedFiles = Array.from(files).map(f => f.name);
+
+    if (uploadedFiles.length > 0) {
+      fileNameDisplay.textContent = `Arquivo selecionado: ${uploadedFiles.join(", ")}`;
     } else {
       fileNameDisplay.textContent = "";
     }
+  }
+
+  // Evento ao selecionar arquivos pelo input normal
+  fileInput.addEventListener("change", () => {
+    updateFileDisplay(fileInput.files);
   });
+
+  // =====================
+  // SUPORTE A DRAG & DROP
+  // =====================
+
+  // Estilo visual ao arrastar
+  function addHighlight() {
+    dropArea.style.border = "2px dashed #1e90ff";
+    dropArea.style.backgroundColor = "#e7f3ff";
+  }
+
+  function removeHighlight() {
+    dropArea.style.border = "2px solid #4a90e2";
+    dropArea.style.backgroundColor = "#f0f8ff";
+  }
+
+  ;["dragenter", "dragover"].forEach(eventName => {
+    dropArea.addEventListener(eventName, (e) => {
+      e.preventDefault();
+      addHighlight();
+    });
+  });
+
+  ;["dragleave", "drop"].forEach(eventName => {
+    dropArea.addEventListener(eventName, (e) => {
+      e.preventDefault();
+      removeHighlight();
+    });
+  });
+
+  dropArea.addEventListener("drop", (e) => {
+    e.preventDefault();
+
+    const dtFiles = e.dataTransfer.files;
+
+    if (dtFiles.length > 0) {
+      updateFileDisplay(dtFiles);
+      fileInput.files = dtFiles;
+    }
+  });
+
 
   addAuthorBtn.addEventListener('click', () => {
     const newAuthor = autorInput.value.trim();
@@ -304,3 +358,42 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
 });
+
+function configurarFullscreen(botaoId, containerId, titleId) {
+  const tabelaContainer = document.getElementById(containerId);
+  const expandBtn = document.getElementById(botaoId);
+  const fullscreenTitle = document.getElementById(titleId);
+
+  const closeBtn = document.createElement("button");
+  closeBtn.innerHTML = "✖";
+  closeBtn.classList.add("close-fullscreen");
+  closeBtn.style.display = "none";
+  document.body.appendChild(closeBtn);
+
+  const overlay = document.createElement("div");
+  overlay.classList.add("fullscreen-overlay");
+  document.body.appendChild(overlay);
+
+  expandBtn.addEventListener("click", () => {
+    tabelaContainer.classList.add("fullscreen");
+    overlay.classList.add("active");
+    document.body.classList.add("noscroll");
+    closeBtn.style.display = "block";
+    fullscreenTitle.style.display = "block";
+  });
+
+  function closeFullscreen() {
+    tabelaContainer.classList.remove("fullscreen");
+    overlay.classList.remove("active");
+    document.body.classList.remove("noscroll");
+    closeBtn.style.display = "none";
+    fullscreenTitle.style.display = "none";
+  }
+
+  closeBtn.addEventListener("click", closeFullscreen);
+  overlay.addEventListener("click", closeFullscreen);
+}
+
+configurarFullscreen("table_extension_contribuicoes", "tabelaContainer_contribuicoes", "titleFullscreen_contribuicoes");
+configurarFullscreen("table_extension_favoritos", "tabelaContainer_favoritos", "titleFullscreen_favoritos");
+configurarFullscreen("table_extension_historico", "tabelaContainer_historico", "titleFullscreen_historico");

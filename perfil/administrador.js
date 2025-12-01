@@ -7,29 +7,77 @@ document.addEventListener("DOMContentLoaded", () => {
   const authorsList = document.getElementById('authorsList');
   const btn = document.getElementById("submitContentBtn");
   const fileInput = document.getElementById("fileUpload");
+  const dropArea = document.getElementById("fileDropArea");
 
-  // =======================
+  // ===========================
   // EXIBIÇÃO DO NOME DO ARQUIVO
-  // =======================
+  // ===========================
   const fileNameDisplay = document.createElement("p");
   fileNameDisplay.style.fontWeight = "bold";
   fileNameDisplay.style.marginTop = "8px";
   fileNameDisplay.style.color = "#444";
   fileInput.parentNode.insertBefore(fileNameDisplay, fileInput.nextSibling);
 
-  fileInput.addEventListener("change", () => {
-    if (fileInput.files.length > 0) {
-      uploadedFiles = Array.from(fileInput.files).map(f => f.name);
-      fileNameDisplay.textContent = `Arquivos selecionados: ${uploadedFiles.join(", ")}`;
+  // Atualiza exibição
+  function updateFileDisplay(files) {
+    uploadedFiles = Array.from(files).map(f => f.name);
+
+    if (uploadedFiles.length > 0) {
+      fileNameDisplay.textContent = `Arquivo selecionado: ${uploadedFiles.join(", ")}`;
     } else {
-      uploadedFiles = [];
       fileNameDisplay.textContent = "";
+    }
+  }
+
+  // Evento ao selecionar arquivos pelo input normal
+  fileInput.addEventListener("change", () => {
+    updateFileDisplay(fileInput.files);
+  });
+
+  // =====================
+  // SUPORTE A DRAG & DROP
+  // =====================
+
+  // Estilo visual ao arrastar
+  function addHighlight() {
+    dropArea.style.border = "2px dashed #1e90ff";
+    dropArea.style.backgroundColor = "#e7f3ff";
+  }
+
+  function removeHighlight() {
+    dropArea.style.border = "2px solid #4a90e2";
+    dropArea.style.backgroundColor = "#f0f8ff";
+  }
+
+  ;["dragenter", "dragover"].forEach(eventName => {
+    dropArea.addEventListener(eventName, (e) => {
+      e.preventDefault();
+      addHighlight();
+    });
+  });
+
+  ;["dragleave", "drop"].forEach(eventName => {
+    dropArea.addEventListener(eventName, (e) => {
+      e.preventDefault();
+      removeHighlight();
+    });
+  });
+
+  dropArea.addEventListener("drop", (e) => {
+    e.preventDefault();
+
+    const dtFiles = e.dataTransfer.files;
+
+    if (dtFiles.length > 0) {
+      updateFileDisplay(dtFiles);
+      fileInput.files = dtFiles;
     }
   });
 
-  // =======================
+
+  // =======
   // AUTORES
-  // =======================
+  // =======
   addAuthorBtn.addEventListener('click', () => {
     const newAuthor = autorInput.value.trim();
 
@@ -115,9 +163,9 @@ document.addEventListener("DOMContentLoaded", () => {
     outroProprietarioContainer.style.display = "none";
   });
 
-  // =======================
+  // ==================
   // RESETAR FORMULÁRIO
-  // =======================
+  // ==================
   function resetForm() {
     document.getElementById("titulo").value = "";
     authors = [];
@@ -130,9 +178,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("visibility").value = "restrito";
   }
 
-  // =======================
+  // ================
   // CHECKBOX “OUTRO”
-  // =======================
+  // ================
   const outroCheckbox = document.getElementById("outro-checkbox");
   const outroContainer = document.getElementById("outro-input-container");
   const adicionarBtn = document.getElementById("adicionar-btn");
@@ -181,9 +229,9 @@ document.addEventListener("DOMContentLoaded", () => {
     novoItemInput.focus();
   });
 
-  // =======================
+  // ===============
   // ENVIO DOS DADOS
-  // =======================
+  // ===============
   btn.addEventListener("click", function (e) {
     e.preventDefault();
 
@@ -255,9 +303,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // =======================
+  // =========================
   // BOTÃO DE EDIÇÃO (EXEMPLO)
-  // =======================
+  // =========================
   document.querySelectorAll(".editBtn").forEach(btn => {
     btn.addEventListener("click", () => {
       document.getElementById("titulo").value = "Como se Combate o Cangaceirismo na Parahyba";
@@ -292,9 +340,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // =======================
+  // =====================
   // CONFIGURAÇÃO DO QUILL
-  // =======================
+  // =====================
   const quill = new Quill('#editor', {
     theme: 'snow',
     placeholder: 'Digite o texto do blog',
@@ -325,13 +373,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// =======================
+// ==================
 // FUNÇÃO PARA O BLOG
-// =======================
+// ==================
 document.addEventListener("DOMContentLoaded", () => {
-  // =======================
+  // =================
   // VARIÁVEIS DO BLOG
-  // =======================
+  // =================
   let blogAuthors = [];
   let blogUploadedFilesAutor = [];
   let blogUploadedFilesCapa = [];
@@ -352,9 +400,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const blogNovoProprietarioInput = document.getElementById("blog-novo-proprietario");
   const blogAdicionarProprietarioBtn = document.getElementById("blog-adicionar-proprietario-btn");
 
-  // =======================
+  // ===============================
   // DINÂMICA DO PROPRIETÁRIO (BLOG)
-  // =======================
+  // ===============================
   blogOutroProprietarioContainer.style.display = "none";
 
   blogProprietarioSelect.addEventListener("change", () => {
@@ -397,47 +445,141 @@ document.addEventListener("DOMContentLoaded", () => {
     blogOutroProprietarioContainer.style.display = "none";
   });
 
-  // =======================
-  // EXIBIÇÃO DO NOME DO ARQUIVO (AUTOR)
-  // =======================
+  // ===================================
+  // ÁREA 1 — FOTO DO AUTOR
+  // ===================================
+  const dropAreaAutor = document.getElementById("blog_fileDropProfileArea");
+
   const blogFileAutorDisplay = document.createElement("p");
   blogFileAutorDisplay.style.fontWeight = "bold";
   blogFileAutorDisplay.style.marginTop = "8px";
   blogFileAutorDisplay.style.color = "#444";
   blogFileUploadAutor.parentNode.insertBefore(blogFileAutorDisplay, blogFileUploadAutor.nextSibling);
 
-  blogFileUploadAutor.addEventListener("change", () => {
-    if (blogFileUploadAutor.files.length > 0) {
-      blogUploadedFilesAutor = Array.from(blogFileUploadAutor.files).map(f => f.name);
+  // Atualiza exibição
+  function updateFileDisplayAutor(files) {
+    blogUploadedFilesAutor = Array.from(files).map(f => f.name);
+
+    if (blogUploadedFilesAutor.length > 0) {
       blogFileAutorDisplay.textContent = `Arquivo selecionado: ${blogUploadedFilesAutor.join(", ")}`;
     } else {
-      blogUploadedFilesAutor = [];
       blogFileAutorDisplay.textContent = "";
+    }
+  }
+
+  // Input normal
+  blogFileUploadAutor.addEventListener("change", () => {
+    updateFileDisplayAutor(blogFileUploadAutor.files);
+  });
+
+
+  // -------- DRAG & DROP — AUTOR --------
+
+  function addHighlightAutor() {
+    dropAreaAutor.style.border = "2px dashed #1e90ff";
+    dropAreaAutor.style.backgroundColor = "#e7f3ff";
+  }
+
+  function removeHighlightAutor() {
+    dropAreaAutor.style.border = "2px solid #4a90e2";
+    dropAreaAutor.style.backgroundColor = "#f0f8ff";
+  }
+
+  ["dragenter", "dragover"].forEach(eventName => {
+    dropAreaAutor.addEventListener(eventName, e => {
+      e.preventDefault();
+      addHighlightAutor();
+    });
+  });
+
+  ["dragleave", "drop"].forEach(eventName => {
+    dropAreaAutor.addEventListener(eventName, e => {
+      e.preventDefault();
+      removeHighlightAutor();
+    });
+  });
+
+  dropAreaAutor.addEventListener("drop", e => {
+    e.preventDefault();
+
+    const dtFiles = e.dataTransfer.files;
+
+    if (dtFiles.length > 0) {
+      updateFileDisplayAutor(dtFiles);
+      blogFileUploadAutor.files = dtFiles;
     }
   });
 
-  // =======================
-  // EXIBIÇÃO DO NOME DO ARQUIVO (CAPA)
-  // =======================
+
+
+  // ===================================
+  // ÁREA 2 — CAPA DO BLOG
+  // ===================================
+  const dropAreaCapa = document.getElementById("blog_fileDropBlogCoverArea");
+
   const blogFileCapaDisplay = document.createElement("p");
   blogFileCapaDisplay.style.fontWeight = "bold";
   blogFileCapaDisplay.style.marginTop = "8px";
   blogFileCapaDisplay.style.color = "#444";
   blogFileUploadCapa.parentNode.insertBefore(blogFileCapaDisplay, blogFileUploadCapa.nextSibling);
 
-  blogFileUploadCapa.addEventListener("change", () => {
-    if (blogFileUploadCapa.files.length > 0) {
-      blogUploadedFilesCapa = Array.from(blogFileUploadCapa.files).map(f => f.name);
+  // Atualiza exibição
+  function updateFileDisplayCapa(files) {
+    blogUploadedFilesCapa = Array.from(files).map(f => f.name);
+
+    if (blogUploadedFilesCapa.length > 0) {
       blogFileCapaDisplay.textContent = `Arquivo selecionado: ${blogUploadedFilesCapa.join(", ")}`;
     } else {
-      blogUploadedFilesCapa = [];
       blogFileCapaDisplay.textContent = "";
+    }
+  }
+
+  // Input normal
+  blogFileUploadCapa.addEventListener("change", () => {
+    updateFileDisplayCapa(blogFileUploadCapa.files);
+  });
+
+
+  // -------- DRAG & DROP — CAPA --------
+
+  function addHighlightCapa() {
+    dropAreaCapa.style.border = "2px dashed #1e90ff";
+    dropAreaCapa.style.backgroundColor = "#e7f3ff";
+  }
+
+  function removeHighlightCapa() {
+    dropAreaCapa.style.border = "2px solid #4a90e2";
+    dropAreaCapa.style.backgroundColor = "#f0f8ff";
+  }
+
+  ["dragenter", "dragover"].forEach(eventName => {
+    dropAreaCapa.addEventListener(eventName, e => {
+      e.preventDefault();
+      addHighlightCapa();
+    });
+  });
+
+  ["dragleave", "drop"].forEach(eventName => {
+    dropAreaCapa.addEventListener(eventName, e => {
+      e.preventDefault();
+      removeHighlightCapa();
+    });
+  });
+
+  dropAreaCapa.addEventListener("drop", e => {
+    e.preventDefault();
+
+    const dtFiles = e.dataTransfer.files;
+
+    if (dtFiles.length > 0) {
+      updateFileDisplayCapa(dtFiles);
+      blogFileUploadCapa.files = dtFiles;
     }
   });
 
-  // =======================
+  // ===========================
   // ADICIONAR AUTOR (HTML fixo)
-  // =======================
+  // ===========================
   blogAddAuthorBtn.addEventListener("click", () => {
     const newAuthor = blogAutorInput.value.trim();
     if (!newAuthor) {
@@ -472,9 +614,9 @@ document.addEventListener("DOMContentLoaded", () => {
     blogAutorInput.value = "";
   });
 
-  // =======================
+  // ============
   // QUILL EDITOR
-  // =======================
+  // ============
   const blogQuill = new Quill("#blog_editor", {
     theme: "snow",
     placeholder: "Digite o texto do blog",
@@ -502,9 +644,9 @@ document.addEventListener("DOMContentLoaded", () => {
     blogAttachmentsContainer.appendChild(card);
   }
 
-  // =======================
+  // ======================
   // ENVIO DE DADOS DO BLOG
-  // =======================
+  // ======================
   blogSubmitBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
@@ -518,13 +660,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const proprietarioFinal =
       blogProprietarioSelect.options[blogProprietarioSelect.selectedIndex].text;
 
-    // === Validação ===
+    // Validação
     if (!titulo) return alert("Preencha o título.");
     if (blogAuthors.length === 0) return alert("Adicione pelo menos um autor.");
     if (blogUploadedFilesAutor.length === 0) return alert("Selecione a foto do autor.");
     if (blogUploadedFilesCapa.length === 0) return alert("Selecione a capa do blog.");
 
-    // === Dados reunidos ===
+    // Dados reunidos
     const blogDataToSend = {
       titulo,
       autores: blogAuthors,
@@ -560,7 +702,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `Capa do Blog: ${blogUploadedFilesCapa.join(", ")}`
     );
 
-    // === Reset ===
+    // Reset
     blogTitulo.value = "";
     blogAuthors = [];
     blogAuthorsList.innerHTML = "";

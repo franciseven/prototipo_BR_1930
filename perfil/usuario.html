@@ -109,7 +109,7 @@
             <button type="button" id="adicionar-btn">Adicionar</button><br /><br />
           </div>
 
-          <br /><br /><div class="file-upload" onclick="document.getElementById('fileUpload').click()">
+          <br /><br /><div class="file-upload" id="fileDropArea" onclick="document.getElementById('fileUpload').click()">
             <p><strong data-i18n="contentSubmission.selectFile">Clique aqui para selecionar um arquivo</strong><br /></p>
             <input type="file" id="fileUpload" name="fileUpload" hidden />
           </div><br />
@@ -130,111 +130,119 @@
         </div>
       </div>
 
-      <section class="contribuicoes">
-        <h3 data-i18n="minhas_contribuicoes">Minhas Contribuições</h3>
-        
-        <div class="tabela-container">
-          <table>
-            <thead>
-              <tr>
-                <th data-i18n="ID_col">ID</th>
-                <th data-i18n="titulo_col">Título</th>
-                <th data-i18n="status">Status</th>
-                <th data-i18n="data">Data</th>
-                <th data-i18n="tamanho">Tamanho</th>
-                <th data-i18n="acao">Ação</th>
-              </tr>
-            </thead>
+      <div class="section">
+        <div class="title-container">
+          <h2 data-i18n="history.title">Minhas Contribuições</h2>
+          <button id="table_extension_contribuicoes" class="table-expanded" style="margin-bottom:10px;">
+            🔍
+          </button>
+        </div>
 
-            <tbody>
+        <div class="tabela-container" id="tabelaContainer_contribuicoes">
+          <h2 data-i18n="minhas_contribuicoes" id="titleFullscreen_contribuicoes">Minhas Contribuições</h2>
+          <div class="tabela-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th data-i18n="ID_col">ID</th>
+                  <th data-i18n="titulo_col">Título</th>
+                  <th data-i18n="status">Status</th>
+                  <th data-i18n="data">Data</th>
+                  <th data-i18n="tamanho">Tamanho</th>
+                  <th data-i18n="acao">Ação</th>
+                </tr>
+              </thead>
 
-              <tr>
-                <td>PER-0000001</td>
-                <td>Análise Sobre os Anos 30</td>
-                <td data-i18n="rejeitado">Rejeitado</td>
-                <td>22/08/2025</td>
-                <td>5 MB</td>
-                <td>
-                  <button data-i18n="visualizar">Visualizar</button>
-                  <button class="info-btn solicitacaoBtn">ℹ</button>
-                </td>
-              </tr>
+              <tbody>
 
-              <tr>
-                <td>PER-0000002</td>
-                <td>Um Estudo Sobre A Revolução de 1930</td>
-                <td data-i18n="em_analise">Em Análise</td>
-                <td>22/08/2025</td>
-                <td>5 MB</td>
-                <td>
-                  <button data-i18n="visualizar">Visualizar</button>
-                  <button class="info-btn solicitacaoBtn">ℹ</button>
-                </td>
-              </tr>
+                <tr>
+                  <td>PER-0000001</td>
+                  <td>Análise Sobre os Anos 30</td>
+                  <td data-i18n="rejeitado">Rejeitado</td>
+                  <td>22/08/2025</td>
+                  <td>5 MB</td>
+                  <td>
+                    <button data-i18n="visualizar">Visualizar</button>
+                    <button class="info-btn solicitacaoBtn">ℹ</button>
+                  </td>
+                </tr>
 
-              <tr>
-                <td>IMG-0000001</td>
-                <td>Mapa Paraibano dos Anos 30</td>
-                <td data-i18n="Aprovado">Aprovado</td>
-                <td>22/08/2025</td>
-                <td>5 MB</td>
-                <td>
-                  <button data-i18n="visualizar">Visualizar</button>
-                  <button class="info-btn solicitacaoBtn">ℹ</button>
-                </td>
-              </tr>
+                <tr>
+                  <td>PER-0000002</td>
+                  <td>Um Estudo Sobre A Revolução de 1930</td>
+                  <td data-i18n="em_analise">Em Análise</td>
+                  <td>22/08/2025</td>
+                  <td>5 MB</td>
+                  <td>
+                    <button data-i18n="visualizar">Visualizar</button>
+                    <button class="info-btn solicitacaoBtn">ℹ</button>
+                  </td>
+                </tr>
 
-              <tr>
-                <td>VID-0000001</td>
-                <td>Filmagem em 1930</td>
-                <td data-i18n="Aprovado">Aprovado</td>
-                <td>22/08/2025</td>
-                <td>5 MB</td>
-                <td>
-                  <button data-i18n="visualizar">Visualizar</button>
-                  <button class="info-btn solicitacaoBtn">ℹ</button>
-                </td>
-              </tr>
+                <tr>
+                  <td>IMG-0000001</td>
+                  <td>Mapa Paraibano dos Anos 30</td>
+                  <td data-i18n="Aprovado">Aprovado</td>
+                  <td>22/08/2025</td>
+                  <td>5 MB</td>
+                  <td>
+                    <button data-i18n="visualizar">Visualizar</button>
+                    <button class="info-btn solicitacaoBtn">ℹ</button>
+                  </td>
+                </tr>
 
-              <tr>
-                <td>PER-0000003</td>
-                <td>A Revolta de Princesa</td>
-                <td data-i18n="rejeitado">Rejeitado</td>
-                <td>21/08/2025</td>
-                <td>5 MB</td>
-                <td>
-                  <button data-i18n="visualizar">Visualizar</button>
-                  <button class="info-btn solicitacaoBtn">ℹ</button>
-                </td>
-              </tr>
+                <tr>
+                  <td>VID-0000001</td>
+                  <td>Filmagem em 1930</td>
+                  <td data-i18n="Aprovado">Aprovado</td>
+                  <td>22/08/2025</td>
+                  <td>5 MB</td>
+                  <td>
+                    <button data-i18n="visualizar">Visualizar</button>
+                    <button class="info-btn solicitacaoBtn">ℹ</button>
+                  </td>
+                </tr>
 
-              <tr>
-                <td>LIV-0000001</td>
-                <td>História Urbana de João Pessoa</td>
-                <td>Parcialmente Aprovado</td>
-                <td>20/05/2025</td>
-                <td>30 MB</td>
-                <td>
-                  <button id="ver_observacao" class="observacao">Ver Observação</button>
-                  <button id="visualizar">Visualizar</button>
-                  <button class="info-btn solicitacaoBtn">ℹ</button>
-                </td>
-              </tr>
+                <tr>
+                  <td>PER-0000003</td>
+                  <td>A Revolta de Princesa</td>
+                  <td data-i18n="rejeitado">Rejeitado</td>
+                  <td>21/08/2025</td>
+                  <td>5 MB</td>
+                  <td>
+                    <button data-i18n="visualizar">Visualizar</button>
+                    <button class="info-btn solicitacaoBtn">ℹ</button>
+                  </td>
+                </tr>
 
-              <tr>
-                <td>LIV-0000001</td>
-                <td>História Urbana de João Pessoa</td>
-                <td>Pendente</td>
-                <td>15/05/2025</td>
-                <td>30 MB</td>
-                <td>
-                  <button id="visualizar">Visualizar</button>
-                  <button class="info-btn solicitacaoBtn">ℹ</button>
-                </td>
-              </tr>
+                <tr>
+                  <td>LIV-0000001</td>
+                  <td>História Urbana de João Pessoa</td>
+                  <td>Parcialmente Aprovado</td>
+                  <td>20/05/2025</td>
+                  <td>30 MB</td>
+                  <td>
+                    <button id="ver_observacao" class="observacao">Ver Observação</button>
+                    <button id="visualizar">Visualizar</button>
+                    <button class="info-btn solicitacaoBtn">ℹ</button>
+                  </td>
+                </tr>
 
-            </tbody>
-          </table>
+                <tr>
+                  <td>LIV-0000001</td>
+                  <td>História Urbana de João Pessoa</td>
+                  <td>Pendente</td>
+                  <td>15/05/2025</td>
+                  <td>30 MB</td>
+                  <td>
+                    <button id="visualizar">Visualizar</button>
+                    <button class="info-btn solicitacaoBtn">ℹ</button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <div id="modalSolicitacao" class="modal-flutuante">
@@ -245,91 +253,112 @@
             <button onclick="enviarSolicitacao()">Enviar Solicitação de Alteração/Remoção</button>
           </div>
         </div>
-      </section>
 
-      <section class="favoritos">
-        <h3 data-i18n="favoritos_lista_interesse">Favoritos / Lista de Interesse</h3>
-
-        <div class="tabela-container">
-          <table>
-            <thead>
-              <tr>
-                <th>Título</th>
-                <th>Palavras-chave</th>
-                <th>Ação</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>História Urbana de João Pessoa</td>
-                <td>
-                  <span class="tag" data-i18n="documento">Documento</span>
-                  <span class="tag">.pdf</span>
-                </td>
-                <td>
-                  <button id="visualizar">Visualizar</button>
-                </td>
-              </tr>
-              <tr>
-                <td>A Revolta de Princesa</td>
-                <td>
-                  <span class="tag" data-i18n="imagem">Imagem</span>
-                  <span class="tag">.jpg</span>
-                </td>
-                <td>
-                  <button id="visualizar">Visualizar</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Análise Sobre os Anos 30</td>
-                <td>
-                  <span class="tag" data-i18n="audio">Áudio</span>
-                  <span class="tag">.mp3</span>
-                </td>
-                <td>
-                  <button id="visualizar">Visualizar</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Um Estudo Sobre A Revolução de 1930</td>
-                <td>
-                  <span class="tag" data-i18n="livro">Livro</span>
-                  <span class="tag">.pdf</span>
-                </td>
-                <td>
-                  <button id="visualizar">Visualizar</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Mapa Paraibano dos Anos 30</td>
-                <td>
-                  <span class="tag" data-i18n="video">Vídeo</span>
-                  <span class="tag">.mp4</span>
-                </td>
-                <td>
-                  <button id="visualizar">Visualizar</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Filmagem em 1930</td>
-                <td>
-                  <span class="tag" data-i18n="filme">Filme</span>
-                  <span class="tag">.mkv</span>
-                </td>
-                <td>
-                  <button id="visualizar">Visualizar</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="section">
+        <div class="title-container">
+          <h2 data-i18n="history.title">Favoritos / Lista de Interesse</h2>
+          <button id="table_extension_favoritos" class="table-expanded" style="margin-bottom:10px;">
+            🔍
+          </button>
         </div>
 
-      </section>
+        <div class="tabela-container" id="tabelaContainer_favoritos">
+          <h2 data-i18n="history.title" id="titleFullscreen_favoritos">Favoritos / Lista de Interesse</h2>
+          <div class="tabela-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Título</th>
+                  <th>Palavras-chave</th>
+                  <th>Ação</th>
+                </tr>
+              </thead>
 
-      <section class="historico">
-        <h3 data-i18n="historico_acesso_atividades">Histórico de Acesso / Atividades Recentes</h3>
+              <tbody>
+                <tr>
+                  <td>História Urbana de João Pessoa</td>
+                  <td>
+                    <span class="tag" data-i18n="documento">Documento</span>
+                    <span class="tag">.pdf</span>
+                  </td>
+                  <td>
+                    <button id="visualizar">Visualizar</button>
+                  </td>
+                </tr>
 
-        <div class="tabela-container">
+                <tr>
+                  <td>A Revolta de Princesa</td>
+                  <td>
+                    <span class="tag" data-i18n="imagem">Imagem</span>
+                    <span class="tag">.jpg</span>
+                  </td>
+                  <td>
+                    <button id="visualizar">Visualizar</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Análise Sobre os Anos 30</td>
+                  <td>
+                    <span class="tag" data-i18n="audio">Áudio</span>
+                    <span class="tag">.mp3</span>
+                  </td>
+                  <td>
+                    <button id="visualizar">Visualizar</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Um Estudo Sobre A Revolução de 1930</td>
+                  <td>
+                    <span class="tag" data-i18n="livro">Livro</span>
+                    <span class="tag">.pdf</span>
+                  </td>
+                  <td>
+                    <button id="visualizar">Visualizar</button>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td>Mapa Paraibano dos Anos 30</td>
+                  <td>
+                    <span class="tag" data-i18n="video">Vídeo</span>
+                    <span class="tag">.mp4</span>
+                  </td>
+                  <td>
+                    <button id="visualizar">Visualizar</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Filmagem em 1930</td>
+                  <td>
+                    <span class="tag" data-i18n="filme">Filme</span>
+                    <span class="tag">.mkv</span>
+                  </td>
+                  <td>
+                    <button id="visualizar">Visualizar</button>
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    <div class="section">
+      <div class="title-container">
+        <h2 data-i18n="history.title">Histórico de Acesso / Atividades Recentes</h2>
+        <button id="table_extension_historico" class="table-expanded" style="margin-bottom:10px;">
+          🔍
+        </button>
+      </div>
+
+      <div class="tabela-container" id="tabelaContainer_historico">
+        <h2 data-i18n="history.title" id="titleFullscreen_historico">Histórico de Acesso / Atividades Recentes</h2>
+        <div class="tabela-scroll">
           <table>
             <thead>
               <tr>
@@ -377,8 +406,9 @@
             </tbody>
           </table>
         </div>
-
-      </section>
+      </div>
+      
+    </div>
 
       <section class="colecoes">
         <div>
