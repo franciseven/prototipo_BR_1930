@@ -794,16 +794,32 @@ document.querySelectorAll(".viewBtn").forEach((btn) => {
   });
 });
 
-document.querySelectorAll(".viewBtnAmostra").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    alert("Visualizando o conteúdo selecionado!");
-    href="../colecoes/audios/index.html";
-  });
-});
-
 document.querySelectorAll(".downloadBtn").forEach((btn) => {
   btn.addEventListener("click", () => {
     alert("Baixando o conteúdo selecionado!");
+  });
+});
+
+document.querySelectorAll(".viewBtnAmostra").forEach((btn) => {
+  btn.addEventListener("click", () => {
+
+    const row = btn.closest("tr");
+
+    const itemId = row.querySelector("td").textContent.trim();
+
+    switch (itemId) {
+      case "AUD-0000001":
+        window.location.href = "../item_selecionado/audios/audio_1_selecionado.html";
+        break;
+
+      case "DT-0000001":
+        window.location.href = "../item_selecionado/teses/tese_1_selecionada.html";
+        break;
+
+      default:
+        console.warn("ID não mapeado:", itemId);
+        break;
+    }
   });
 });
 
