@@ -320,23 +320,26 @@ document.addEventListener('DOMContentLoaded', () => {
 	// =======================
 	// EXIBIR PDF SE ASSUNTO FOR BLOG
 	// =======================
-	selectAssunto.addEventListener('change', function () {
-		const pdfExistente = document.getElementById('pdf-blog');
-		if (pdfExistente) pdfExistente.remove(); // remove PDF anterior, se houver
+selectAssunto.addEventListener('change', function () {
+    const pdfExistente = document.getElementById('pdf-blog');
+    if (pdfExistente) pdfExistente.remove(); // remove o item anterior, se houver
 
-		if (this.value === 'blog') {
-			const pdfEmbed = document.createElement('embed');
-			pdfEmbed.id = 'pdf-blog';
-			pdfEmbed.src = './INSTRUCOES_PARA_ENVIO_DE_ARTIGO_AO_BLOG.pdf';
-			pdfEmbed.type = 'application/pdf';
-			pdfEmbed.width = '499px';
-			pdfEmbed.height = '150px';
-			
-			// Insere abaixo da label de Assunto
-			const labelAssunto = document.querySelector('label[for="assunto"]');
-			labelAssunto.insertAdjacentElement('afterend', pdfEmbed);
-		}
-	});
+    if (this.value === 'blog') {
+        const link = document.createElement('a');
+        link.id = 'pdf-blog';
+        link.href = './INSTRUCOES_PARA_ENVIO_DE_ARTIGO_AO_BLOG.pdf';
+        link.textContent = 'Baixar instruções em PDF';
+        link.download = 'INSTRUCOES_PARA_ENVIO_DE_ARTIGO_AO_BLOG.pdf';
+        link.style.display = 'inline-block';
+        link.style.marginTop = '10px';
+        link.style.fontSize = '1.1rem';
+        link.style.textDecoration = 'underline';
+        
+        const labelAssunto = document.querySelector('label[for="assunto"]');
+        labelAssunto.insertAdjacentElement('afterend', link);
+    }
+});
+
 
   // =======================
   // ENVIO DO FORMULÁRIO
