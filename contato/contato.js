@@ -340,7 +340,6 @@ selectAssunto.addEventListener('change', function () {
     }
 });
 
-
   // =======================
   // ENVIO DO FORMULÁRIO
   // =======================

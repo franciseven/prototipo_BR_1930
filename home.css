@@ -619,3 +619,54 @@
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ============================
+   Ajustes PROPORCIONAIS para o CABEÇALHO
+   baseado no design Full HD
+   ============================ */
+
+/* ---------- 1366 x 768 (escala ~0.711) ---------- */
+@media screen and (max-width: 1366px) and (min-width: 1281px) {
+  /* Header padding: originalmente 2vh 4vw (≈ 21.6px 76.8px em 1080/1920) */
+  header {
+    padding: 15px 55px !important;        /* vertical px, horizontal px proporcionais */
+  }
+
+  /* Diminui a logo proporcional à resolução */
+  header a img {
+    height: 32px !important;  /* antes chegava a ~45px; agora mantém proporção da versão full HD */
+  }
+
+  /* Nav links: reduzir fonte/leves paddings proporcionalmente */
+  nav a {
+    font-size: 13px !important;   
+  }
+
+  /* Language selector wrapper size */
+  .language-wrapper {
+    min-width: 114px !important;          /* 160 * 0.711 ≈ 114px */
+  }
+
+  /* Select visual adjustments: padding/font/border-radius */
+  select#language-selector {
+    padding: 5px 28px 5px 9px !important; /* 6/40/12 scaled -> 5/28/9 */
+    font-size: 13px !important;           /* 1rem ~18px -> *0.711 ≈ 13px */
+    border-radius: 4px !important;        /* 6px -> *0.711 ≈ 4px */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
+  }
+
+  .language-wrapper::after {
+    font-size: 0.72rem !important;        /* caret proporcional */
+    right: 10px !important;
+  }
+}
+
+/* Pequeno ajuste geral: garantir que header respeite layout e não enrole itens inesperadamente */
+@media screen and (max-width: 1366px) {
+  header {
+    align-items: center; /* mantém centralizado verticalmente */
+  }
+  nav {
+    flex-wrap: wrap;    /* permite quebra se precisar sem alterar ordem */
+  }
+}

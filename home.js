@@ -96,10 +96,6 @@ window.addEventListener('load', () => {
 })
 
 
-
-
-
-
 /* Versão com o fechamento definitivo do popup quando o usuário clicar no 'x'
 window.addEventListener('load', () => {
   const popup = document.getElementById('popup-colab');
