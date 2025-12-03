@@ -116,3 +116,29 @@ document.addEventListener('contextmenu', e => {
     e.preventDefault();
     alert("Acesso ao menu de contexto bloqueado!");
 });
+
+
+function aplicarZoomProporcional() {
+  const w = screen.width;
+  const h = screen.height;
+
+  let scale = 1;
+
+  if (
+    (w === 1536 && h === 864) ||
+    (w === 1366 && h === 768)
+  ) {
+    scale = 0.80;
+  }
+
+  if (w === 1280 && h === 720) {
+    scale = 0.75
+  }
+
+  document.documentElement.style.transform = `scale(${scale})`;
+  document.documentElement.style.width = (100 / scale) + "%";
+  document.documentElement.style.height = (100 / scale) + "%";
+}
+
+aplicarZoomProporcional();
+window.addEventListener("resize", aplicarZoomProporcional);
