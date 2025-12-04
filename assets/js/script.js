@@ -126,7 +126,7 @@ function aplicarZoomProporcional() {
 
   if (
     (w === 1536 && h === 864) ||
-    (w === 1366 && h === 768)
+    (w === 1368 && h === 768)
   ) {
     scale = 0.80;
   }
