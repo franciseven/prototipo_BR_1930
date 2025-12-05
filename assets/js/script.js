@@ -133,7 +133,7 @@ function aplicarZoomProporcional() {
   }
 
   if (w === 1366 && h === 768)  {
-    scale = 0.72;
+    scale = 0.70;
   }
 
   if  (w === 1280 && h === 720){
