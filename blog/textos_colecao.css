@@ -18,7 +18,7 @@ html, body {
 }
 
 .text-container {
-  max-width: 100%;
+  max-width: 1500px;
   margin: 60px auto;
   padding: 0 20px;
   padding-bottom: 120px;
