@@ -126,13 +126,18 @@ function aplicarZoomProporcional() {
 
   if (
     (w === 1536 && h === 864) ||
-    (w === 1366 && h === 768)
+    (w === 1368 && h === 768) ||
+    (w === 1440 && h === 900)
   ) {
-    scale = 0.80;
+    scale = 0.86;
   }
 
-  if (w === 1280 && h === 720) {
+  if  (w === 1280 && h === 720){
     scale = 0.75
+  }
+
+  if (w === 1024 && h === 768){
+    scale = 0.65;
   }
 
   document.documentElement.style.transform = `scale(${scale})`;
