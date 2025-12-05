@@ -4,24 +4,23 @@ select {
 }
 
 .login-container {
-	position: relative;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-	padding: clamp(20px, 5vh, 60px) clamp(20px, 5vw, 60px);
-	background-color: #f5f5f5;
+  flex: 1;
 
-	min-height: 85vh;
-  background-color: #f0f0f0;
-  padding: 60px 10vw;
-	
-	background-image: url(../imagens/background/pesquisa_na_uniao\ 7.jpg);
+  padding: clamp(20px, 5vh, 60px) clamp(20px, 5vw, 60px);
+  background-color: #f5f5f5;
+
+  background-image: url(../imagens/background/pesquisa_na_uniao\ 7.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: rgb(198, 198, 198, 0.89);
-  background-blend-mode: lighten
+  background-blend-mode: lighten;
 }
+
 
 .login-container figcaption {
   position: absolute;
