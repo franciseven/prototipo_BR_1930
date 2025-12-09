@@ -267,7 +267,7 @@ html, body {
 }
 
 .item-info .descricao.collapsed {
-  max-height: 5em;
+  max-height: 2em;
   overflow: hidden;
 }
 
