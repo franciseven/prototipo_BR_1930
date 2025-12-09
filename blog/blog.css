@@ -113,8 +113,22 @@
 }
 
 .post-text {
-	text-align: justify;
-	font-size: 1.3rem;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.25rem;
+  line-height: 1.75;
+
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 1rem 1.2rem;
+
+  color: #1a1a1a;
+  
+  text-align: left;
+  word-break: break-word;
+}
+
+.post-text p {
+  margin-bottom: 1.2rem;
 }
 
 .navegacao {
