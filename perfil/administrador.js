@@ -307,7 +307,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // BOTÃO DE EDIÇÃO (EXEMPLO)
   // =========================
   document.querySelectorAll(".editBtn").forEach(btn => {
-    btn.addEventListener("click", () => {
+      btn.addEventListener("click", () => {
+      
+      alert("Edição de item habilitada");
+
+      const alvo = document.getElementById("edit-go");
+      if (alvo) {
+        alvo.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
       document.getElementById("titulo").value = "Como se Combate o Cangaceirismo na Parahyba";
       authors = ["Jornal A Manhã (RJ)"];
       uploadedFiles = ["capa_territorio_1.jpg"];
