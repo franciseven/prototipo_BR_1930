@@ -212,17 +212,21 @@ html, body {
 
 .item {
   display: flex;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 20px;
   background-color: #ffffffac;
+  align-items: stretch;
+  min-height: 220px;
+  min-width: 220px;
+  padding: 1%;
 }
 
 .item img {
-  width: 90px;
-  height: 120px;
+  display: block;
+  width: 100%;
+  max-width: 140px;
+  height: 100%;
+  max-height: 220px;
   object-fit: cover;
   margin-right: 25px;
-  border-radius: 4px;
 }
 
 .item-info {
