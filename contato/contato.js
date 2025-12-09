@@ -321,15 +321,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	// EXIBIR PDF SE ASSUNTO FOR BLOG
 	// =======================
 selectAssunto.addEventListener('change', function () {
-    const pdfExistente = document.getElementById('pdf-blog');
-    if (pdfExistente) pdfExistente.remove(); // remove o item anterior, se houver
+    const docxExistente = document.getElementById('docx-blog');
+    if (docxExistente) docxExistente.remove(); // remove o item anterior, se houver
 
     if (this.value === 'blog') {
         const link = document.createElement('a');
-        link.id = 'pdf-blog';
-        link.href = './INSTRUCOES_PARA_ENVIO_DE_ARTIGO_AO_BLOG.pdf';
-        link.textContent = 'Baixar instruções em PDF';
-        link.download = 'INSTRUCOES_PARA_ENVIO_DE_ARTIGO_AO_BLOG.pdf';
+        link.id = 'docx-blog';
+        link.href = './MODELO_E_INSTRUÇÕES_PARA_O_ENVIO_DE_ARTIGO_PARA_O_NOSSO_BLOG.docx';
+        link.textContent = 'CLIQUE AQUI PARA BAIXAR O MODELO COM AS INSTRUÇÕES PARA O ENVIO';
+        link.download = 'MODELO_E_INSTRUÇÕES_PARA_O_ENVIO_DE_ARTIGO_PARA_O_NOSSO_BLOG.docx';
         link.style.display = 'inline-block';
         link.style.marginTop = '10px';
         link.style.fontSize = '1.1rem';
