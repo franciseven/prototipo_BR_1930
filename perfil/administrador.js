@@ -308,45 +308,51 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================
   document.querySelectorAll(".editBtn").forEach(btn => {
       btn.addEventListener("click", () => {
-      
-      alert("Edição de item habilitada");
+      const row = btn.closest("tr");
+      const itemID = row.children[0].textContent.trim();
 
-      const alvo = document.getElementById("edit-go");
-      if (alvo) {
-        alvo.scrollIntoView({ behavior: "smooth", block: "start" });
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+      // Verifica se o item é do tipo BLOG
+      if (!itemID.startsWith("BLOG-")) {
 
-      document.getElementById("titulo").value = "Como se Combate o Cangaceirismo na Parahyba";
-      authors = ["Jornal A Manhã (RJ)"];
-      uploadedFiles = ["capa_territorio_1.jpg"];
-      authorsList.innerHTML = "";
-      authors.forEach(author => {
-        const li = document.createElement("li");
-        li.textContent = author;
-        const removeBtn = document.createElement("button");
-        removeBtn.textContent = '×';
-        removeBtn.style.marginLeft = '8px';
-        removeBtn.style.color = 'red';
-        removeBtn.style.border = 'none';
-        removeBtn.style.background = 'transparent';
-        removeBtn.style.cursor = 'pointer';
-        removeBtn.title = 'Remover autor';
-        removeBtn.addEventListener('click', () => {
-          authorsList.removeChild(li);
-          authors = authors.filter(a => a !== author);
+        alert("Edição de item habilitada");
+
+        const alvo = document.getElementById("edit-go");
+        if (alvo) {
+          alvo.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        document.getElementById("titulo").value = "Como se Combate o Cangaceirismo na Parahyba";
+        authors = ["Jornal A Manhã (RJ)"];
+        uploadedFiles = ["capa_territorio_1.jpg"];
+        authorsList.innerHTML = "";
+        authors.forEach(author => {
+          const li = document.createElement("li");
+          li.textContent = author;
+          const removeBtn = document.createElement("button");
+          removeBtn.textContent = '×';
+          removeBtn.style.marginLeft = '8px';
+          removeBtn.style.color = 'red';
+          removeBtn.style.border = 'none';
+          removeBtn.style.background = 'transparent';
+          removeBtn.style.cursor = 'pointer';
+          removeBtn.title = 'Remover autor';
+          removeBtn.addEventListener('click', () => {
+            authorsList.removeChild(li);
+            authors = authors.filter(a => a !== author);
+          });
+          li.appendChild(removeBtn);
+          authorsList.appendChild(li);
         });
-        li.appendChild(removeBtn);
-        authorsList.appendChild(li);
-      });
-      const palavrasChave = ["territorio", "periodico"];
-      document.querySelectorAll("input[name='keyword']").forEach(cb => {
-        cb.checked = palavrasChave.includes(cb.value);
-      });
-      fileNameDisplay.textContent = "Arquivo anexado: " + uploadedFiles.join(", ");
-      document.getElementById("annotation").value = "";
-      document.getElementById("visibility").value = "livre";
+        const palavrasChave = ["territorio", "periodico"];
+        document.querySelectorAll("input[name='keyword']").forEach(cb => {
+          cb.checked = palavrasChave.includes(cb.value);
+        });
+        fileNameDisplay.textContent = "Arquivo anexado: " + uploadedFiles.join(", ");
+        document.getElementById("annotation").value = "";
+        document.getElementById("visibility").value = "livre";
+      }
     });
   });
 
@@ -606,7 +612,7 @@ document.addEventListener("DOMContentLoaded", () => {
     li.textContent = newAuthor;
 
     const removeBtn = document.createElement("button");
-    removeBtn.textContent = "×";
+    removeBtn.textContent = "x";
     removeBtn.style.marginLeft = "8px";
     removeBtn.style.color = "red";
     removeBtn.style.border = "none";
@@ -623,6 +629,65 @@ document.addEventListener("DOMContentLoaded", () => {
     blogAuthorsList.appendChild(li);
     blogAutorInput.value = "";
   });
+
+  // --- CAPTURAR BOTÕES DE EDIÇÃO ---
+  document.querySelectorAll(".editBtn").forEach(btn => {
+    btn.addEventListener("click", () => {
+
+      const row = btn.closest("tr"); // pega a linha da tabela
+      const itemID = row.children[0].textContent.trim(); // primeiro <td> contém o ID
+
+      // Verifica se o item é do tipo BLOG
+      if (itemID.startsWith("BLOG-")) {
+
+        alert("Edição de item habilitada");
+
+        const alvo = document.getElementById("blog_titulo_go");
+        if (alvo) {
+          alvo.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        // --- PREENCHIMENTO DOS CAMPOS DO BLOG ---
+        blogTitulo.value = "Território Livre de Princesa Isabel";
+
+        for (let i = 0; i < blogProprietarioSelect.options.length; i++) {
+          if (blogProprietarioSelect.options[i].text.trim() === "Administrador") {
+            blogProprietarioSelect.selectedIndex = i;
+            if (blogOutroProprietarioContainer) blogOutroProprietarioContainer.style.display = "none";
+            break;
+          }
+        }
+
+        // Data
+        blogData.value = "2025-11-20";
+
+        // Link Lattes
+        document.getElementById("blog_lattes").value =
+          "http://lattes.cnpq.br/2368150617722699";
+
+        // Fonte
+        blogFonte.value =
+          "Arquivo da Fundação Casa de José Américo";
+
+        // Descrição
+        blogDescricao.value = "";
+
+        // Anotações
+        blogAnnotation.value = "";
+
+        // Texto do blog
+        blogQuill.root.innerHTML =
+          "A década de 1920 e o início dos anos de 1930 ficaram marcados por profundas transformações econômicas, políticas e sociais na Paraíba, no Brasil e no mundo...";
+
+        // --- ROLAR PARA O INÍCIO DO FORMULÁRIO ---
+        const formTop = document.getElementById("blog_titulo_go").offsetTop;
+        window.scrollTo({ top: formTop - 30, behavior: "smooth" });
+      }
+    });
+  });
+
 
   // ============
   // QUILL EDITOR
