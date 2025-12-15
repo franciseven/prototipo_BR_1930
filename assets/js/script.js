@@ -148,3 +148,39 @@ function aplicarZoomProporcional() {
 
 aplicarZoomProporcional();
 window.addEventListener("resize", aplicarZoomProporcional);
+
+
+(function () {
+
+  function carregarVLibras() {
+    if (window.VLibras) return;
+
+    const script = document.createElement('script');
+    script.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
+    script.onload = () => {
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    };
+    document.body.appendChild(script);
+  }
+
+  function esperarContainer() {
+    const container = document.querySelector('[vw]');
+    if (container) {
+      carregarVLibras();
+    } else {
+      setTimeout(esperarContainer, 100);
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', esperarContainer);
+
+})();
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const vwButton = document.querySelector('[vw-access-button]');
+    if (vwButton) {
+      vwButton.style.top = '140px';
+    }
+  }, 1);
+});
