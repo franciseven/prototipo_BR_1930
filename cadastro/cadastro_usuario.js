@@ -1,3 +1,8 @@
+const dataInput = document.getElementById("data-nascimento");
+
+const hoje = new Date().toISOString().split("T")[0];
+dataInput.max = hoje;
+
 document.addEventListener('DOMContentLoaded', () => {
 	const estadoSelect = document.getElementById('estado');
 	const cidadeContainer = document.getElementById('cidade-container');

@@ -229,6 +229,12 @@ document.addEventListener("DOMContentLoaded", () => {
     novoItemInput.focus();
   });
 
+
+  const dataInput = document.getElementById("data");
+
+  const hoje = new Date().toISOString().split("T")[0];
+  dataInput.max = hoje;
+
   // ===============
   // ENVIO DOS DADOS
   // ===============
@@ -238,8 +244,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const titulo = document.getElementById("titulo").value.trim();
     const anotacoes = document.getElementById("annotation").value.trim();
     const visibilidade = document.getElementById("visibility").options[document.getElementById("visibility").selectedIndex].text;
-
-    const dataValor = document.getElementById("data").value;
 
     const proprietarioValor = proprietarioSelect.options[proprietarioSelect.selectedIndex].text;
 
@@ -251,10 +255,23 @@ document.addEventListener("DOMContentLoaded", () => {
       .filter(cb => cb.id !== "outro-checkbox")
       .map(cb => cb.value);
 
+    const dataValor = dataInput.value;
+
     if (!titulo) {
       alert("Por favor, preencha o campo Título.");
       return;
     }
+
+    if (!dataValor) {
+      alert("Por favor, selecione uma data.");
+      return;
+    }
+
+    if (new Date(dataValor) > new Date(hoje)) {
+      alert("A data não pode ser superior à data atual.");
+      return;
+    }
+
     if (authors.length === 0) {
       alert("Por favor, adicione pelo menos um autor.");
       return;
@@ -290,7 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `Conteúdo enviado com sucesso!\n\n` +
       `Título: ${titulo}\n` +
       `Autores: ${authors.join(", ")}\n` +
-      `Data: ${dataValor}\n` +
+      `Data: ${dataValor.split("-").reverse().join("/")}\n` +
       `Proprietário: ${proprietarioValor}\n` +
       `Coleções: ${colecaoValor.join(", ")}\n` +
       `Palavras-Chave: ${palavrasChaveValor.join(", ")}\n` +
