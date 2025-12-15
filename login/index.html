@@ -25,12 +25,13 @@
         <label class="custom-label">
           <span>E-mail</span> <span style="color: #c00;">*</span>
         </label>
-        <input type="text" placeholder="E-mail" data-i18n-placeholder="email" required>
+        <input type="email" id="email" placeholder="E-mail" data-i18n-placeholder="email" required>
 
         <label class="custom-label">
           <span>Senha</span> <span style="color: #c00;">*</span>
         </label>
-        <input type="password" placeholder="Senha" data-i18n-placeholder="senha" required>
+        <input type="password" id="senha" placeholder="Senha" data-i18n-placeholder="senha" required>
+        <small id="senha-ajuda" style="color: #c00;">A senha deve ter pelo menos 8 caracteres, incluindo maiúsculas, minúsculas, números e caracteres especiais.</small>
 
         <button type="submit" class="login-btn" data-i18n="entrar">ENTRAR</button>
       </form>
