@@ -155,6 +155,11 @@ document.addEventListener("DOMContentLoaded", () => {
     novoItemInput.focus();
   });
 
+  const dataInput = document.getElementById("data");
+
+  const hoje = new Date().toISOString().split("T")[0];
+  dataInput.max = hoje;
+
   btn.addEventListener("click", function (e) {
     e.preventDefault();
 
@@ -162,6 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const anotacoes = document.getElementById("annotation").value.trim();
     const arquivo = fileInput.files[0];
     const visibilidade = document.getElementById("visibility").options[document.getElementById("visibility").selectedIndex].text;
+    const data = document.getElementById("data").value;
 
     const colecaoCheckboxes = document.querySelectorAll("#colecao-checkboxes input[type='checkbox']:checked");
     const colecaoValor = Array.from(colecaoCheckboxes).map(cb => cb.value)
@@ -173,6 +179,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!titulo) {
       alert("Por favor, preencha o campo Título.");
+      return;
+    }
+
+    if (!data) {
+      alert("Por favor, selecione uma data.");
+      return;
+    }
+
+    if (new Date(data) > new Date(hoje)) {
+      alert("A data não pode ser superior à data atual.");
       return;
     }
 
@@ -198,6 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const dados = {
       titulo,
+      data,
       autores: authors,
       anotacoes,
       colecoes: colecaoValor,
@@ -212,6 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `Conteúdo enviado com sucesso para os administradores para revisão!\n\n` +
       `Observação: O seu conteúdo será enviado para a plataforma apenas após aprovação do administrador!!!\n\n` +
       `Título: ${titulo}\n` +
+      `Data: ${data.split("-").reverse().join("/")}\n` +
       `Autores: ${authors.join(", ")}\n` +
       `Anotações: ${anotacoes ? anotacoes : 'Nenhuma anotação'}\n` +
       `Coleções: ${colecaoValor.join(", ")}\n` +
