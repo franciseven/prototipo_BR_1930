@@ -23,10 +23,10 @@ proceedBtn.addEventListener('click', function () {
 	if (!input.files.length) {
 		const confirmProceed = confirm("Foto de perfil não inserida! Tem certeza que não gostaria de enviar uma foto de perfil?\n\nClique em OK para ir para a próxima tela!\nClique em Cancelar para permanecer nesta!");
 		if (confirmProceed) {
-			window.location.href = '../perfil/usuario.html';
+			window.location.href = './termos_uso.html';
 		}
 	} else {
 		alert("Foto de perfil inserida com Sucesso!");
-		window.location.href = "../perfil/usuario.html"
+		window.location.href = "./termos_uso.html"
 	}
 });

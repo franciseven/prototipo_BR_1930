@@ -4,7 +4,7 @@ const authInput = document.getElementById('auth-code');
 verifyBtn.addEventListener('click', () => {
 	const code = authInput.value.trim();
 	if (code === "123456") {
-		window.location.href = "./termos_uso.html";
+		window.location.href = "./foto_cadastro_usuario.html";
 	} else {
 		alert("Código incorreto. Tente novamente.");
 		authInput.value = "";
