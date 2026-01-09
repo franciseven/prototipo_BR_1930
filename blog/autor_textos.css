@@ -104,8 +104,8 @@
 
 .card-link {
 	text-decoration: none;
-	background: #ffffff;
-	color: #111827;
+	background: #4a90e2;
+	color: #ffffff;
 	padding: 8px 12px;
 	border-radius: 6px;
 	text-align: center;
@@ -116,7 +116,7 @@
 }
 
 .card-link:hover {
-	background: #3b82f6; 
+	background: #357ABD; 
 	color: white;
 	box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
