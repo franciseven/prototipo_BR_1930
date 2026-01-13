@@ -295,4 +295,87 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  const btnApagar = document.querySelector("#apagarConta button");
+
+  btnApagar.addEventListener("click", () => {
+    criarPopupConfirmacao();
+  });
+
+  function criarPopupConfirmacao() {
+    const overlay = document.createElement("div");
+    overlay.style.position = "fixed";
+    overlay.style.top = 0;
+    overlay.style.left = 0;
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "rgba(0,0,0,0.6)";
+    overlay.style.display = "flex";
+    overlay.style.alignItems = "center";
+    overlay.style.justifyContent = "center";
+    overlay.style.zIndex = "9999";
+
+    const popup = document.createElement("div");
+    popup.style.background = "#fff";
+    popup.style.padding = "2rem";
+    popup.style.borderRadius = "12px";
+    popup.style.maxWidth = "420px";
+    popup.style.textAlign = "center";
+    popup.style.boxShadow = "0 8px 20px rgba(0,0,0,0.3)";
+
+    popup.innerHTML = `
+      <p style="margin-bottom: 1.5rem; font-size: 1rem;">
+        Você tem certeza que deseja deletar a sua conta?<br>
+        <strong>Esta ação é irreversível!</strong>
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <button id="confirmar" style="padding: 0.6rem 1rem; background: #c0392b; color: white; border: none; border-radius: 6px; cursor: pointer;">
+          Sim, tenho certeza
+        </button>
+        <button id="cancelar" style="padding: 0.6rem 1rem; background: #7f8c8d; color: white; border: none; border-radius: 6px; cursor: pointer;">
+          Não, desejo manter a minha conta
+        </button>
+      </div>
+    `;
+
+    overlay.appendChild(popup);
+    document.body.appendChild(overlay);
+
+    popup.querySelector("#cancelar").addEventListener("click", () => {
+      overlay.remove();
+    });
+
+    popup.querySelector("#confirmar").addEventListener("click", () => {
+      overlay.remove();
+      criarPopupContaExcluida();
+    });
+  }
+
+  function criarPopupContaExcluida() {
+    const overlay = document.createElement("div");
+    overlay.style.position = "fixed";
+    overlay.style.top = 0;
+    overlay.style.left = 0;
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "rgba(0,0,0,0.6)";
+    overlay.style.display = "flex";
+    overlay.style.alignItems = "center";
+    overlay.style.justifyContent = "center";
+    overlay.style.zIndex = "9999";
+
+    const popup = document.createElement("div");
+    popup.style.background = "#fff";
+    popup.style.padding = "2rem";
+    popup.style.borderRadius = "12px";
+    popup.style.textAlign = "center";
+
+    popup.innerHTML = `
+      <h2>Conta excluída!</h2>
+    `;
+
+    overlay.appendChild(popup);
+    document.body.innerHTML = "";
+    document.body.appendChild(overlay);
+  }
 });
