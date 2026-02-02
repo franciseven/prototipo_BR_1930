@@ -198,10 +198,8 @@
 }
 
 .overlay-warning {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  margin-top: clamp(12px, 2vh, 24px);
 
   background: rgba(255, 0, 0, 0.92);
   color: #fff;
@@ -210,19 +208,16 @@
 
   width: clamp(280px, 60vw, 900px);
   max-width: 80vw;
-  max-height: 50vh;
-  overflow: auto;
 
   text-align: center;
   font-size: clamp(1rem, 2.5vw, 1.6rem);
   line-height: 1.4;
 
   box-shadow: 0 6px 25px rgba(0,0,0,0.35);
-  z-index: 3; 
+  z-index: 3;
 }
 
 .overlay-buttons {
-	margin-top: 25px;
 	display: flex;
 	justify-content: center;
 	gap: 15px;
