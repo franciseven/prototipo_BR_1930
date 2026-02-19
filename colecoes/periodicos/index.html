@@ -34,7 +34,7 @@
       <h1>Periódicos</h1>
 
       <p>
-        Esta seção apresenta uma coleção de periódicos contendo tipos como <strong>entrevistas impressas, matérias jornalísticas e revistas.</strong> Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
+        Esta seção apresenta uma coleção de periódicos contendo <strong>revistas, matérias jornalísticas e entrevistas impressas.</strong> Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
       </p>
 
       <div class="navegar-box">
@@ -109,7 +109,6 @@
             <option>.png</option>
             <option>.pdf</option>
             <option>.jpg</option>
-            <option>.tiff</option>
           </select>
           <button>Pesquisar</button>
         </div>
@@ -142,6 +141,8 @@
             <option value="noticia">Notícia</option>
             <option value="artigo">Artigo</option>
             <option value="relatorio">Relatório</option>
+            <option value="poema">Poema</option>
+            <option value="musica">Música (Letra)</option>
           </select>
 
           <input type="text" id="materia-jornalistica-input" placeholder="Digite a matéria jornalística" />
@@ -154,9 +155,13 @@
         <div class="filtros-inputs">
           <select id="revistas-select">
             <option value="" disabled selected>(Escolha a revista)</option>
+            <option value="titulo">Título</option>
             <option value="editora">Editora</option>
             <option value="assunto">Assunto</option>
-            <option value="titulo">Título</option>
+            <option value="autor">Autor</option>
+            <option value="volume">Volume</option>
+            <option value="edicao">Edição</option>
+            <option value="periodicidade">Periodicidade</option>
           </select>
 
           <select id="revistas-editora-select" style="display: none;">
