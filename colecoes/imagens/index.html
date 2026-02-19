@@ -44,6 +44,8 @@
           <button class="tab" data-target="filtros-autor">Autores</button>
           <button class="tab" data-target="filtros-data">Data de Publicação</button>
           <button class="tab" data-target="filtros-tipo">Tipos</button>
+          <button class="tab" data-target="filtros-observacao">Observações</button>
+          <button class="tab" data-target="filtros-palavra_chave">Palavras-Chave</button>
         </div>
       </div>
 
@@ -109,6 +111,30 @@
             <option>Pintura</option>
             <option>Cartaz</option>
           </select>
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-observacao" style="display:none;">
+        <label>Filtrar por Observação</label>
+        <div class="filtros-inputs">
+          <select>
+            <option value="" disabled selected>(Escolha a observação)</option>
+            <option>Exemplo</option>
+          </select>
+          <input type="text" placeholder="Digite a observação" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-palavra_chave" style="display:none;">
+        <label>Filtrar por Palavra-Chave</label>
+        <div class="filtros-inputs">
+          <select>
+            <option value="" disabled selected>(Escolha a palavra-chave)</option>
+            <option>Exemplo</option>
+          </select>
+          <input type="text" placeholder="Digite a palavra-chave" />
           <button>Pesquisar</button>
         </div>
       </div>
