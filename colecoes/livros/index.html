@@ -34,7 +34,7 @@
       <h1>Livros</h1>
 
       <p>
-        Esta seção apresenta uma coleção de livros catalogados. Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
+        Esta seção apresenta uma coleção de livros. Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
       </p>
 
       <div class="navegar-box">
@@ -46,6 +46,8 @@
           <button class="tab" data-target="filtros-edicao">Edição</button>
           <button class="tab" data-target="filtros-data">Data de Publicação</button>
           <button class="tab" data-target="filtros-genero">Gêneros</button>
+          <button class="tab" data-target="filtros-observacao">Observações</button>
+          <button class="tab" data-target="filtros-palavra_chave">Palavras-Chave</button>
         </div>
       </div>
 
@@ -86,10 +88,9 @@
             <option value="" disabled selected>(Escolha o gênero)</option>
             <option>Ficção</option>
             <option>Biografia</option>
-            <option>Acadêmico</option>
-            <option>Texto Literário</option>
-            <option>Texto Não Literário</option>
-            <option>Texto Científico</option>
+            <option>Literário</option>
+            <option>Não Literário</option>
+            <option>Científico</option>
           </select>
           <input type="text" placeholder="Digite o gênero" />
           <button>Pesquisar</button>
@@ -116,6 +117,30 @@
             <option>1ª Edição</option>
           </select>
           <input type="text" placeholder="Digite a edição" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-observacao" style="display:none;">
+        <label>Filtrar por Observação</label>
+        <div class="filtros-inputs">
+          <select>
+            <option value="" disabled selected>(Escolha a observação)</option>
+            <option>Obras Raras</option>
+          </select>
+          <input type="text" placeholder="Digite a observação" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-palavra_chave" style="display:none;">
+        <label>Filtrar por Palavra-Chave</label>
+        <div class="filtros-inputs">
+          <select>
+            <option value="" disabled selected>(Escolha a palavra-chave)</option>
+            <option>Exemplo</option>
+          </select>
+          <input type="text" placeholder="Digite a palavra-chave" />
           <button>Pesquisar</button>
         </div>
       </div>

@@ -181,6 +181,7 @@ window.addEventListener('load', () => {
     const vwButton = document.querySelector('[vw-access-button]');
     if (vwButton) {
       vwButton.style.top = '140px';
+      vwButton.style.right = '5px';
     }
   }, 1);
 });
