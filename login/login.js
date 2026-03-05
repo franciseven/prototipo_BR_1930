@@ -19,8 +19,10 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
     senhaInput.setCustomValidity("");
   }
 
-  if (this.checkValidity()) {
-    window.location.href = "../perfil/administrador.html";
+  if (senhaInput.value === "Usuario@teste1!") {
+    window.location.href = "../perfil/usuario.html";
+  } else if (senhaInput.value === "Admin@teste1!") {
+    window.location.href = "./codigo_autenticacao.html";
   } else {
     this.reportValidity();
   }

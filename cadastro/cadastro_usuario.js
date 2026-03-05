@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (!valido) return;
 
 		if (form.checkValidity()) {
-			window.location.href = "./codigo_autenticacao.html";
+			window.location.href = "./foto_cadastro_usuario.html";
 		} else {
 			form.reportValidity();
 		}
