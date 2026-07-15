@@ -221,6 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll("form").forEach((form) => {
     const formTitle = form.closest("section")?.querySelector("h2")?.innerText || "";
 
+    // adicionar correto redirecionamento para a página de alteração de foto de cadastro do administrador
     if (formTitle.includes("Foto de Perfil")) {
       const fileInput = form.querySelector("#fileUpload");
       const fileNameDisplay = document.getElementById("fileNameDisplay");
