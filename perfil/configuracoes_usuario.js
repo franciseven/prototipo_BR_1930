@@ -234,6 +234,12 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       }
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        
+        window.location.href = "alteracao_foto_cadastro_usuario.html";
+      });
     }
 
     form.addEventListener("submit", function (e) {
@@ -266,15 +272,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         showPopup();
         setTimeout(() => form.submit(), 1000);
-      } else if (formTitle.includes("Foto de Perfil")) {
-        const fileInput = form.querySelector("#fileUpload");
-
-        if (fileInput && fileInput.files.length > 0) {
-          showPopup();
-          setTimeout(() => form.submit(), 1000);
-        } else {
-          alert("Nenhum arquivo selecionado.");
-        }
       } else if (form.id === "cadastro-form") {
         if (isAnyFieldChanged(form)) {
           showPopup();
