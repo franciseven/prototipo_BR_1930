@@ -27,30 +27,28 @@
     <div class="main-content">
 
       <div class="document-header">
-        <h1 data-i18n="titulo_item">O Ano do Nego</h1>
+        <h1 data-i18n="titulo_item">[ITEM APENAS EXEMPLO] História da Paraíba: Lutas e Resistência</h1>
       </div>
 
       <div class="document-section">
 
         <div class="left-column">
-          <img src="../../imagens/capas_colecoes/livros/capa_livro_1-oanodonego.png" alt="Capa do Item" class="cover-image">
+          <img src="../../imagens/capas_colecoes/livros/capa_livro_2 - historia_da_paraiba_lutas_e_resistencia.jpg" alt="Capa do Item" class="cover-image">
           <a href="https://link" download data-i18n="baixar" class="download-link">Acessar Item</a>
-          <p><strong data-i18n="data">Data</strong><br><span data-i18n="data_valor">1968</span></p>
-          <p><strong data-i18n="autor">Autor(a)</strong><br><span data-i18n="autor_valor">José Américo de Almeida</span></p>
+          <p><strong data-i18n="data">Data</strong><br><span data-i18n="data_valor">1994</span></p>
+          <p><strong data-i18n="autor">Autor(a)</strong><br><span data-i18n="autor_valor">José Octávio</span></p>
           <p><strong data-i18n="edicao">Edição</strong><br><span data-i18n="observacao_valor">-----</span></p>
           <p><strong data-i18n="observacao">Observação</strong><br><span data-i18n="observacao_valor">-----</span></p>
         </div>
 
         <div class="right-column">
           <h3 data-i18n="resumo">Resumo</h3>
-          <p data-i18n="resumo_texto">Memórias de José Américo sobre o assassinato de João Pessoa.</p>
+          <p data-i18n="resumo_texto">DESCONHECIDO</p>
 
           <h3 data-i18n="palavra_chave">Palavras-chave</h3>
           <div class="tags">
             <div class="tag" data-i18n="tipo_documento">Livro</div>
-            <div class="tag" data-i18n="tipo_documento">José Américo</div>
-            <div class="tag" data-i18n="tipo_documento">João Pessoa</div>
-            <div class="tag" data-i18n="tipo_documento">Memórias</div>
+            <div class="tag" data-i18n="tipo_documento">José Octávio</div>
           </div>
 
         </div>
@@ -61,8 +59,16 @@
 
     <div id="overlay">
       <div class="overlay-content">
-
-        <img id="overlay-image" src="../../imagens/capas_colecoes/livros/capa_livro_1-oanodonego.png" alt="Capa do Arquivo">
+        
+        <div class="pdf-preview-container">
+          <canvas id="pdf-canvas"></canvas>
+          
+          <div class="pdf-controls">
+            <button id="prev-page" class="pdf-btn">&laquo; Anterior</button>
+            <span class="page-info">Página <span id="page-num">1</span> de <span id="page-count">2</span></span>
+            <button id="next-page" class="pdf-btn">Próxima &raquo;</button>
+          </div>
+        </div>
 
         <p class="overlay-warning">
           Arquivo protegido por direitos autorais. Qualquer uso sem autorização levará a ser penalizado de acordo com as leis cabíveis.
