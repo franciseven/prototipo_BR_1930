@@ -34,20 +34,21 @@
       <h1>Periódicos</h1>
 
       <p>
-        Esta seção apresenta uma coleção de periódicos contendo <strong>revistas, matérias jornalísticas e entrevistas impressas.</strong> Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
+        Esta seção apresenta uma coleção de periódicos contendo <strong>revistas e matérias jornalísticas.</strong> Explore os registros disponíveis com o auxílio das ferramentas de filtro abaixo.
       </p>
 
       <div class="navegar-box">
         <div class="navegar-header">Filtros de Navegação</div>
         <div class="navegar-tabs" id="tabs">
           <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
-          <button class="tab" data-target="filtros-autor">Autores</button>
+          <button class="tab" data-target="filtros-autor">Autor</button>
+          <button class="tab" data-target="filtros-titulo">Título</button>
           <button class="tab" data-target="filtros-data">Data de Publicação</button>
-          <button class="tab" data-target="filtros-formato">Formatos</button>
-          <button class="tab" data-target="filtros-materias-jornalisticas">Matérias Jornalísticas</button>
-          <button class="tab" data-target="filtros-revistas">Revistas</button>
-          <button class="tab" data-target="filtros-observacao">Observações</button>
-          <button class="tab" data-target="filtros-palavra_chave">Palavras-Chave</button>
+          <button class="tab" data-target="filtros-formato">Formato</button>
+          <button class="tab" data-target="filtros-materias-jornalisticas">Matéria Jornalística</button>
+          <button class="tab" data-target="filtros-revistas">Revista</button>
+          <button class="tab" data-target="filtros-observacao">Observação</button>
+          <button class="tab" data-target="filtros-palavra_chave">Palavra-Chave</button>
         </div>
       </div>
 
@@ -63,6 +64,18 @@
             <option>EXEMPLO</option>
           </select>
           <input type="text" placeholder="Digite o nome do autor" />
+          <button>Pesquisar</button>
+        </div>
+      </div>
+
+      <div class="filtros" id="filtros-titulo" style="display:none;">
+        <label>Filtrar periódico por título</label>
+        <div class="filtros-inputs">
+          <select>
+            <option value="" disabled selected>(Escolha o título)</option>
+            <option>EXEMPLO</option>
+          </select>
+          <input type="text" placeholder="Digite o título" />
           <button>Pesquisar</button>
         </div>
       </div>
