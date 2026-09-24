@@ -138,6 +138,71 @@
       </div>
 
       <div class="section">
+        <h2 data-i18n="contentSubmission.title" id="blog_titulo_go">Submissão Para o Blog</h2>
+
+        <div class="upload-area">
+          <label for="blog_titulo" data-i18n="contentSubmission.titleLabel">Título:</label><br />
+          <input type="text" id="blog_titulo" placeholder="Digite o título do item" name="blog_titulo" /><br /><br />
+
+          <label data-i18n="contentSubmission.authorLabel">Autor(a):</label><br />
+          <div class="autores" id="blog_author-input-group">
+            <input type="text" id="blog_autorInput" placeholder="Digite o nome do autor" />
+            <button type="button" id="blog_addAuthorBtn">Adicionar Autor</button>
+            <ul id="blog_authorsList"></ul>
+          </div>        
+
+          <div class="file-upload" id="blog_fileDropProfileArea" onclick="document.getElementById('blog_fileUploadAutor').click()">
+            <p><strong data-i18n="contentSubmission.selectFile">Clique aqui para enviar uma foto de perfil do autor</strong><br /></p>
+            <input type="file" id="blog_fileUploadAutor" name="blog_fileUploadAutor" hidden />
+          </div><br />
+
+          <label for="blog_data" data-i18n="contentSubmission.dataLabel">Data:</label><br />
+          <input type="date" id="blog_data" class="custom-label" placeholder="Digite a data do item" name="blog_data" /><br />
+
+          <label for="blog_lattes" data-i18n="contentSubmission.lattesLabel">Link do Lattes:</label><br />
+          <input type="text" id="blog_lattes" placeholder="Digite o link do lattes do autor" name="blog_lattes" /><br /><br />
+
+          <label for="blog_descricao" data-i18n="contentSubmission.descricaoLabel">Descrição do Item:</label><br />
+          <input type="text" id="blog_descricao" placeholder="Digite a descrição do item" name="blog_descricao" /><br /><br />
+
+          <div class="file-upload" id="blog_fileDropBlogCoverArea" onclick="document.getElementById('blog_fileUploadCapa').click()">
+            <p><strong data-i18n="contentSubmission.selectFile">Clique aqui para selecionar uma capa para o blog</strong><br /></p>
+            <input type="file" id="blog_fileUploadCapa" name="blog_fileUploadCapa" hidden />
+          </div><br />
+
+          <label for="blog_fonte" data-i18n="contentSubmission.fonteLabel">Fonte do Item (origem):</label><br />
+          <input type="text" id="blog_fonte" placeholder="Digite a fonte do item" name="blog_fonte" /><br /><br />
+
+          <label for="blog_annotation" data-i18n="contentSubmission.annotationsLabel">Observações sobre o conteúdo:</label><br />
+          <input type="text" id="blog_annotation" placeholder="Digite Observações sobre o conteúdo" name="blog_annotation" /><br /><br />
+<!--
+                    <div class="editor-wrapper">
+            <div id="blog_toolbar">
+              <select class="ql-header">
+                <option value="1"></option>
+                <option value="2"></option>
+                <option selected></option>
+              </select>
+              <button class="ql-bold"></button>
+              <button class="ql-italic"></button>
+              <button class="ql-underline"></button>
+              <button class="ql-list" value="ordered"></button>
+              <button class="ql-list" value="bullet"></button>
+            </div>
+
+            <div id="blog_editor" class="editor-container"></div>
+          </div>
+
+          <div class="attachments" id="blog_attachments"></div>
+-->
+          <button id="submitContentBtn" data-i18n="contentSubmission.submitButton">Enviar Conteúdo</button>
+          
+
+
+        </div>
+      </div>
+
+      <div class="section">
         <div class="title-container">
           <h2 data-i18n="history.title">Minhas Contribuições</h2>
           <button id="table_extension_contribuicoes" class="table-expanded" style="margin-bottom:10px;">
